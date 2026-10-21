@@ -26,13 +26,13 @@ def main() -> None:
     if not all(list(row) == fields for row in papers):
         raise ValueError("record fields/order must match for clean CSV export")
     with CSV.open("w", encoding="utf-8-sig", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
         writer.writeheader()
         writer.writerows(papers)
     source = HTML.read_text(encoding="utf-8")
     # Do not allow an inserted record to prematurely close the HTML script element.
     serialized = json.dumps(papers, ensure_ascii=False, indent=2).replace("<", "\\u003c")
-    pattern = r"(?<=const PAPERS = )\[[\s\S]*?\](?=;\nconst ROUTE = )"
+    pattern = r"(?<=const PAPERS = )\[[\s\S]*?\](?=;\nconst DIRECTIONS = )"
     updated, n = re.subn(pattern, lambda _m: serialized, source)
     if n != 1:
         raise ValueError(f"Expected one PAPERS declaration before ROUTE, got {n}; aborting")
