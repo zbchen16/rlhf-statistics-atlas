@@ -1,5 +1,7 @@
 # RLHF × Statistics Research Atlas
 
+**Public site:** https://zbchen16.github.io/rlhf-statistics-atlas/
+
 An interactive, static research atlas of RLHF, preference learning and alignment papers, curated on **2026-10-21**. Prioritizes 2025–2026 conference papers and statistical perspectives; includes a small number of JASA/arXiv reference records.
 
 ## Contents
@@ -8,6 +10,12 @@ An interactive, static research atlas of RLHF, preference learning and alignment
 - Interactive search, topic/venue/year/statistical-method filters, a 4-week reading route, six research prompts, side-by-side paper comparison.
 - Stars, reading status and reading notes stored in the **visitor’s local browser** via `localStorage`. These are not synced across browsers and are not uploaded to a server.
 - No backend, no database, no API keys, and no need to build an Agent.
+
+## Screenshots
+
+![Desktop view](docs/screenshots/desktop.png)
+
+![Mobile view](docs/screenshots/mobile.png)
 
 ## Preview locally
 
