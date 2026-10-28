@@ -7,237 +7,238 @@
     "direction": "RLHF & Preference Alignment",
     "type": "Theory + Method",
     "tags": [
+      "RLHF",
       "Doubly Robust",
-      "DPO"
+      "Misspecification"
     ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0a226473989931ec6f6ced7343542f86-Abstract-Conference.html",
-    "problem": "双重稳健偏好优化能否缓解偏好模型与参考策略的错设？",
-    "idea": "构造利用两类 nuisance 模型信息的偏好优化目标。",
-    "contribution": "把双重稳健估计思想引入语言模型对齐。",
-    "evidence": "官网摘要陈述一致性条件；具体误差界与证明条件需阅读全文。",
-    "statistics": "半参数估计、正交化与模型错设。",
-    "potential": "值得精读；交叉拟合和非标量反馈扩展仍只是待核查假设。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "偏好模型或参考策略错设时，怎样可靠估计偏好并学习策略？",
+    "idea": "将直接预测与重要性加权组合为双重稳健偏好估计，再用于 DRPO。",
+    "contribution": "把半参数双重稳健思想用于偏好评价和优化，放宽两类模型同时正确的要求。",
+    "evidence": "作者给出一类模型正确时的一致性、效率及策略误差分析，并报告 LLM 实验；所有结论均依赖论文条件。",
+    "statistics": "半参数效率、nuisance 估计、模型错设、离策略评价。",
+    "potential": "优先精读。可核查交叉拟合、重叠不足及偏好漂移的影响；这些扩展尚未在本项目验证。",
+    "url": "https://arxiv.org/abs/2506.01183",
+    "authors": [
+      "Erhan Xu",
+      "Kai Ye",
+      "Hongyi Zhou",
+      "Luhan Zhu",
+      "Francesco Quinzan",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2506.01183",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0a226473989931ec6f6ced7343542f86-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "p02",
-    "title": "Understanding the Performance Gap in Preference Learning: A Dichotomy of RLHF and DPO",
+    "id": "s250403784",
+    "title": "Robust Reinforcement Learning from Human Feedback for Large Language Models Fine-Tuning",
     "year": 2026,
-    "venue": "ICML",
+    "venue": "AoAS",
     "direction": "RLHF & Preference Alignment",
-    "type": "Theory",
+    "type": "Theory + Method",
     "tags": [
       "RLHF",
-      "DPO"
-    ],
-    "url": "https://proceedings.mlr.press/v306/shi26s.html",
-    "problem": "RLHF 与 DPO 的性能差异在何种设定下出现？",
-    "idea": "比较两类偏好优化路线的目标和假设。",
-    "contribution": "提供区分两类路线的理论视角。",
-    "evidence": "仅据官网摘要概括；具体定理和常数未独立核验。",
-    "statistics": "偏好模型错设、策略估计与有限样本分析。",
-    "potential": "适合作为 RLHF/DPO 对照阅读；先复核其模型假设。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p03",
-    "title": "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
-    "year": 2025,
-    "venue": "ICML",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Bradley–Terry",
-      "Preference Model"
-    ],
-    "url": "https://proceedings.mlr.press/v267/zhang25de.html",
-    "problem": "BT 模型不能表达复杂偏好时如何对齐？",
-    "idea": "建立更一般的偏好表示并用于语言模型对齐。",
-    "contribution": "把偏好表示范围扩展到标准 BT 假设之外。",
-    "evidence": "仅核查摘要；理论条件及实验幅度待阅读全文。",
-    "statistics": "统计识别、非传递偏好和模型错设。",
-    "potential": "值得精读；先明确更一般模型的可识别条件。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p04",
-    "title": "DisPPO: Quantile-Based Distributional Reinforcement Learning for Large Language Models",
-    "year": 2026,
-    "venue": "ICML",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Distributional Reward",
-      "Quantile Regression"
-    ],
-    "url": "https://proceedings.mlr.press/v306/zhou26z.html",
-    "problem": "标量奖励会遗漏哪些反馈分布信息？",
-    "idea": "用分位数式分布建模改进偏好优化。",
-    "contribution": "使奖励分布而非单一均值参与训练。",
-    "evidence": "仅据摘要概括；不把优化收敛当作统计保证。",
-    "statistics": "分位数回归、分布估计与风险敏感决策。",
-    "potential": "可研究分位数估计误差如何传播到策略；目前是研究假设。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p05",
-    "title": "Unbiased Alignment for Large Language Models with Noisy Preferences",
-    "year": 2026,
-    "venue": "ICML",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Noisy Preferences",
-      "Robust Estimation"
-    ],
-    "url": "https://proceedings.mlr.press/v306/wang26fa.html",
-    "problem": "偏好标签有噪声时如何避免优化偏差？",
-    "idea": "校正带噪偏好信号下的训练目标。",
-    "contribution": "把噪声机制显式纳入对齐目标。",
-    "evidence": "摘要级核查；噪声可识别性和误差界需读原文。",
-    "statistics": "标签噪声、校准与稳健估计。",
-    "potential": "值得精读；实例依赖噪声扩展需先证明可识别性。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p06",
-    "title": "Distortion of AI Alignment: Does Preference Optimization Optimize for Preferences?",
-    "year": 2025,
-    "venue": "NeurIPS",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory",
-    "tags": [
-      "Preference Aggregation",
-      "Social Choice"
-    ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2526c5e8110bc6bc8b462ba95198161e-Abstract-Conference.html",
-    "problem": "优化成对偏好是否等于满足群体偏好？",
-    "idea": "分析偏好优化目标与社会福利目标的关系。",
-    "contribution": "提醒目标函数与规范性偏好汇总之间可能不一致。",
-    "evidence": "摘要级核查；具体反例或界限需读原文。",
-    "statistics": "社会选择、目标错配与群体异质性。",
-    "potential": "可与群体偏好论文对读；不要把规范性选择当作统计事实。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p07",
-    "title": "Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment",
-    "year": 2026,
-    "venue": "ICML",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory",
-    "tags": [
-      "DPO",
-      "RLHF"
-    ],
-    "url": "https://proceedings.mlr.press/v306/yang26dp.html",
-    "problem": "DPO 与 RLHF 何时等价，何时失效？",
-    "idea": "研究两者的条件等价和假设失效。",
-    "contribution": "明确直接偏好目标与奖励优化之间的条件边界。",
-    "evidence": "摘要级核查；未独立复核定理细节。",
-    "statistics": "识别假设、偏好模型与策略目标错配。",
-    "potential": "适合与 DPO 原文对读并构造反例。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p08",
-    "title": "Avoiding exp(R) scaling in RLHF through Preference-based Exploration",
-    "year": 2025,
-    "venue": "NeurIPS",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Online RLHF",
-      "Exploration"
-    ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f0666ac2771a39f43b483086ffee8d37-Abstract-Conference.html",
-    "problem": "在线 RLHF 如何避免低效探索？",
-    "idea": "利用偏好反馈设计探索机制。",
-    "contribution": "针对样本效率提出不同于静态偏好学习的路线。",
-    "evidence": "摘要级核查；样本复杂度结论需原文确认。",
-    "statistics": "主动学习、探索与样本复杂度。",
-    "potential": "适合研究自适应标注和评估偏差。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p09",
-    "title": "What Makes a Reward Model a Good Teacher? An Optimization Perspective",
-    "year": 2025,
-    "venue": "NeurIPS",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Reward Modeling",
-      "Optimization"
-    ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/554e056fe2b6d9fd27ffcd3367ae1267-Abstract-Conference.html",
-    "problem": "什么样的奖励模型才能有效指导策略训练？",
-    "idea": "从优化信号而非单一比较准确率分析奖励模型。",
-    "contribution": "把奖励质量与下游策略更新联系起来。",
-    "evidence": "摘要级核查；具体命题和实验幅度未复核。",
-    "statistics": "代理风险、梯度信号与评估效度。",
-    "potential": "值得对照 RewardBench 指标与真实策略收益。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p11",
-    "title": "On the Robustness of Reward Models for Language Model Alignment",
-    "year": 2025,
-    "venue": "ICML",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Reward Modeling",
+      "Variance Reduction",
       "Robustness"
     ],
-    "url": "https://proceedings.mlr.press/v267/hong25d.html",
-    "problem": "奖励模型面对分布变化或扰动是否可靠？",
-    "idea": "分析并改善奖励模型的稳健性。",
-    "contribution": "把稳健性作为奖励建模的核心评估维度。",
-    "evidence": "摘要级核查；稳健保证的适用范围需读原文。",
-    "statistics": "稳健统计、分布偏移与泛化。",
-    "potential": "适合研究反馈分布与政策分布的错配。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p14",
-    "title": "Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization",
-    "year": 2025,
-    "venue": "ICLR",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory",
-    "tags": [
-      "DPO",
-      "Optimization"
+    "problem": "Bradley–Terry 奖励模型错设如何影响对齐？",
+    "idea": "通过方差降低的偏好优化 VRPO 改进奖励与策略估计。",
+    "contribution": "将奖励错设与估计方差联系起来，并据此改进优化。",
+    "evidence": "摘要报告奖励/策略估计方差降低和 regret 界改进；实验优势只适用于文中模型、数据与评判方式。",
+    "statistics": "错设模型下估计、方差降低与策略风险。",
+    "potential": "与 DRPO 对照：分别写出目标、稳健含义和识别条件，不能把两篇的保证混为一谈。",
+    "url": "https://arxiv.org/abs/2504.03784",
+    "authors": [
+      "Kai Ye",
+      "Hongyi Zhou",
+      "Jin Zhu",
+      "Francesco Quinzan",
+      "Chengchun Shi"
     ],
-    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3df38ca67befaed9c03b95ffee07d9f8-Abstract-Conference.html",
-    "problem": "DPO 是否会意外降低偏好答案的似然？",
-    "idea": "分析直接偏好目标中的 likelihood displacement。",
-    "contribution": "揭示目标函数优化中的非直观行为。",
-    "evidence": "摘要级核查；这是优化行为分析，不自动等于统计一致性保证。",
-    "statistics": "目标函数诊断、模型选择与数据分布。",
-    "potential": "适合作为 DPO 失效案例阅读。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2504.03784",
+    "publication_status": "作者主页列入 accepted manuscripts；正式刊页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "p15",
-    "title": "COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences",
+    "id": "s241002504",
+    "title": "Dual Active Learning for Reinforcement Learning from Human Feedback",
     "year": 2026,
-    "venue": "ICLR",
+    "venue": "Operations Research",
     "direction": "RLHF & Preference Alignment",
     "type": "Theory + Method",
     "tags": [
-      "General Preferences",
-      "Game Theory"
+      "RLHF",
+      "Active Learning",
+      "Experimental Design"
     ],
-    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5447eef63ec8544bd3a06a9d36efec6b-Abstract-Conference.html",
-    "problem": "非传递一般偏好下如何定义与求解对齐策略？",
-    "idea": "用元算法处理一般偏好结构。",
-    "contribution": "超越单标量奖励或纯 BT 排序设定。",
-    "evidence": "摘要级核查；收敛结果需区分算法收敛与统计误差。",
-    "statistics": "非传递偏好、博弈与估计误差。",
-    "potential": "适合与 p03 比较模型表达力和样本需求。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "标注预算有限且教师能力不同，应该选哪些对话给谁标注？",
+    "idea": "用 D-optimal design 同时选择对话和教师，再做悲观离线策略学习。",
+    "contribution": "把数据选择和标注者选择组成双重主动学习。",
+    "evidence": "作者报告奖励估计的渐近广义方差性质及预算相关策略次优界；未逐条复核证明。",
+    "statistics": "最优设计、主动学习、异质标注、离线 RL。",
+    "potential": "很适合统计学切入。先核查教师可靠性可识别性，再考虑预算分配的稳健扩展。",
+    "url": "https://arxiv.org/abs/2410.02504",
+    "authors": [
+      "Pangpang Liu",
+      "Chengchun Shi",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "arxiv": "2410.02504",
+    "publication_status": "作者主页列为 2026 已接收/发表；正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260402507",
+    "title": "Reinforcement Learning from Human Feedback: A Statistical Perspective",
+    "year": 2026,
+    "venue": "Annual Review / 待核实",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Survey",
+      "Preference Learning"
+    ],
+    "problem": "如何从统计角度理解 RLHF 的建模、估计、优化与评估？",
+    "idea": "以 BTL、潜在效用、主动学习和不确定性量化串起 RLHF 流程。",
+    "contribution": "提供综述与教学示例；不是宣称提出一个新的统一最优算法。",
+    "evidence": "综述条目；理论与方法标签表示覆盖内容，不表示本篇同时证明新定理和提出新算法。",
+    "statistics": "偏好估计、实验设计、UQ、选择偏差。",
+    "potential": "作为入门地图优先阅读，再顺着原始论文核对假设；综述中的开放问题也需查最新工作。",
+    "url": "https://arxiv.org/abs/2604.02507",
+    "authors": [
+      "Pangpang Liu",
+      "Chengchun Shi",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "arxiv": "2604.02507",
+    "publication_status": "Sun 主页称 Annual Review；Shi 主页仍列预印本，正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260301162",
+    "title": "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "RLVR",
+      "GRPO",
+      "U-statistics"
+    ],
+    "problem": "GRPO 的组内采样如何决定梯度估计误差和策略效果？",
+    "idea": "把 GRPO policy gradient 表达为 U-statistic。",
+    "contribution": "为 MSE、有限样本误差、渐近分布及组大小选择提供统一分析视角。",
+    "evidence": "作者提出 oracle 等价与一类算法中的渐近最优性；其适用类与渐近条件未逐项审计，不能推广成所有 LLM 上最优。",
+    "statistics": "U-statistics、渐近理论、方差分解、采样预算。",
+    "potential": "优先精读理论假设；可核查相关 rollout、非平稳训练与固定计算预算下的结论。",
+    "url": "https://arxiv.org/abs/2603.01162",
+    "authors": [
+      "Hongyi Zhou",
+      "Kai Ye",
+      "Erhan Xu",
+      "Jin Zhu",
+      "Ying Yang",
+      "Shijin Gong",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2603.01162",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2603.01162",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260428005",
+    "title": "Kernelized Advantage Estimation: From Nonparametric Statistics to LLM Reasoning",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLVR",
+      "Kernel Smoothing",
+      "Variance Reduction"
+    ],
+    "problem": "每个提示只能生成少量推理轨迹时，怎样降低梯度方差？",
+    "idea": "用核平滑估计 value function，再构造 advantage 和策略梯度。",
+    "contribution": "用经典非参数估计在有限 rollout 预算下共享信息。",
+    "evidence": "摘要称有 value/gradient 估计与策略优化的理论和数值结果；未复核带宽、维数及正则条件。",
+    "statistics": "非参数回归、偏差—方差权衡、核平滑。",
+    "potential": "适合统计方法研究，但高维表征与训练分布漂移可能改变有效性，需先复核。",
+    "url": "https://arxiv.org/abs/2604.28005",
+    "authors": [
+      "Shijin Gong",
+      "Kai Ye",
+      "Jin Zhu",
+      "Xinyu Zhang",
+      "Hongyi Zhou",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2604.28005",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2604.28005",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260527293",
+    "title": "BASIS: Batchwise Advantage Estimation from Single-Rollout Information Sharing for LLM Reasoning",
+    "year": 2026,
+    "venue": "EMNLP Findings",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Method",
+    "tags": [
+      "RLVR",
+      "Advantage Estimation",
+      "Information Sharing"
+    ],
+    "problem": "如何兼顾单 rollout 的计算成本和多 rollout 的估计精度？",
+    "idea": "BASIS 跨同一批次的提示共享奖励信息，估计 value baseline。",
+    "contribution": "提出不训练 critic、每提示单 rollout 的后训练算法。",
+    "evidence": "作者在其基准上报告 value 估计 MSE 和训练效率改善；不等于任意任务都有同样收益。",
+    "statistics": "跨样本信息共享、方差降低、异质性。",
+    "potential": "与 KAE/GRPO 配套读，重点检查跨提示共享需要什么同质性及有效样本假设。",
+    "url": "https://arxiv.org/abs/2605.27293",
+    "authors": [
+      "Shijin Gong",
+      "Erhan Xu",
+      "Kai Ye",
+      "Giulia Livieri",
+      "Francesco Quinzan",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2605.27293",
+    "publication_status": "作者主页称已接收；正式 proceedings 页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
     "id": "p38",
@@ -247,257 +248,496 @@
     "direction": "RLHF & Preference Alignment",
     "type": "Theory + Method",
     "tags": [
+      "RLHF",
       "Heterogeneous Feedback",
       "Low Rank"
     ],
-    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2674413",
-    "problem": "如何表达人类反馈中的群体异质性？",
-    "idea": "以低秩上下文结构建模异质反馈。",
-    "contribution": "提供统计期刊中的结构化 RLHF 视角。",
-    "evidence": "期刊页面可核查发表元数据；理论细节未逐条复核。",
-    "statistics": "低秩估计、异质性与个体化决策。",
-    "potential": "适合深入统计建模；与 quantile RLHF 不是同一论文。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "异质用户的偏好如何建模，又如何应对反馈分布偏移？",
+    "idea": "低秩建模用户上下文与回答特征的交互，配合 reduced-subspace 悲观策略。",
+    "contribution": "LoCo-RLHF 将个性化上下文结构与低秩统计估计结合。",
+    "evidence": "作者给出特定设定的策略次优界和个性化实验；不将它解释为一般用户偏好的完整表示。",
+    "statistics": "低秩估计、上下文偏好、分布偏移。",
+    "potential": "优先精读。可核查秩选择与子空间估计的不确定性如何传递到策略评价。",
+    "url": "https://arxiv.org/abs/2412.19436",
+    "authors": [
+      "Seong Jin Lee",
+      "Will Wei Sun",
+      "Yufeng Liu"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2412.19436",
+    "publication_status": "已发表：期刊记录核查",
+    "publication_source": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2674413",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n01",
-    "title": "Training language models to follow instructions with human feedback",
-    "year": 2022,
-    "venue": "NeurIPS",
+    "id": "s251203208",
+    "title": "Uncertainty Quantification for Large Language Model Reward Learning under Heterogeneous Human Feedback",
+    "year": 2025,
+    "venue": "arXiv",
     "direction": "RLHF & Preference Alignment",
-    "type": "Method",
+    "type": "Theory + Method",
     "tags": [
       "RLHF",
-      "Reward Modeling"
+      "Uncertainty Quantification",
+      "Heterogeneity"
     ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html",
-    "problem": "预训练模型难以稳定遵循人类指令。",
-    "idea": "先进行示范数据监督微调，再用排序反馈训练奖励模型并以 RLHF 优化。",
-    "contribution": "建立后续 LLM RLHF 工作常用的训练流程。",
-    "evidence": "官方论文摘要描述训练和人类偏好评估；无统计定理主张。",
-    "statistics": "排序标签采样、奖励模型泛化和评估偏差。",
-    "potential": "必读基础；关注标注者分布如何影响目标。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "存在标注者差异时，奖励估计的置信区间如何构造？",
+    "idea": "联合建模 latent reward 与 human rationality，用交替梯度求解，再推导统计推断。",
+    "contribution": "把异质偏好下的奖励估计与 UQ、奖励比较和 BoN 决策连接起来。",
+    "evidence": "作者给出估计器收敛及渐近分布，用于区间和比较；优化收敛与统计分布是两种不同结果。",
+    "statistics": "双凸估计、渐近正态性、置信区间。",
+    "potential": "统计方向高度相关。先核查尺度识别与模型条件，再考虑错设下覆盖率。",
+    "url": "https://arxiv.org/abs/2512.03208",
+    "authors": [
+      "Pangpang Liu",
+      "Junwei Lu",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2512.03208",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2512.03208",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n02",
-    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
-    "year": 2023,
+    "id": "s260322563",
+    "title": "Privacy-Preserving Reinforcement Learning from Human Feedback via Decoupled Reward Modeling",
+    "year": 2026,
+    "venue": "SLADS / 作者报告",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Differential Privacy",
+      "Minimax"
+    ],
+    "problem": "偏好数据含敏感信息时，如何设计隐私保护 RLHF 流程？",
+    "idea": "只对 reward learning 施加差分隐私，再由私有奖励模型导出策略。",
+    "contribution": "把隐私预算配置与奖励/策略阶段的结构区分开来。",
+    "evidence": "作者分析附加隐私误差及 minimax 下界，并在特定样本量和隐私区间比较上界；不声称全参数范围最优。",
+    "statistics": "差分隐私、minimax 下界、统计误差分解。",
+    "potential": "可研究异质教师与私有奖励推断的结合；发布策略前需严格核查后处理与数据访问假设。",
+    "url": "https://arxiv.org/abs/2603.22563",
+    "authors": [
+      "Young Hyun Cho",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2603.22563",
+    "publication_status": "作者主页列为 SLADS 2026；正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240516455",
+    "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
+    "year": 2025,
+    "venue": "JASA",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Preference Collapse",
+      "Regularization"
+    ],
+    "problem": "KL 正则化是否会使模型输出偏离要表达的偏好分布？",
+    "idea": "分析 preference collapse，并设计 preference matching 正则化及条件版本。",
+    "contribution": "区分奖励最大化与偏好分布匹配，提出明确的匹配目标。",
+    "evidence": "作者在 BTL/Plackett–Luce 等设定下论证匹配性质并报告实验；“应匹配什么偏好”同时含规范性选择。",
+    "statistics": "偏好分布、正则化偏差、少数群体偏好。",
+    "potential": "优先阅读。将目标定义与统计识别分开，核查不同对齐指标是否改变结论。",
+    "url": "https://arxiv.org/abs/2405.16455",
+    "authors": [
+      "Jiancong Xiao",
+      "Ziniu Li",
+      "Xingyu Xie",
+      "Emily Getzen",
+      "Cong Fang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2405.16455",
+    "publication_status": "已接收：arXiv 注释及作者主页；期刊链接保留",
+    "publication_source": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2025.2555067",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250310990",
+    "title": "Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium",
+    "year": 2026,
+    "venue": "Annals of Statistics",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "RLHF",
+      "Social Choice",
+      "Nash Equilibrium"
+    ],
+    "problem": "存在循环偏好时，标量奖励能否完整表达群体偏好？",
+    "idea": "从 Condorcet cycle 分析奖励可表示性，再考察 Nash 策略。",
+    "contribution": "给出对齐可表示性与多样偏好保留的限制和可能性。",
+    "evidence": "作者在明确的概率偏好模型中给出不可能性/可能性结果；不能解释为所有 RLHF 均不可用。",
+    "statistics": "概率偏好、可识别性、社会选择、博弈。",
+    "potential": "和算法偏差论文配套读，先明确“对齐”是哪一个数学目标。",
+    "url": "https://arxiv.org/abs/2503.10990",
+    "authors": [
+      "Kaizhao Liu",
+      "Qi Long",
+      "Zhekun Shi",
+      "Weijie J. Su",
+      "Jiancong Xiao"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2503.10990",
+    "publication_status": "已接收：arXiv 注释及作者主页；正式刊页未核实",
+    "publication_source": "https://jiancongxiao.github.io/publications/",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250501997",
+    "title": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Calibration",
+      "Uncertainty"
+    ],
+    "problem": "偏好对齐后为什么会出现过度自信，如何校准？",
+    "idea": "区分可校准与不可校准区间，并使用校准感知微调及 EM 型 ECE 正则。",
+    "contribution": "把对齐、任务性能和校准误差一起分析。",
+    "evidence": "作者报告机制分析和实验；模型可能性判断依赖所定义的 ECE 条件，未复核全部理论细节。",
+    "statistics": "校准、ECE、分布偏移、统计决策。",
+    "potential": "适合研究校准评估的抽样误差与跨域稳定性，不能用单一 ECE 替代全部可靠性。",
+    "url": "https://arxiv.org/abs/2505.01997",
+    "authors": [
+      "Jiancong Xiao",
+      "Bojian Hou",
+      "Zhanliang Wang",
+      "Ruochen Jin",
+      "Qi Long",
+      "Weijie J. Su",
+      "Li Shen"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2505.01997",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/xiao25b.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s231211456",
+    "title": "Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint",
+    "year": 2024,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Online DPO",
+      "Exploration"
+    ],
+    "problem": "离线、在线和混合数据下，如何高效学习 KL 约束 RLHF 策略？",
+    "idea": "用 reverse-KL contextual bandit 分析策略改进，导出迭代 DPO 和 rejection sampling。",
+    "contribution": "把探索与数据覆盖显式纳入 RLHF 理论及算法。",
+    "evidence": "正式摘要陈述有限样本保证与 LLM 实验；理论设定与完整神经网络训练仍有距离。",
+    "statistics": "上下文 bandit、覆盖、样本复杂度。",
+    "potential": "Tong Zhang 路线的入门代表作；先画清在线反馈和离线样本的差异。",
+    "url": "https://arxiv.org/abs/2312.11456",
+    "authors": [
+      "Wei Xiong",
+      "Hanze Dong",
+      "Chenlu Ye",
+      "Ziqi Wang",
+      "Han Zhong",
+      "Heng Ji",
+      "Nan Jiang",
+      "Tong Zhang"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2312.11456",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v235/xiong24a.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240207314",
+    "title": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+    "year": 2024,
     "venue": "NeurIPS",
     "direction": "RLHF & Preference Alignment",
     "type": "Theory + Method",
     "tags": [
-      "DPO",
-      "Preference Optimization"
+      "RLHF",
+      "General Preferences",
+      "Minimax"
     ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract.html",
-    "problem": "显式奖励模型加 RL 优化流程复杂。",
-    "idea": "将 KL 正则奖励优化目标重参数化为成对偏好分类损失。",
-    "contribution": "提出无需单独拟合奖励模型的 DPO 路线。",
-    "evidence": "官方摘要支持方法与实验主张；等价推导的适用假设需原文复核。",
-    "statistics": "BT 假设、目标识别和离线样本分布。",
-    "potential": "必读基础；与 p07、p14 对照其条件和失效模式。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "不假设 Bradley–Terry 奖励结构，如何从一般比较偏好学习？",
+    "idea": "将 RLHF 写成带 reverse-KL 正则的双策略 minimax game。",
+    "contribution": "绕开潜在标量奖励存在的假设，分析离线及在线可学习性。",
+    "evidence": "作者给出样本效率结果及经验验证；偏好 oracle 可访问性与函数类条件需精读。",
+    "statistics": "非传递偏好、博弈估计、统计学习。",
+    "potential": "与 Xiao 的循环偏好和 DRPO 对照，可区分目标改变和估计稳健性的不同作用。",
+    "url": "https://arxiv.org/abs/2402.07314",
+    "authors": [
+      "Chenlu Ye",
+      "Wei Xiong",
+      "Yuheng Zhang",
+      "Hanze Dong",
+      "Nan Jiang",
+      "Tong Zhang"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2402.07314",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://papers.nips.cc/paper_files/paper/2024/hash/94d13c2401fe119e57ba325b6fe526e0-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n03",
-    "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
-    "year": 2024,
-    "venue": "ICML",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
-    "tags": [
-      "RLAIF",
-      "AI Feedback"
-    ],
-    "url": "https://proceedings.mlr.press/v235/lee24t.html",
-    "problem": "人工偏好标签成本高，AI 反馈能否替代部分标注？",
-    "idea": "以 AI 生成的偏好反馈训练奖励模型和对齐策略。",
-    "contribution": "给出 RLAIF 与 RLHF 的直接经验比较。",
-    "evidence": "PMLR 摘要级核查；实验数字和条件需原文确认。",
-    "statistics": "自动标注偏差、测量误差和迁移。",
-    "potential": "RLAIF 代表性入门；重点追问评判器偏差。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "n04",
-    "title": "Constitutional AI: Harmlessness from AI Feedback",
-    "year": 2022,
-    "venue": "arXiv",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
-    "tags": [
-      "Constitutional AI",
-      "RLAIF"
-    ],
-    "url": "https://arxiv.org/abs/2212.08073",
-    "problem": "如何在少量人工安全标注下改进有害请求处理？",
-    "idea": "用原则驱动自我批评与修订，并用 AI 反馈训练偏好模型。",
-    "contribution": "形成宪法式 AI 反馈路线的基础范式。",
-    "evidence": "核查 arXiv 原文元数据和摘要；正式会议发表状态未确认。",
-    "statistics": "规则选择、反馈测量与安全评估。",
-    "potential": "基础背景；不把预印本标为正式顶会。",
-    "verification": "arXiv 原文/摘要；正式发表未确认"
-  },
-  {
-    "id": "n05",
-    "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
-    "year": 2023,
-    "venue": "ACL",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
-    "tags": [
-      "SFT",
-      "Self-Alignment"
-    ],
-    "url": "https://aclanthology.org/2023.acl-long.754/",
-    "problem": "指令微调所需人工指令数据稀缺。",
-    "idea": "模型生成指令及示例，过滤后用于监督微调。",
-    "contribution": "展示自生成数据支持指令对齐的可行路线。",
-    "evidence": "ACL Anthology 摘要及发表信息已核查；实验细节待原文。",
-    "statistics": "合成数据选择偏差、覆盖度与泛化。",
-    "potential": "SFT 和 self-alignment 基础；研究数据质量而非仅数据量。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "n06",
-    "title": "Reinforcement Learning with Verifiable Rewards: GRPO’s Loss, Dynamics, and Success Amplification",
+    "id": "s250502387",
+    "title": "RM-R1: Reward Modeling as Reasoning",
     "year": 2026,
-    "venue": "ICML",
-    "direction": "Other Alignment Methods",
-    "type": "Theory",
+    "venue": "ICLR",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Method",
     "tags": [
+      "Reward Modeling",
       "RLVR",
-      "GRPO"
+      "Reasoning"
     ],
-    "url": "https://proceedings.mlr.press/v306/mroueh26a.html",
-    "problem": "可验证奖励下 GRPO 为何有效、其损失和动态如何理解？",
-    "idea": "分析 GRPO 损失、优化动态与成功样本放大。",
-    "contribution": "为 RLVR/GRPO 提供理论分析入口。",
-    "evidence": "PMLR 摘要级核查；具体定理需阅读全文，不将动力学结果表述为统计泛化保证。",
-    "statistics": "组内相对基线、方差和采样分布。",
-    "potential": "RLVR 理论优先读；检验组采样机制对估计偏差的影响。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "奖励模型先推理再评分，能否提供更可靠反馈？",
+    "idea": "RM-R1 用 chain-of-rubrics 推理，并通过蒸馏和可验证奖励训练。",
+    "contribution": "将奖励建模改写为可解释的生成式推理任务。",
+    "evidence": "正式摘要以奖励基准上的经验改善为主；可读推理链不构成奖励无偏或校准的证明。",
+    "statistics": "评判器误差、测量效度、校准。",
+    "potential": "适合研究 reasoning reward 的可靠性，但需独立评价而非让同一个模型自证正确。",
+    "url": "https://arxiv.org/abs/2505.02387",
+    "authors": [
+      "Xiusi Chen",
+      "Gaotang Li",
+      "Ziqi Wang",
+      "Bowen Jin",
+      "Cheng Qian",
+      "Yu Wang",
+      "Hongru Wang",
+      "Yu Zhang",
+      "Denghui Zhang",
+      "Tong Zhang",
+      "Hanghang Tong",
+      "Heng Ji"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2505.02387",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8e3b8de251afd887fb4589c1e3a3c793-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n07",
-    "title": "Spurious Rewards: Rethinking Training Signals in RLVR",
-    "year": 2026,
-    "venue": "ICML",
-    "direction": "Other Alignment Methods",
+    "id": "s240208787",
+    "title": "Rethinking Machine Unlearning for Large Language Models",
+    "year": 2025,
+    "venue": "Nature Machine Intelligence",
+    "direction": "Machine Unlearning",
     "type": "Theory + Method",
     "tags": [
-      "RLVR",
-      "Reward Hacking"
+      "LLM Unlearning",
+      "Survey",
+      "Evaluation"
     ],
-    "url": "https://proceedings.mlr.press/v306/shao26d.html",
-    "problem": "可验证奖励是否可能携带虚假训练信号？",
-    "idea": "分析 RLVR 奖励信号中的伪相关并提出处理思路。",
-    "contribution": "把 RLVR 反馈质量置于方法设计中心。",
-    "evidence": "PMLR 摘要级核查；理论和实验细节待原文。",
-    "statistics": "测量误差、伪相关和分布偏移。",
-    "potential": "适合统计学切入；需分清可验证标签与真正目标。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "LLM 遗忘到底要求移除什么影响，如何评价？",
+    "idea": "梳理遗忘范围、数据—模型关系、方法、指标和应用。",
+    "contribution": "建立概念地图并提示容易被忽视的多面评估问题；属于综述。",
+    "evidence": "综述覆盖理论与方法，不提供所有 LLM 的通用删除证书。",
+    "statistics": "反事实重训练基准、影响函数、可检验性。",
+    "potential": "Unlearning 首读；先区分训练影响删除、知识抑制与安全拒答，再比较算法。",
+    "url": "https://arxiv.org/abs/2402.08787",
+    "authors": [
+      "Sijia Liu",
+      "Yuanshun Yao",
+      "Jinghan Jia",
+      "Stephen Casper",
+      "Nathalie Baracaldo",
+      "Peter Hase",
+      "Yuguang Yao",
+      "Chris Yuhao Liu",
+      "Xiaojun Xu",
+      "Hang Li",
+      "Kush R. Varshney",
+      "Mohit Bansal",
+      "Sanmi Koyejo",
+      "Yang Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2402.08787",
+    "publication_status": "已发表：期刊记录核查",
+    "publication_source": "https://www.nature.com/articles/s42256-025-00985-0",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n08",
-    "title": "Aligning Large Language Models via Fully Self-Synthetic Data",
-    "year": 2026,
-    "venue": "ACL",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
-    "tags": [
-      "Self-Alignment",
-      "Synthetic Data"
-    ],
-    "url": "https://aclanthology.org/2026.acl-long.1595/",
-    "problem": "对齐流程对人工、外部模型或外部偏好数据依赖较强。",
-    "idea": "模型自生成提示、回答和偏好后执行自我对齐优化。",
-    "contribution": "提供全自合成数据的对齐实现。",
-    "evidence": "ACL Anthology 摘要报告基准改进；未复核实验幅度或统计保证。",
-    "statistics": "自选择偏差、误差放大和评估独立性。",
-    "potential": "代表近期 self-alignment；关注训练与评估同源偏差。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "n09",
-    "title": "Nudging: Inference-time Alignment of LLMs via Guided Decoding",
+    "id": "s241007163",
+    "title": "Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning",
     "year": 2025,
-    "venue": "ACL",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
+    "venue": "NeurIPS",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
     "tags": [
-      "Inference-time Alignment",
-      "Decoding"
+      "LLM Unlearning",
+      "SimNPO",
+      "Reference Bias"
     ],
-    "url": "https://aclanthology.org/2025.acl-long.623/",
-    "problem": "能否不重新训练模型而在推理时调整输出？",
-    "idea": "以引导式解码在生成阶段施加对齐信号。",
-    "contribution": "代表推理时对齐路线。",
-    "evidence": "ACL Anthology 发表页和摘要级核查；实验细节待原文。",
-    "statistics": "序列选择偏差、校准与计算约束。",
-    "potential": "与训练时对齐方法比较成本及泛化。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "NPO 的参考模型会如何影响遗忘样本的优化权重？",
+    "idea": "移除参考模型依赖，设计 SimNPO，并分析简化模型。",
+    "contribution": "揭示 reference bias 和难度不均带来的权重问题。",
+    "evidence": "作者给出 Markov-chain mixture 分析及 TOFU/MUSE 实验；简化模型分析不等价于一般 LLM 删除保证。",
+    "statistics": "参考偏差、加权估计、模型简化。",
+    "potential": "与 SatImp/G-effect 对照读，核查收益来自目标、权重、长度还是调参。",
+    "url": "https://arxiv.org/abs/2410.07163",
+    "authors": [
+      "Chongyu Fan",
+      "Jiancheng Liu",
+      "Licong Lin",
+      "Jinghan Jia",
+      "Ruiqi Zhang",
+      "Song Mei",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2410.07163",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/02443e4e008231e0af0855f3cc70ed17-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n10",
-    "title": "Safeguarding LLM Fine-tuning via Push-Pull Distributional Alignment",
-    "year": 2026,
-    "venue": "ACL",
-    "direction": "Other Alignment Methods",
-    "type": "Method",
+    "id": "s250205374",
+    "title": "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
     "tags": [
-      "Safety Alignment",
-      "Distribution Shift"
+      "LLM Unlearning",
+      "Relearning",
+      "Robust Optimization"
     ],
-    "url": "https://aclanthology.org/2026.acl-long.1083/",
-    "problem": "普通微调可能侵蚀已有安全行为。",
-    "idea": "以分布级对齐保护安全，同时适配新任务。",
-    "contribution": "把安全微调表述为分布级运输问题。",
-    "evidence": "ACL Anthology 摘要级核查；具体安全收益待全文复核。",
-    "statistics": "最优传输、分布偏移和安全—效用权衡。",
-    "potential": "安全路线代表作；考察安全指标的统计不确定性。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "少量重新训练为什么能恢复被遗忘内容，如何减轻？",
+    "idea": "用稳健优化和 SAM 等平滑策略提高遗忘对重新学习的耐受。",
+    "contribution": "把 relearning attack 与损失景观平滑联系起来。",
+    "evidence": "作者报告 WMDP/MUSE 上抵抗若干攻击的改进；不构成对所有未知恢复攻击的认证。",
+    "statistics": "稳健优化、局部敏感性、攻击分布。",
+    "potential": "优先阅读，并区分攻击预算、保留能力与遗忘强度之间的权衡。",
+    "url": "https://arxiv.org/abs/2502.05374",
+    "authors": [
+      "Chongyu Fan",
+      "Jinghan Jia",
+      "Yihua Zhang",
+      "Anil Ramakrishna",
+      "Mingyi Hong",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2502.05374",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/fan25e.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n11",
-    "title": "Self-Guided Alignment: Adaptive Preference Sensing for Multi-Objective Generation",
-    "year": 2026,
-    "venue": "ACL",
-    "direction": "Other Alignment Methods",
+    "id": "s251009007",
+    "title": "LLM Unlearning on Noisy Forget Sets: A Study of Incomplete, Rewritten, and Watermarked Data",
+    "year": 2025,
+    "venue": "AISec Workshop",
+    "direction": "Machine Unlearning",
     "type": "Method",
     "tags": [
-      "Multi-objective",
-      "Preference Sensing"
+      "LLM Unlearning",
+      "Noisy Forget Sets",
+      "Watermark"
     ],
-    "url": "https://aclanthology.org/2026.acl-long.2184/",
-    "problem": "单一偏好目标难兼顾多个用户目标。",
-    "idea": "自适应感知偏好以引导多目标生成。",
-    "contribution": "提供多目标对齐的动态调节路线。",
-    "evidence": "ACL Anthology 摘要级核查；不把实验声称写成普遍最优保证。",
-    "statistics": "多目标估计、偏好异质性与权衡曲线。",
-    "potential": "可研究目标权重估计及不确定性。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "遗忘集不完整、被改写或带水印时，现有方法是否有效？",
+    "idea": "在扰动后的 forget sets 上系统评估 RMU/NPO，并用 saliency 分析语义线索。",
+    "contribution": "把真实可获得的遗忘数据质量纳入评估。",
+    "evidence": "作者观察到保留核心语义时的若干稳健现象；这不是水印来源检测论文，也不是任意噪声下的定理。",
+    "statistics": "测量误差、语义保真、评估设计。",
+    "potential": "与第三方向形成联系，但应区分“用含水印数据遗忘”和“检测水印”两个任务。",
+    "url": "https://arxiv.org/abs/2510.09007",
+    "authors": [
+      "Changsheng Wang",
+      "Yihua Zhang",
+      "Dennis Wei",
+      "Jinghan Jia",
+      "Pin-Yu Chen",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2510.09007",
+    "publication_status": "已接收：arXiv 注释与作者主页；不是 CCS 主会论文",
+    "publication_source": "https://lsjxjtu.github.io/publications.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n12",
-    "title": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+    "id": "s240609179",
+    "title": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
     "year": 2025,
     "venue": "ICLR",
     "direction": "Machine Unlearning",
     "type": "Method",
     "tags": [
-      "Unlearning Evaluation",
-      "Benchmark"
+      "LLM Unlearning",
+      "Evaluation",
+      "Forget–Retain"
     ],
-    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/4556f5398bd2c61bd7500e306b4e560a-Abstract-Conference.html",
-    "problem": "单一指标难判断语言模型是否真正遗忘。",
-    "idea": "从多维度评估 LLM unlearning 的忘记与保留。",
-    "contribution": "建立更全面的 unlearning 评估基准。",
-    "evidence": "OpenReview 正式 ICLR 页面/摘要级核查；具体指标定义需读原文。",
-    "statistics": "测量效度、攻击测试与多指标评估。",
-    "potential": "unlearning 必读评估入口；避免以拒答率替代删除证明。",
-    "verification": "ICLR 2025 正式论文集摘要核查；未逐条复核全文定理"
+    "problem": "不同方法在遗忘与保留上取舍不同，怎样公平比较？",
+    "idea": "检查指标对攻击的敏感性，并校准非目标性能后比较遗忘。",
+    "contribution": "强调指标可靠性及比较基准的可比性。",
+    "evidence": "正式摘要讨论攻击下的评估失真与校准方案；校准后好分数仍不是知识完全删除的证明。",
+    "statistics": "测量效度、Pareto 比较、校准。",
+    "potential": "优先精读评估协议，核查校准是否隐藏其他能力损失。",
+    "url": "https://arxiv.org/abs/2406.09179",
+    "authors": [
+      "Qizhou Wang",
+      "Bo Han",
+      "Puning Yang",
+      "Jianing Zhu",
+      "Tongliang Liu",
+      "Masashi Sugiyama"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2406.09179",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3a91841d2bcc0b13a3d0d5d60c9f0581-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
     "id": "n13",
@@ -507,96 +747,646 @@
     "direction": "Machine Unlearning",
     "type": "Method",
     "tags": [
-      "Forget–Retention",
-      "LLM Unlearning"
+      "LLM Unlearning",
+      "GRU",
+      "Gradient Projection"
     ],
-    "url": "https://proceedings.mlr.press/v267/wang25de.html",
-    "problem": "删除目标知识时如何保留其他能力？",
-    "idea": "设计兼顾遗忘与保留的更新机制。",
-    "contribution": "直接处理 LLM unlearning 的核心权衡。",
-    "evidence": "PMLR 摘要级核查；实验和理论保证需原文确认。",
-    "statistics": "多目标风险、保留集抽样与权衡估计。",
-    "potential": "方法线代表；研究权衡曲线而非单点分数。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "遗忘更新如何尽量减少对无关能力的副作用？",
+    "idea": "GRU 调整梯度更新方向以缓解 forget–retain 冲突。",
+    "contribution": "将保留损害控制纳入遗忘更新规则。",
+    "evidence": "主要是算法及基准实验；未核查一般分布下统计或认证删除保证。",
+    "statistics": "多目标优化、梯度干扰、保留风险。",
+    "potential": "适合作为方法基线；研究性能时应对齐保留集、调参预算与攻击强度。",
+    "url": "https://arxiv.org/abs/2503.09117",
+    "authors": [
+      "Yue Wang",
+      "Qizhou Wang",
+      "Feng Liu",
+      "Wei Huang",
+      "Yali Du",
+      "Xiaojiang Du",
+      "Bo Han"
+    ],
+    "scholars": [
+      "wang"
+    ],
+    "arxiv": "2503.09117",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/wang25de.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n14",
-    "title": "Textual Unlearning Gives a False Sense of Unlearning",
+    "id": "s250511953",
+    "title": "Exploring Criteria of Loss Reweighting to Enhance LLM Unlearning",
     "year": 2025,
-    "venue": "ICML",
-    "direction": "Machine Unlearning",
-    "type": "Theory + Method",
-    "tags": [
-      "Unlearning Evaluation",
-      "Leakage"
-    ],
-    "url": "https://proceedings.mlr.press/v267/du25d.html",
-    "problem": "文本遗忘表象是否掩盖仍可恢复的信息？",
-    "idea": "提出 U-LiRA+ 审计方法，并设计黑盒与白盒文本遗忘泄漏攻击。",
-    "contribution": "显示表面遗忘仍可能发生成员推断与数据重建泄漏。",
-    "evidence": "PMLR 摘要报告攻击检出与泄漏现象；具体实验条件、数值和适用模型需原文复核。",
-    "statistics": "成员推断、似然比检验、攻击检验力与隐私风险。",
-    "potential": "与 MUSE 对读；重点区分行为抑制、成员隐私和真正删除。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "n15",
-    "title": "Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models",
-    "year": 2026,
     "venue": "ICML",
     "direction": "Machine Unlearning",
     "type": "Method",
     "tags": [
       "LLM Unlearning",
-      "Context"
+      "Reweighting",
+      "SatImp"
     ],
-    "url": "https://proceedings.mlr.press/v306/peng26a.html",
-    "problem": "遗忘指定知识时如何保留上下文中的正常推理能力？",
-    "idea": "引入上下文感知的遗忘机制。",
-    "contribution": "把遗忘与保留的边界进一步细化。",
-    "evidence": "PMLR 摘要级核查；方法细节和效果待原文。",
-    "statistics": "条件风险、上下文偏移与保留评估。",
-    "potential": "适合研究条件化遗忘目标的可识别性。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "遗忘损失的样本权重到底在发挥什么作用？",
+    "idea": "区分 saturation 与 importance，并组合成 SatImp。",
+    "contribution": "通过可分解实验研究权重的目标、平滑度和粒度。",
+    "evidence": "论文主要给出经验规律；未把所测基准上较好的权重当成普遍最优规则。",
+    "statistics": "加权风险、样本难度、影响性。",
+    "potential": "适合从统计重加权切入，先区分目标风险改变与估计方差改变。",
+    "url": "https://arxiv.org/abs/2505.11953",
+    "authors": [
+      "Puning Yang",
+      "Qizhou Wang",
+      "Zhuo Huang",
+      "Tongliang Liu",
+      "Chengqi Zhang",
+      "Bo Han"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2505.11953",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/yang25ak.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n16",
-    "title": "Leak@$k$: Unlearning Does Not Make LLMs Forget Under Probabilistic Decoding",
+    "id": "s260516776",
+    "title": "Distinguishable Deletion: Unifying Knowledge Erasure and Refusal for Large Language Model Unlearning",
     "year": 2026,
     "venue": "ICML",
     "direction": "Machine Unlearning",
     "type": "Theory + Method",
     "tags": [
-      "Unlearning Evaluation",
-      "Decoding"
+      "LLM Unlearning",
+      "Energy",
+      "Refusal"
     ],
-    "url": "https://proceedings.mlr.press/v306/reisizadeh26a.html",
-    "problem": "贪心解码下的遗忘是否能抵抗随机采样？",
-    "idea": "用概率解码下的泄漏指标重新检验遗忘。",
-    "contribution": "揭示评估协议改变会改变遗忘结论。",
-    "evidence": "PMLR 摘要级核查；具体定理与数值待原文。",
-    "statistics": "尾部风险、多次抽样检验与置信区间。",
-    "potential": "优先读评估论文；对公开站点的评估表述有直接启发。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "如何结合知识移除与合理拒答，减少只抑制固定词串的问题？",
+    "idea": "D² 在 latent representation 限制响应分布，以 energy 边界实现 EUA 训练与推理拒答。",
+    "contribution": "把知识分离与拒答连接为可操作框架。",
+    "evidence": "作者提供数学分析和基准实验；不应把 energy 指标等同于完整训练影响被删除。",
+    "statistics": "表示分布、判别边界、评价指标效度。",
+    "potential": "值得读新范式，重点追问潜在知识与行为指标之间的对应是否可识别。",
+    "url": "https://arxiv.org/abs/2605.16776",
+    "authors": [
+      "Puning Yang",
+      "Junchi Yu",
+      "Qizhou Wang",
+      "Philip Torr",
+      "Bo Han",
+      "Xiuying Chen"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2605.16776",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v306/yang26dc.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
   {
-    "id": "n17",
-    "title": "Unlearning Isn’t Deletion: Investigating Reversibility of Machine Unlearning in LLMs",
+    "id": "s260122028",
+    "title": "Contrastive Representation Shaping for LLM Unlearning",
     "year": 2026,
-    "venue": "ICML",
+    "venue": "NeurIPS",
     "direction": "Machine Unlearning",
     "type": "Method",
     "tags": [
-      "Reversibility",
-      "Unlearning Evaluation"
+      "LLM Unlearning",
+      "Representation",
+      "Contrastive Learning"
     ],
-    "url": "https://proceedings.mlr.press/v306/xu26cd.html",
-    "problem": "看似遗忘的模型是否可经少量训练恢复原知识？",
-    "idea": "测试遗忘结果的可逆性。",
-    "contribution": "把可恢复性作为区别行为隐藏与删除的检查。",
-    "evidence": "PMLR 摘要级核查；恢复设置和结果待原文。",
-    "statistics": "攻击鲁棒性、恢复风险和实验设计。",
-    "potential": "与 Leak@$k$ 一起审视遗忘评估边界。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "输出不再出现目标内容时，表征中的遗忘与保留是否仍然纠缠？",
+    "idea": "CLReg 用对比正则分离 forget 与 retain features。",
+    "contribution": "将表征纠缠作为遗忘算法的可测诊断和改进目标。",
+    "evidence": "作者给出一步 entanglement proxy 分析及多模型实验；一步代理量下降不是全局知识删除定理。",
+    "statistics": "表示识别、代理测量、隐私风险。",
+    "potential": "Haoran Tang 的 LLM 代表作，建议与输出评估方法一起读。",
+    "url": "https://arxiv.org/abs/2601.22028",
+    "authors": [
+      "Haoran Tang",
+      "Rajiv Khanna"
+    ],
+    "scholars": [
+      "tang"
+    ],
+    "arxiv": "2601.22028",
+    "publication_status": "已接收：arXiv 注释和作者主页；正式 proceedings 未核实",
+    "publication_source": "https://haorantang.github.io/",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250613715",
+    "title": "Sharpness-Aware Machine Unlearning",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "Machine Unlearning",
+      "SAM",
+      "Generalization"
+    ],
+    "problem": "SAM 在遗忘与保留信号相互干扰时会如何改变泛化？",
+    "idea": "分析不同信号强度下 SAM 的作用，并提出 Sharp MinMax。",
+    "contribution": "把遗忘集和保留集的优化几何分开讨论。",
+    "evidence": "含理论及实验；是一般 machine unlearning 方法，不能自动外推到大语言模型或认证删除。",
+    "statistics": "信号强度、泛化、成员推断、损失几何。",
+    "potential": "作为理论补充，与 LLM 论文对照检查迁移条件；不将传统设定写成已验证的 LLM 结论。",
+    "url": "https://arxiv.org/abs/2506.13715",
+    "authors": [
+      "Haoran Tang",
+      "Rajiv Khanna"
+    ],
+    "scholars": [
+      "tang"
+    ],
+    "arxiv": "2506.13715",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/815d50638e46b7f3bdaaae2158c68d54-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250219301",
+    "title": "Rethinking LLM Unlearning Objectives: A Gradient Perspective and Go Beyond",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "G-effect",
+      "Gradient Analysis"
+    ],
+    "problem": "多个遗忘目标为何表现不同，怎样统一检查其局部影响？",
+    "idea": "用 G-effect 描述目标在样本、层和训练步骤上的梯度影响。",
+    "contribution": "提供分析和诊断遗忘目标的工具。",
+    "evidence": "局部梯度分析配合实验；局部变化不自动推出多步训练后的遗忘质量。",
+    "statistics": "影响分析、局部近似、多目标风险。",
+    "potential": "先验证局部诊断是否预测训练结果，再考虑用其选择权重或正则。",
+    "url": "https://arxiv.org/abs/2502.19301",
+    "authors": [
+      "Qizhou Wang",
+      "Jin Peng Zhou",
+      "Zhanke Zhou",
+      "Saebyeol Shin",
+      "Bo Han",
+      "Kilian Q. Weinberger"
+    ],
+    "scholars": [
+      "wang"
+    ],
+    "arxiv": "2502.19301",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/9ad307ab459fb93163248a0a56959307-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251000761",
+    "title": "Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Optimizer",
+      "Robustness"
+    ],
+    "problem": "优化器本身如何影响遗忘被量化或微调破坏的程度？",
+    "idea": "比较不同阶信息的优化器，并结合一阶与零阶更新。",
+    "contribution": "把优化器从目标函数之外单独作为鲁棒性的研究变量。",
+    "evidence": "作者报告若干基准上简化优化器改善耐受性，并讨论平滑机制；不是任何噪声优化器都会更好。",
+    "statistics": "随机平滑、优化噪声、稳健性评估。",
+    "potential": "适合受控消融，需公平匹配计算、学习率搜索与遗忘强度。",
+    "url": "https://arxiv.org/abs/2510.00761",
+    "authors": [
+      "Yicheng Lang",
+      "Yihua Zhang",
+      "Chongyu Fan",
+      "Changsheng Wang",
+      "Jinghan Jia",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2510.00761",
+    "publication_status": "作者主页列为 ICLR；正式论文 PDF 核查",
+    "publication_source": "https://openreview.net/pdf/a78c8e7458c059eb2cd9237d4af803b102afba7b.pdf",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251001268",
+    "title": "AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Logits",
+      "Statistical Testing"
+    ],
+    "problem": "固定 log-probability 检测统计量是否浪费可用信息？",
+    "idea": "AdaDetectGPT 从数据自适应学习 witness function，增强 logits-based detector。",
+    "contribution": "把检测规则学习与错误率分析结合起来。",
+    "evidence": "作者对 TPR/FPR 等给出统计保证并报告实验；保证受采样、分布及训练条件限制。",
+    "statistics": "两样本判别、假设检验、阈值校准。",
+    "potential": "适合精读统计保证；部署前单独检验中文、短文本和新模型上的误报。",
+    "url": "https://arxiv.org/abs/2510.01268",
+    "authors": [
+      "Hongyi Zhou",
+      "Jin Zhu",
+      "Pingfan Su",
+      "Kai Ye",
+      "Ying Yang",
+      "Shakeel A O B Gavioli-Akilagun",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2510.01268",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/808bc5e3d076c1125a87f81b42d5e52d-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260503723",
+    "title": "Segmenting Human-LLM Co-authored Text via Change Point Detection",
+    "year": 2026,
+    "venue": "STAI-X",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Change Points",
+      "Mixed Text"
+    ],
+    "problem": "混合人类与 AI 写作中，如何定位连续来源片段？",
+    "idea": "将局部检测分数当作序列，使用加权及广义变点方法处理异质波动。",
+    "contribution": "从整篇二分类走向片段定位。",
+    "evidence": "作者在其分数序列模型下建立 minimax 性质并报告实验；不是对任意自然文本的无条件定位保证。",
+    "statistics": "变点检测、异方差、定位误差。",
+    "potential": "与水印定位配套读：前者借助通用分数，后者需要水印 pivot 和密钥信息。",
+    "url": "https://arxiv.org/abs/2605.03723",
+    "authors": [
+      "Mengchu Li",
+      "Jin Zhu",
+      "Jinglai Li",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2605.03723",
+    "publication_status": "作者主页列为 STAI-X；正式会议页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240401245",
+    "title": "A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules",
+    "year": 2025,
+    "venue": "Annals of Statistics",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Hypothesis Testing",
+      "Minimax"
+    ],
+    "problem": "如何比较水印检测规则的统计效率并控制误报？",
+    "idea": "基于文本与密钥构造 pivot，分析漏报率并求解 minimax 检测。",
+    "contribution": "给水印机制与检测规则提供统计比较框架。",
+    "evidence": "正式记录含最优规则与渐近效率分析；成立于相应 watermark、pivot 和概率模型下。",
+    "statistics": "枢轴量、I/II 类错误、大偏差、minimax。",
+    "potential": "水印方向首读。先写出 H0/H1 和密钥可用性，再阅读编辑鲁棒性。",
+    "url": "https://arxiv.org/abs/2404.01245",
+    "authors": [
+      "Xiang Li",
+      "Feng Ruan",
+      "Huiyuan Wang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2404.01245",
+    "publication_status": "已发表：arXiv journal reference 与期刊 DOI 核查",
+    "publication_source": "https://doi.org/10.1214/24-AOS2468",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241113868",
+    "title": "Robust Detection of Watermarks for Large Language Models Under Human Edits",
+    "year": 2026,
+    "venue": "JRSS B",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Human Edits",
+      "Tr-GoF"
+    ],
+    "problem": "人类删改稀释水印后，怎样提高检测能力？",
+    "idea": "用混合模型描述编辑后的 pivot，采用 truncated goodness-of-fit（Tr-GoF）检验。",
+    "contribution": "在特定 Gumbel-max 水印及编辑渐近区间，建立自适应稳健检测分析。",
+    "evidence": "作者给出指定渐近区间的最优性与效率结果，并做合成/LLM 实验；不保证任意对抗改写后可检测。",
+    "statistics": "稀疏混合检测、自适应检验、检测边界。",
+    "potential": "与你的问题最直接相关。先核查编辑如何影响 token—key 对齐和信号存活。",
+    "url": "https://arxiv.org/abs/2411.13868",
+    "authors": [
+      "Xiang Li",
+      "Feng Ruan",
+      "Huiyuan Wang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2411.13868",
+    "publication_status": "期刊记录：2025 在线发表；2026 卷 88(2), 491 起",
+    "publication_source": "https://academic.oup.com/jrsssb/article-abstract/88/2/491/8261309",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250622343",
+    "title": "Optimal Estimation of Watermark Proportions in Hybrid AI-Human Texts",
+    "year": 2025,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Mixture Proportion",
+      "Identifiability"
+    ],
+    "problem": "混合文本中仍带水印信号的比例能否估计？",
+    "idea": "把 pivot 分布写成混合模型，区分不可识别机制与连续 pivot 可估计机制。",
+    "contribution": "建立比例识别条件、估计器及 minimax 界。",
+    "evidence": "作者证明某些水印机制下不可识别，并在特定连续 pivot 类给出最优速率；比例不自动等于全部 AI 写作占比。",
+    "statistics": "混合比例估计、可识别性、下界。",
+    "potential": "优先阅读。可核查依赖和失配编辑下区间估计，但目前仅是研究提议。",
+    "url": "https://arxiv.org/abs/2506.22343",
+    "authors": [
+      "Xiang Li",
+      "Garrett Wen",
+      "Weiqing He",
+      "Jiayuan Wu",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2506.22343",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2506.22343",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251003944",
+    "title": "On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "Watermark",
+      "Goodness-of-Fit",
+      "Post-editing"
+    ],
+    "problem": "经典 GoF 检验在不同水印及编辑条件下实际有多大检验力？",
+    "idea": "系统比较多个 GoF 检验、水印、温度和后编辑设置。",
+    "contribution": "为经典统计检验提供有针对性的水印实证比较。",
+    "evidence": "主要是经验结果；观测到的检验力优势不是所有分布上的最优性证明。",
+    "statistics": "拟合优度、检验力、重复 token 与依赖。",
+    "potential": "适合复现实证基线，尤其关注低误报区间和文本长度，而非只看 AUROC。",
+    "url": "https://arxiv.org/abs/2510.03944",
+    "authors": [
+      "Weiqing He",
+      "Xiang Li",
+      "Tianqi Shang",
+      "Li Shen",
+      "Weijie Su",
+      "Qi Long"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2510.03944",
+    "publication_status": "已发表：正式会议论文核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1b19bf73c2f341a350f9bd05c204d97b-Paper-Conference.pdf",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260814906",
+    "title": "Optimal Watermark Localization in Mixed-Source Large Language Model Texts",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Localization",
+      "Multiple Testing"
+    ],
+    "problem": "编辑后的混合文本中，哪些位置仍保留水印依赖？",
+    "idea": "将 token 级定位写成多重检验，分析存活信号和自适应阈值。",
+    "contribution": "区分整篇检测、发现部分位置与一致分类的统计难度。",
+    "evidence": "作者在坐标级 pivot 规则和特定渐近模型中给出边界；其不可分类结果也限定于该规则类。",
+    "statistics": "稀疏多重检验、发现边界、定位。",
+    "potential": "水印进阶首选。关注定位目标是存活信号，而非直接证明每个词由 AI 创作。",
+    "url": "https://arxiv.org/abs/2608.14906",
+    "authors": [
+      "Jose H. Blanchet",
+      "T. Tony Cai",
+      "Xiang Li",
+      "Hao Liu",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2608.14906",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2608.14906",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s231005130",
+    "title": "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+    "year": 2024,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Zero-shot",
+      "Curvature"
+    ],
+    "problem": "怎样降低零样本文本检测的计算成本？",
+    "idea": "Fast-DetectGPT 用 conditional probability curvature，以采样替代昂贵文本扰动。",
+    "contribution": "提供高效的概率统计检测基线。",
+    "evidence": "作者在所测来源模型和数据上报告检测与速度改进；不能推断任意模型、语言和改写都可识别。",
+    "statistics": "条件概率统计量、近似、跨分布检验。",
+    "potential": "作为无水印检测入门。查清 scoring/sampling 模型与被检测模型是否相同。",
+    "url": "https://arxiv.org/abs/2310.05130",
+    "authors": [
+      "Guangsheng Bao",
+      "Yanbin Zhao",
+      "Zhiyang Teng",
+      "Linyi Yang",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2310.05130",
+    "publication_status": "已发表：正式会议论文与 arXiv camera version",
+    "publication_source": "https://openreview.net/pdf?id=Bpcgcr8E8Z",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241211506",
+    "title": "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Black-box",
+      "Distribution Estimation"
+    ],
+    "problem": "闭源 API 只暴露部分概率，如何使用依赖完整分布的检测器？",
+    "idea": "Glimpse 从部分观测估计概率分布，接到 Fast-DetectGPT 等统计量。",
+    "contribution": "连接 API 概率信息与原本需要更多模型访问的检测方法。",
+    "evidence": "论文主要报告近似方法与实验；分布补全不意味着恢复内部表征或无偏检验。",
+    "statistics": "分布估计、缺失信息、误差传播。",
+    "potential": "注意 API 是否仍提供所需 top-k 概率；研究可用性与检测校准是两个独立问题。",
+    "url": "https://arxiv.org/abs/2412.11506",
+    "authors": [
+      "Guangsheng Bao",
+      "Yanbin Zhao",
+      "Juncai He",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2412.11506",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/806e8e4ea77000a1486eeddeb1b90a6e-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250300258",
+    "title": "Decoupling Content and Expression: Two-Dimensional Detection of AI-Generated Text",
+    "year": 2025,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Paraphrase",
+      "Content–Expression"
+    ],
+    "problem": "文本被表面改写后，内容与表达能否提供不同检测信号？",
+    "idea": "用二维方法分离内容和语言表达，并按 HART 风险层次组织任务。",
+    "contribution": "将 AI 参与写作的不同程度及表面编辑放在同一检测框架中。",
+    "evidence": "作者在其基准上观察内容比表面表达更耐改写；未给出任意语义重写的可靠检测保证。",
+    "statistics": "语义表征、测量分解、分布偏移。",
+    "potential": "与你关注的改写场景相关。先明确检测的是 AI 内容参与、表达参与还是整篇来源。",
+    "url": "https://arxiv.org/abs/2503.00258",
+    "authors": [
+      "Guangsheng Bao",
+      "Lihua Rong",
+      "Yanbin Zhao",
+      "Qiji Zhou",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2503.00258",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2503.00258",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251100988",
+    "title": "Advancing Machine-Generated Text Detection from an Easy to Hard Supervision Perspective",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Inexact Labels",
+      "Paraphrase"
+    ],
+    "problem": "来源标签含糊、短文本难检测时，如何构造较可靠监督？",
+    "idea": "用较容易的长文本任务监督更难的目标检测器，并通过结构连接训练。",
+    "contribution": "把检测边界模糊与不精确监督纳入方法设计。",
+    "evidence": "作者给出特定监督结构分析及跨域/改写实验；不把长文本标签视为绝对真实。",
+    "statistics": "弱监督、标签误差、迁移。",
+    "potential": "可研究混合文本标签的定义与校准；先核查长短文本分布是否可比。",
+    "url": "https://arxiv.org/abs/2511.00988",
+    "authors": [
+      "Chenwang Wu",
+      "Yiu-ming Cheung",
+      "Bo Han",
+      "Defu Lian"
+    ],
+    "scholars": [
+      "wu"
+    ],
+    "arxiv": "2511.00988",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/dce5d66bf88b7b7d0f11fbd9c9f16620-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260208031",
+    "title": "Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Markov Calibration",
+      "Paraphrase"
+    ],
+    "problem": "token 检测分数受到随机生成与上下文关系影响，如何校正？",
+    "idea": "用 Markov random field 表达邻近相似和初始不稳定，经 mean-field 近似校准分数。",
+    "contribution": "给现有 metric-based 检测器添加轻量分数校准模块。",
+    "evidence": "作者给出关系分析并报告跨模型与改写实验；不是已控制每种部署分布下的 FPR。",
+    "statistics": "序列依赖、MRF、近似推断、校准。",
+    "potential": "Chenwang Wu 的首读；可检验依赖错设与阈值选择对低误报检测的影响。",
+    "url": "https://arxiv.org/abs/2602.08031",
+    "authors": [
+      "Chenwang Wu",
+      "Yiu-ming Cheung",
+      "Shuhai Zhang",
+      "Bo Han",
+      "Defu Lian"
+    ],
+    "scholars": [
+      "wu"
+    ],
+    "arxiv": "2602.08031",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/50b4eb974283cf1a7a60980ed06cf1be-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   }
 ]

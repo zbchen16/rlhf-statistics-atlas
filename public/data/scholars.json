@@ -1,0 +1,154 @@
+[
+  {
+    "id": "shi",
+    "name": "Chengchun Shi",
+    "affiliation": "LSE",
+    "url": "https://callmespring.github.io/",
+    "publications": "https://callmespring.github.io/publication",
+    "focus": "统计 RLHF：错设、双重稳健、主动学习；也做 AI 文本检测。",
+    "recommended": [
+      "p01",
+      "s241002504",
+      "s260301162"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "xiao",
+    "name": "Jiancong Xiao",
+    "affiliation": "NUS",
+    "url": "https://jiancongxiao.github.io/",
+    "publications": "https://jiancongxiao.github.io/publications/",
+    "focus": "偏好匹配、循环偏好与对齐后校准。",
+    "recommended": [
+      "s240516455",
+      "s250310990",
+      "s250501997"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "sun",
+    "name": "Will Wei Sun",
+    "affiliation": "Purdue",
+    "url": "https://web.ics.purdue.edu/~sun244/",
+    "publications": "https://web.ics.purdue.edu/~sun244/research.html",
+    "focus": "异质奖励、主动设计、不确定性量化与隐私。",
+    "recommended": [
+      "p38",
+      "s251203208",
+      "s241002504"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "zhang",
+    "name": "Tong Zhang",
+    "affiliation": "UIUC / ML theory",
+    "url": "https://www.tongzhang-ml.org/",
+    "publications": "https://www.tongzhang-ml.org/publication",
+    "focus": "在线偏好学习、一般偏好模型、推理奖励建模。",
+    "recommended": [
+      "s231211456",
+      "s240207314",
+      "s250502387"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "liu",
+    "name": "Sijia Liu",
+    "affiliation": "MSU / OPTML",
+    "url": "https://lsjxjtu.github.io/",
+    "publications": "https://lsjxjtu.github.io/publications.html",
+    "focus": "LLM 遗忘目标、评估与抗恢复优化；已排除同名 NLP 研究者。",
+    "recommended": [
+      "s240208787",
+      "s241007163",
+      "s250205374"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "tang",
+    "name": "Haoran Tang",
+    "affiliation": "Purdue CS",
+    "url": "https://haorantang.github.io/",
+    "publications": "https://haorantang.github.io/",
+    "focus": "表征级 LLM 遗忘与 SAM 理论；非同名 BAIR 研究者。",
+    "recommended": [
+      "s260122028",
+      "s250613715"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "wang",
+    "name": "Qizhou Wang",
+    "affiliation": "RIKEN AIP",
+    "url": "https://qizhouwang.github.io/homepage/",
+    "publications": "https://qizhouwang.github.io/homepage/",
+    "focus": "遗忘评价、梯度目标与遗忘—保留权衡。",
+    "recommended": [
+      "s240609179",
+      "s250219301",
+      "n13"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "yang",
+    "name": "Puning Yang",
+    "affiliation": "MBZUAI",
+    "url": "https://puning97.github.io/",
+    "publications": "https://puning97.github.io/",
+    "focus": "重加权、遗忘评价，以及删除与拒答结合。",
+    "recommended": [
+      "s250511953",
+      "s260516776",
+      "s240609179"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "bao",
+    "name": "Guangsheng Bao",
+    "affiliation": "Fuyao / formerly Westlake",
+    "url": "https://baoguangsheng.github.io/",
+    "publications": "https://baoguangsheng.github.io/publications/",
+    "focus": "零样本 AI 文本检测、闭源概率近似与改写后检测。",
+    "recommended": [
+      "s231005130",
+      "s241211506",
+      "s250300258"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "wu",
+    "name": "Chenwang Wu",
+    "affiliation": "HKBU / USTC",
+    "url": "https://daftstone.github.io/",
+    "publications": "https://daftstone.github.io/",
+    "focus": "检测分数的序列校准与不精确监督。",
+    "recommended": [
+      "s260208031",
+      "s251100988"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "li",
+    "name": "Xiang Li",
+    "affiliation": "Penn DBEI",
+    "url": "https://lx10077.github.io/",
+    "publications": "https://lx10077.github.io/publications/",
+    "focus": "水印检验、编辑鲁棒性、混合比例和定位；非其他同名学者。",
+    "recommended": [
+      "s240401245",
+      "s241113868",
+      "s260814906"
+    ],
+    "verified_on": "2026-10-28"
+  }
+]

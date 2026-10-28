@@ -1,0 +1,817 @@
+[
+  {
+    "arxiv": "2506.01183",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Doubly Robust Alignment for Large Language Models",
+    "authors": [
+      "Xu, Erhan",
+      "Ye, Kai",
+      "Zhou, Hongyi",
+      "Zhu, Luhan",
+      "Quinzan, Francesco",
+      "Shi, Chengchun"
+    ],
+    "date": "2025/06/01",
+    "abstract": " This paper studies reinforcement learning from human feedback (RLHF) for aligning large language models with human preferences. While RLHF has demonstrated promising results, many algorithms are highly sensitive to misspecifications in the underlying preference model (e.g., the Bradley-Terry model), the reference policy, or the reward function, resulting in undesirable fine-tuning. To address model misspecification, we propose a doubly robust preference optimization algorithm that remains consistent when either the preference model or the reference policy is correctly specified (without requiring both). Our proposal demonstrates superior and more robust performance than state-of-the-art algorithms, both in theory and in practice. The code is available at this https URL",
+    "status_excerpt": "Comments: Accepted to NeurIPS 2025 Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI); Machine Learning (stat.ML) Cite as: arXiv:2506.01183 [cs.LG] (or arXiv:2506.01183v3 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2506.01183 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2504.03784",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Robust Reinforcement Learning from Human Feedback for Large Language Models Fine-Tuning",
+    "authors": [
+      "Ye, Kai",
+      "Zhou, Hongyi",
+      "Zhu, Jin",
+      "Quinzan, Francesco",
+      "Shi, Chengchun"
+    ],
+    "date": "2025/04/03",
+    "abstract": " Reinforcement learning from human feedback (RLHF) has emerged as a key technique for aligning the output of large language models (LLMs) with human preferences. To learn the reward function, most existing RLHF algorithms use the Bradley-Terry model, which relies on assumptions about human preferences that may not reflect the complexity and variability of real-world judgments. In this paper, we propose a robust algorithm to enhance the performance of existing approaches under such reward model misspecifications. Theoretically, our algorithm reduces the variance of reward and policy estimators, leading to improved regret bounds. Empirical evaluations on LLM benchmark datasets demonstrate that the proposed algorithm consistently outperforms existing methods, with 77-81% of responses being favored over baselines on the Anthropic Helpful and Harmless dataset. The code is available at this https URL .",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2410.02504",
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "title": "Dual Active Learning for Reinforcement Learning from Human Feedback",
+    "authors": [
+      "Liu, Pangpang",
+      "Shi, Chengchun",
+      "Sun, Will Wei"
+    ],
+    "date": "2024/10/03",
+    "abstract": " Aligning large language models (LLMs) with human preferences is critical to recent advances in generative artificial intelligence. Reinforcement learning from human feedback (RLHF) is widely applied to achieve this objective. A key step in RLHF is to learn the reward function from human feedback. However, human feedback is costly and time-consuming, making it essential to collect high-quality conversation data for human teachers to label. Additionally, different human teachers have different levels of expertise. It is thus critical to query the most appropriate teacher for their opinions. In this paper, we use offline reinforcement learning (RL) to formulate the alignment problem. Motivated by the idea of $D$-optimal design, we first propose a dual active reward learning algorithm for the simultaneous selection of conversations and teachers. Next, we apply pessimistic RL to solve the alignment problem, based on the learned reward estimator. Theoretically, we show that the reward estimator obtained through our proposed adaptive selection strategy achieves minimal generalized variance asymptotically, and prove that the sub-optimality of our pessimistic policy scales as $O(1/\\sqrt{T})$ with a given sample budget $T$. Through simulations and experiments on LLMs, we demonstrate the effectiveness of our algorithm and its superiority over state-of-the-arts.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2604.02507",
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "title": "Reinforcement Learning from Human Feedback: A Statistical Perspective",
+    "authors": [
+      "Liu, Pangpang",
+      "Shi, Chengchun",
+      "Sun, Will Wei"
+    ],
+    "date": "2026/04/02",
+    "abstract": " Reinforcement learning from human feedback (RLHF) has emerged as a central framework for aligning large language models (LLMs) with human preferences. Despite its practical success, RLHF raises fundamental statistical questions because it relies on noisy, subjective, and often heterogeneous feedback to learn reward models and optimize policies. This survey provides a statistical perspective on RLHF, focusing primarily on the LLM alignment setting. We introduce the main components of RLHF, including supervised fine-tuning, reward modeling, and policy optimization, and relate them to familiar statistical ideas such as Bradley-Terry-Luce (BTL) model, latent utility estimation, active learning, experimental design, and uncertainty quantification. We review methods for learning reward functions from pairwise preference data and for optimizing policies through both two-stage RLHF pipelines and emerging one-stage approaches such as direct preference optimization. We further discuss recent extensions including reinforcement learning from AI feedback, inference-time algorithms, and reinforcement learning from verifiable rewards, as well as benchmark datasets, evaluation protocols, and open-source frameworks that support RLHF research. We conclude by highlighting open challenges in RLHF. An accompanying GitHub demo this https URL illustrates key components of the RLHF pipeline.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2603.01162",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic",
+    "authors": [
+      "Zhou, Hongyi",
+      "Ye, Kai",
+      "Xu, Erhan",
+      "Zhu, Jin",
+      "Yang, Ying",
+      "Gong, Shijin",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/03/01",
+    "abstract": " Group relative policy optimization (GRPO), a core methodological component of DeepSeekMath and DeepSeek-R1, has emerged as a cornerstone for scaling reasoning capabilities of large language models. Despite its widespread adoption and the proliferation of follow-up works, the theoretical properties of GRPO remain less studied. This paper provides a unified framework to understand GRPO through the lens of classical U-statistics. We demonstrate that the GRPO policy gradient is inherently a U-statistic, allowing us to characterize its mean squared error (MSE), derive the finite-sample error bound and asymptotic distribution of the suboptimality gap for its learned policy. Our findings reveal that GRPO is asymptotically equivalent to an oracle policy gradient algorithm -- one with access to a value function that quantifies the goodness of its learning policy at each training iteration -- and achieves asymptotically optimal performance within a broad class of policy gradient algorithms. Furthermore, we establish a universal scaling law that offers principled guidance for selecting the optimal group size. Empirical experiments further validate our theoretical findings, demonstrating that the optimal group size is universal, and verify the oracle property of GRPO.",
+    "status_excerpt": "Comments: 5 pages, 53 figures Subjects: Machine Learning (cs.LG) ; Machine Learning (stat.ML) Cite as: arXiv:2603.01162 [cs.LG] (or arXiv:2603.01162v3 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2603.01162 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2604.28005",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Kernelized Advantage Estimation: From Nonparametric Statistics to LLM Reasoning",
+    "authors": [
+      "Gong, Shijin",
+      "Ye, Kai",
+      "Zhu, Jin",
+      "Zhang, Xinyu",
+      "Zhou, Hongyi",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/04/30",
+    "abstract": " Recent advances in large language models (LLMs) have increasingly relied on reinforcement learning (RL) to improve their reasoning capabilities. Three types of approaches have been widely adopted: The first relies on a deep neural network to estimate the value function of the learning policy in order to reduce the variance of the policy gradient. However, estimating and maintaining such a value network incurs substantial computational and memory overhead. The second avoids training a value network by approximating the value function using sample averages. However, it samples a large number of reasoning traces per prompt for accurate value function approximation, making it computationally expensive. The third samples only a single reasoning trajectory per prompt, which reduces computational cost but suffers from poor sample efficiency. This paper focuses on a practical, resource-constrained setting in which only a small number of reasoning traces can be sampled per prompt, while low-variance gradient estimation remains essential for high-quality policy learning. To address this challenge, we bring classical nonparametric statistical methods, which are both computationally and statistically efficient, to LLM reasoning. We employ kernel smoothing as a concrete example for value function estimation and the subsequent policy optimization. Numerical and theoretical results demonstrate that our proposal achieves accurate value and gradient estimation, leading to improved policy optimization.",
+    "status_excerpt": "Comments: 45 pages, 5 figures Subjects: Machine Learning (cs.LG) ; Machine Learning (stat.ML) Cite as: arXiv:2604.28005 [cs.LG] (or arXiv:2604.28005v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2604.28005 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2605.27293",
+    "scholars": [
+      "shi"
+    ],
+    "title": "BASIS: Batchwise Advantage Estimation from Single-Rollout Information Sharing for LLM Reasoning",
+    "authors": [
+      "Gong, Shijin",
+      "Xu, Erhan",
+      "Ye, Kai",
+      "Livieri, Giulia",
+      "Quinzan, Francesco",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/05/26",
+    "abstract": " Reinforcement learning with verifiable rewards has become a standard recipe for improving the reasoning abilities of large language models. Existing algorithms face a tradeoff between computational efficiency and sample efficiency in value estimation and policy learning. We introduce BASIS, a critic-free post-training algorithm designed to address this tradeoff. At each online training step, BASIS samples only one rollout per prompt, but leverages rich information across prompts in the entire batch to improve value function estimation. Our experiments demonstrate that BASIS reduces MSE in value function estimation by 69% compared to REINFORCE++, a representative single-rollout baseline, and achieves lower MSE with one rollout than group mean estimators with 8 rollouts. This improvement in value estimation translates to better policy optimization: using substantially less training time, BASIS achieves performance close to multi-rollout GRPO-type baselines and often outperforms single-rollout REINFORCE-type baselines.",
+    "status_excerpt": "Comments: 25 pages, 9 figures Subjects: Machine Learning (cs.LG) ; Machine Learning (stat.ML) Cite as: arXiv:2605.27293 [cs.LG] (or arXiv:2605.27293v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2605.27293 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2412.19436",
+    "scholars": [
+      "sun"
+    ],
+    "title": "Low-Rank Contextual Reinforcement Learning from Heterogeneous Human Feedback",
+    "authors": [
+      "Lee, Seong Jin",
+      "Sun, Will Wei",
+      "Liu, Yufeng"
+    ],
+    "date": "2024/12/27",
+    "abstract": " Reinforcement learning from human feedback (RLHF) has become a cornerstone for aligning large language models with human preferences. However, the heterogeneity of human feedback, driven by diverse individual contexts and preferences, poses significant challenges for reward learning. To address this, we propose a Low-rank Contextual RLHF (LoCo-RLHF) framework that integrates contextual information to better model heterogeneous feedback while maintaining computational efficiency. Our approach builds on a contextual preference model, leveraging the intrinsic low-rank structure of the interaction between user contexts and query-answer pairs to mitigate the high dimensionality of feature representations. Furthermore, we address the challenge of distributional shifts in feedback through our Pessimism in Reduced Subspace (PRS) policy, inspired by pessimistic offline reinforcement learning techniques. We theoretically demonstrate that our policy achieves a tighter sub-optimality gap compared to existing methods. Extensive experiments validate the effectiveness of LoCo-RLHF, showcasing its superior performance in personalized RLHF settings and its robustness to distribution shifts.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2512.03208",
+    "scholars": [
+      "sun"
+    ],
+    "title": "Uncertainty Quantification for Large Language Model Reward Learning under Heterogeneous Human Feedback",
+    "authors": [
+      "Liu, Pangpang",
+      "Lu, Junwei",
+      "Sun, Will Wei"
+    ],
+    "date": "2025/12/02",
+    "abstract": " We study estimation and statistical inference for reward models used in aligning large language models (LLMs). A key component of LLM alignment is reinforcement learning from human feedback (RLHF), where humans compare pairs of model-generated answers and their preferences are used to train a reward model. However, human feedback is inherently heterogeneous, creating significant challenges for reliable reward learning. To address this, we adopt a heterogeneous preference framework that jointly models the latent reward of answers and human rationality. This leads to a challenging biconvex optimization problem, which we solve via an alternating gradient descent algorithm. We establish theoretical guarantees for the resulting estimator, including its convergence and asymptotic distribution. These results enable the construction of confidence intervals for reward estimates. Leveraging these uncertainty quantification results, we conduct valid statistical comparisons between rewards and incorporate uncertainty into the best-of-$N$ (BoN) policy framework. Extensive simulations demonstrate the effectiveness of our method, and applications to real LLM data highlight the practical value of accounting for uncertainty in reward modeling for LLM alignment.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2603.22563",
+    "scholars": [
+      "sun"
+    ],
+    "title": "Privacy-Preserving Reinforcement Learning from Human Feedback via Decoupled Reward Modeling",
+    "authors": [
+      "Cho, Young Hyun",
+      "Sun, Will Wei"
+    ],
+    "date": "2026/03/23",
+    "abstract": " Preference-based fine-tuning has become an important component in training large language models, and the data used at this stage may contain sensitive user information. A central question is how to design a differentially private pipeline that is well suited to the distinct structure of reinforcement learning from human feedback. We propose a privacy-preserving framework that imposes differential privacy only on reward learning and derives the final policy from the resulting private reward model. Theoretically, we study the suboptimality gap and show that privacy contributes an additional additive term beyond the usual non-private statistical error. We also establish a minimax lower bound and show that the dominant term changes with sample size and privacy level, which in turn characterizes regimes in which the upper bound is rate-optimal up to logarithmic factors. Empirically, synthetic experiments confirm the scaling predicted by the theory, and experiments on the Anthropic HH-RLHF dataset using the Gemma-2B-IT model show stronger private alignment performance than existing differentially private baseline methods across privacy budgets.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2405.16455",
+    "scholars": [
+      "xiao"
+    ],
+    "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
+    "authors": [
+      "Xiao, Jiancong",
+      "Li, Ziniu",
+      "Xie, Xingyu",
+      "Getzen, Emily",
+      "Fang, Cong",
+      "Long, Qi",
+      "Su, Weijie J."
+    ],
+    "date": "2024/05/26",
+    "abstract": " Accurately aligning large language models (LLMs) with human preferences is crucial for informing fair, economically sound, and statistically efficient decision-making processes. However, we argue that the predominant approach for aligning LLMs with human preferences through a reward model -- reinforcement learning from human feedback (RLHF) -- suffers from an inherent algorithmic bias due to its Kullback--Leibler-based regularization in optimization. In extreme cases, this bias could lead to a phenomenon we term preference collapse, where minority preferences are virtually disregarded. To mitigate this algorithmic bias, we introduce preference matching (PM) RLHF, a novel approach that provably aligns LLMs with the preference distribution of the reward model under the Bradley--Terry--Luce/Plackett--Luce model. Central to our approach is a PM regularizer that takes the form of the negative logarithm of the LLM's policy probability distribution over responses, which helps the LLM balance response diversification and reward maximization. Notably, we obtain this regularizer by solving an ordinary differential equation that is necessary for the PM property. For practical implementation, we introduce a conditional variant of PM RLHF that is tailored to natural language generation. Finally, we empirically validate the effectiveness of conditional PM RLHF through experiments on the OPT and Llama-family models, demonstrating a 29% to 41% improvement in alignment with human preferences, as measured by a certain metric, compared to standard RLHF.",
+    "status_excerpt": "Comments: Accepted for publication in the Journal of the American Statistical Association Subjects: Machine Learning (stat.ML) ; Machine Learning (cs.LG); Methodology (stat.ME) Cite as: arXiv:2405.16455 [stat.ML] (or arXiv:2405.16455v2 [stat.ML] for this version) https://doi.org/10.48550/arXiv.2405.16455 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2503.10990",
+    "scholars": [
+      "xiao"
+    ],
+    "title": "Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium",
+    "authors": [
+      "Liu, Kaizhao",
+      "Long, Qi",
+      "Shi, Zhekun",
+      "Su, Weijie J.",
+      "Xiao, Jiancong"
+    ],
+    "date": "2025/03/14",
+    "abstract": " Aligning large language models (LLMs) with diverse human preferences is critical for ensuring fairness and informed outcomes when deploying these models for decision-making. In this paper, we seek to uncover fundamental statistical limits concerning aligning LLMs with human preferences, with a focus on the probabilistic representation of human preferences and the preservation of diverse preferences in aligned LLMs. We first show that human preferences can be represented by a reward model if and only if the preference among LLM-generated responses is free of any Condorcet cycle. Moreover, we prove that Condorcet cycles exist with probability converging to one exponentially fast under a general probabilistic preference model called the Luce model, thereby demonstrating the impossibility of fully aligning human preferences using reward-based approaches such as reinforcement learning from human feedback. Next, we explore the conditions under which LLMs would employ mixed strategies -- meaning they do not collapse to a single response -- when aligned in the limit using a non-reward-based approach, such as Nash learning from human feedback. We identify a necessary and sufficient condition for mixed strategies: the absence of a response that is preferred over all others by a majority. As a blessing, we prove that this condition holds with high probability under the Luce model, thereby highlighting the statistical possibility of preserving minority preferences without explicit regularization in aligning LLMs.",
+    "status_excerpt": "Comments: Accepted for publication in the Annals of Statistics Subjects: Computer Science and Game Theory (cs.GT) ; Machine Learning (cs.LG); Theoretical Economics (econ.TH); Statistics Theory (math.ST); Machine Learning (stat.ML) Cite as: arXiv:2503.10990 [cs.GT] (or arXiv:2503.10990v2 [cs.GT] for this version) https://doi.org/10.48550/arXiv.2503.10990 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2505.01997",
+    "scholars": [
+      "xiao"
+    ],
+    "title": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "authors": [
+      "Xiao, Jiancong",
+      "Hou, Bojian",
+      "Wang, Zhanliang",
+      "Jin, Ruochen",
+      "Long, Qi",
+      "Su, Weijie J.",
+      "Shen, Li"
+    ],
+    "date": "2025/05/04",
+    "abstract": " One of the key technologies for the success of Large Language Models (LLMs) is preference alignment. However, a notable side effect of preference alignment is poor calibration: while the pre-trained models are typically well-calibrated, LLMs tend to become poorly calibrated after alignment with human preferences. In this paper, we investigate why preference alignment affects calibration and how to address this issue. For the first question, we observe that the preference collapse issue in alignment undesirably generalizes to the calibration scenario, causing LLMs to exhibit overconfidence and poor calibration. To address this, we demonstrate the importance of fine-tuning with domain-specific knowledge to alleviate the overconfidence issue. To further analyze whether this affects the model's performance, we categorize models into two regimes: calibratable and non-calibratable, defined by bounds of Expected Calibration Error (ECE). In the calibratable regime, we propose a calibration-aware fine-tuning approach to achieve proper calibration without compromising LLMs' performance. However, as models are further fine-tuned for better performance, they enter the non-calibratable regime. For this case, we develop an EM-algorithm-based ECE regularization for the fine-tuning loss to maintain low calibration error. Extensive experiments validate the effectiveness of the proposed methods.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2312.11456",
+    "scholars": [
+      "zhang"
+    ],
+    "title": "Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint",
+    "authors": [
+      "Xiong, Wei",
+      "Dong, Hanze",
+      "Ye, Chenlu",
+      "Wang, Ziqi",
+      "Zhong, Han",
+      "Ji, Heng",
+      "Jiang, Nan",
+      "Zhang, Tong"
+    ],
+    "date": "2023/12/18",
+    "abstract": " This paper studies the alignment process of generative models with Reinforcement Learning from Human Feedback (RLHF). We first identify the primary challenges of existing popular methods like offline PPO and offline DPO as lacking in strategical exploration of the environment. Then, to understand the mathematical principle of RLHF, we consider a standard mathematical formulation, the reverse-KL regularized contextual bandit for RLHF. Despite its widespread practical application, a rigorous theoretical analysis of this formulation remains open. We investigate its behavior in three distinct settings -- offline, online, and hybrid -- and propose efficient algorithms with finite-sample theoretical guarantees. Moving towards practical applications, our framework, with a robust approximation of the information-theoretical policy improvement oracle, naturally gives rise to several novel RLHF algorithms. This includes an iterative version of the Direct Preference Optimization (DPO) algorithm for online settings, and a multi-step rejection sampling strategy for offline scenarios. Our empirical evaluations on real-world alignment experiment of large language model demonstrate that these proposed methods significantly surpass existing strong baselines, such as DPO and Rejection Sampling Optimization (RSO), showcasing the connections between solid theoretical foundations and their potent practical implementations.",
+    "status_excerpt": "Comments: 53 pages; theoretical study and algorithmic design of iterative RLHF and DPO Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI); Machine Learning (stat.ML) Cite as: arXiv:2312.11456 [cs.LG] (or arXiv:2312.11456v4 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2312.11456 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2402.07314",
+    "scholars": [
+      "zhang"
+    ],
+    "title": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+    "authors": [
+      "Ye, Chenlu",
+      "Xiong, Wei",
+      "Zhang, Yuheng",
+      "Dong, Hanze",
+      "Jiang, Nan",
+      "Zhang, Tong"
+    ],
+    "date": "2024/02/11",
+    "abstract": " We investigate Reinforcement Learning from Human Feedback (RLHF) in the context of a general preference oracle. In particular, we do not assume the existence of a reward function and an oracle preference signal drawn from the Bradley-Terry model as most of the prior works do. We consider a standard mathematical formulation, the reverse-KL regularized minimax game between two LLMs for RLHF under general preference oracle. The learning objective of this formulation is to find a policy so that it is consistently preferred by the KL-regularized preference oracle over any competing LLMs. We show that this framework is strictly more general than the reward-based one, and propose sample-efficient algorithms for both the offline learning from a pre-collected preference dataset and online learning where we can query the preference oracle along the way of training. Empirical studies verify the effectiveness of the proposed framework.",
+    "status_excerpt": "Comments: RLHF, Preference Learning, Alignment for LLMs Subjects: Machine Learning (cs.LG) ; Machine Learning (stat.ML) Cite as: arXiv:2402.07314 [cs.LG] (or arXiv:2402.07314v3 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2402.07314 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2505.02387",
+    "scholars": [
+      "zhang"
+    ],
+    "title": "RM-R1: Reward Modeling as Reasoning",
+    "authors": [
+      "Chen, Xiusi",
+      "Li, Gaotang",
+      "Wang, Ziqi",
+      "Jin, Bowen",
+      "Qian, Cheng",
+      "Wang, Yu",
+      "Wang, Hongru",
+      "Zhang, Yu",
+      "Zhang, Denghui",
+      "Zhang, Tong",
+      "Tong, Hanghang",
+      "Ji, Heng"
+    ],
+    "date": "2025/05/05",
+    "abstract": " Reward modeling is essential for aligning large language models with human preferences through reinforcement learning. To provide accurate reward signals, a reward model (RM) should stimulate deep thinking and conduct interpretable reasoning before assigning a score or a judgment. Inspired by recent advances of long chain-of-thought on reasoning-intensive tasks, we hypothesize and validate that integrating reasoning into reward modeling significantly enhances RM's interpretability and performance. We introduce a new class of generative reward models, Reasoning Reward Models (ReasRMs), which formulate reward modeling as a reasoning task. We propose a reasoning-oriented training pipeline and train a family of ReasRMs, RM-R1. RM-R1 features a chain-of-rubrics (CoR) mechanism -- self-generating sample-level chat rubrics or math/code solutions, and evaluating candidate responses against them. The training of RM-R1 consists of two key stages: (1) distillation of high-quality reasoning chains and (2) reinforcement learning with verifiable rewards. Empirically, our models achieve superior performance across three reward model benchmarks on average, outperforming much larger open-weight models (e.g., INF-ORM-Llama3.1-70B) and proprietary ones (e.g., GPT-4o) by up to 4.9%. Beyond final performance, we perform thorough analyses to understand the key ingredients of successful ReasRM training.",
+    "status_excerpt": "Comments: ICLR 2026 Subjects: Computation and Language (cs.CL) ; Artificial Intelligence (cs.AI); Machine Learning (cs.LG) Cite as: arXiv:2505.02387 [cs.CL] (or arXiv:2505.02387v4 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2505.02387 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2402.08787",
+    "scholars": [
+      "liu"
+    ],
+    "title": "Rethinking Machine Unlearning for Large Language Models",
+    "authors": [
+      "Liu, Sijia",
+      "Yao, Yuanshun",
+      "Jia, Jinghan",
+      "Casper, Stephen",
+      "Baracaldo, Nathalie",
+      "Hase, Peter",
+      "Yao, Yuguang",
+      "Liu, Chris Yuhao",
+      "Xu, Xiaojun",
+      "Li, Hang",
+      "Varshney, Kush R.",
+      "Bansal, Mohit",
+      "Koyejo, Sanmi",
+      "Liu, Yang"
+    ],
+    "date": "2024/02/13",
+    "abstract": " We explore machine unlearning (MU) in the domain of large language models (LLMs), referred to as LLM unlearning. This initiative aims to eliminate undesirable data influence (e.g., sensitive or illegal information) and the associated model capabilities, while maintaining the integrity of essential knowledge generation and not affecting causally unrelated information. We envision LLM unlearning becoming a pivotal element in the life-cycle management of LLMs, potentially standing as an essential foundation for developing generative AI that is not only safe, secure, and trustworthy, but also resource-efficient without the need of full retraining. We navigate the unlearning landscape in LLMs from conceptual formulation, methodologies, metrics, and applications. In particular, we highlight the often-overlooked aspects of existing LLM unlearning research, e.g., unlearning scope, data-model interaction, and multifaceted efficacy assessment. We also draw connections between LLM unlearning and related areas such as model editing, influence functions, model explanation, adversarial training, and reinforcement learning. Furthermore, we outline an effective assessment framework for LLM unlearning and explore its applications in copyright and privacy safeguards and sociotechnical harm reduction.",
+    "status_excerpt": "Comments: Accepted by Nature Machine Intelligence Subjects: Machine Learning (cs.LG) ; Computation and Language (cs.CL) Cite as: arXiv:2402.08787 [cs.LG] (or arXiv:2402.08787v6 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2402.08787 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2410.07163",
+    "scholars": [
+      "liu"
+    ],
+    "title": "Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning",
+    "authors": [
+      "Fan, Chongyu",
+      "Liu, Jiancheng",
+      "Lin, Licong",
+      "Jia, Jinghan",
+      "Zhang, Ruiqi",
+      "Mei, Song",
+      "Liu, Sijia"
+    ],
+    "date": "2024/10/09",
+    "abstract": " This work studies the problem of large language model (LLM) unlearning, aiming to remove unwanted data influences (e.g., copyrighted or harmful content) while preserving model utility. Despite the increasing demand for unlearning, a technically-grounded optimization framework is lacking. Gradient ascent (GA)-type methods, though widely used, are suboptimal as they reverse the learning process without controlling optimization divergence (i.e., deviation from the pre-trained state), leading to risks of over-forgetting and potential model collapse. Negative preference optimization (NPO) has been proposed to address this issue and is considered one of the state-of-the-art LLM unlearning approaches. In this work, we revisit NPO and identify another critical issue: reference model bias. This bias arises from using the reference model (i.e., the model prior to unlearning) to evaluate the unlearning success, which can compromise NPO's effectiveness. Specifically, it leads to (a) uneven allocation of optimization power across forget data with varying difficulty levels and (b) ineffective gradient weight smoothing during the early stages of unlearning optimization. To overcome these challenges, we propose a simple yet effective unlearning optimization framework, called SimNPO, showing that `simplicity' in removing the reliance on a reference model (through the lens of simple preference optimization) benefits unlearning. We provide deeper insights into SimNPO's advantages through an analysis based on mixtures of Markov chains. Extensive experiments further validate SimNPO's efficacy on benchmarks like TOFU and MUSE, as well as its robustness against relearning attacks. Codes are available at this https URL .",
+    "status_excerpt": "Comments: Accepted by NeurIPS 2025 Subjects: Computation and Language (cs.CL) ; Artificial Intelligence (cs.AI); Machine Learning (cs.LG) Cite as: arXiv:2410.07163 [cs.CL] (or arXiv:2410.07163v4 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2410.07163 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2502.05374",
+    "scholars": [
+      "liu"
+    ],
+    "title": "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+    "authors": [
+      "Fan, Chongyu",
+      "Jia, Jinghan",
+      "Zhang, Yihua",
+      "Ramakrishna, Anil",
+      "Hong, Mingyi",
+      "Liu, Sijia"
+    ],
+    "date": "2025/02/07",
+    "abstract": " The LLM unlearning technique has recently been introduced to comply with data regulations and address the safety and ethical concerns of LLMs by removing the undesired data-model influence. However, state-of-the-art unlearning methods face a critical vulnerability: they are susceptible to ``relearning'' the removed information from a small number of forget data points, known as relearning attacks. In this paper, we systematically investigate how to make unlearned models robust against such attacks. For the first time, we establish a connection between robust unlearning and sharpness-aware minimization (SAM) through a unified robust optimization framework, in an analogy to adversarial training designed to defend against adversarial attacks. Our analysis for SAM reveals that smoothness optimization plays a pivotal role in mitigating relearning attacks. Thus, we further explore diverse smoothing strategies to enhance unlearning robustness. Extensive experiments on benchmark datasets, including WMDP and MUSE, demonstrate that SAM and other smoothness optimization approaches consistently improve the resistance of LLM unlearning to relearning attacks. Notably, smoothness-enhanced unlearning also helps defend against (input-level) jailbreaking attacks, broadening our proposal's impact in robustifying LLM unlearning. Codes are available at this https URL .",
+    "status_excerpt": "Comments: Accepted by ICML 2025 Subjects: Machine Learning (cs.LG) ; Computation and Language (cs.CL) Cite as: arXiv:2502.05374 [cs.LG] (or arXiv:2502.05374v4 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2502.05374 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2510.09007",
+    "scholars": [
+      "liu"
+    ],
+    "title": "LLM Unlearning on Noisy Forget Sets: A Study of Incomplete, Rewritten, and Watermarked Data",
+    "authors": [
+      "Wang, Changsheng",
+      "Zhang, Yihua",
+      "Wei, Dennis",
+      "Jia, Jinghan",
+      "Chen, Pin-Yu",
+      "Liu, Sijia"
+    ],
+    "date": "2025/10/10",
+    "abstract": " Large language models (LLMs) exhibit remarkable generative capabilities but raise ethical and security concerns by memorizing sensitive data, reinforcing biases, and producing harmful content. These risks have spurred interest in LLM unlearning, the task of removing knowledge associated with undesirable data from pre-trained models. However, most existing methods assume access to clean, well-defined forget data samples, whereas real-world forget data could often be low-quality, synthetically rewritten, or watermarked, casting doubt on the reliability of unlearning. This work presents the first study of unlearning under perturbed or low-fidelity forget data, referred to as noisy forget sets. By systematically benchmarking state-of-the-art LLM unlearning methods, RMU and NPO, on such noisy forget sets, we find that unlearning remains surprisingly robust to perturbations, provided that core semantic signals are preserved. To explain this robustness, we propose a saliency-based interpretation: key semantic components that drive forgetting remain consistently influential despite substantial variation in surface form. This suggests that unlearning algorithms are primarily guided by deep semantic cues rather than shallow lexical patterns.",
+    "status_excerpt": "Comments: Accepted by 18th ACM Workshop on Artificial Intelligence and Security (AISec'25) Subjects: Machine Learning (cs.LG) ACM classes: I.2.7 Cite as: arXiv:2510.09007 [cs.LG] (or arXiv:2510.09007v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2510.09007 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2506.01339",
+    "scholars": [
+      "liu"
+    ],
+    "title": "Invariance Makes LLM Unlearning Resilient Even to Unanticipated Downstream Fine-Tuning",
+    "authors": [
+      "Wang, Changsheng",
+      "Zhang, Yihua",
+      "Jia, Jinghan",
+      "Ram, Parikshit",
+      "Wei, Dennis",
+      "Yao, Yuguang",
+      "Pal, Soumyadeep",
+      "Baracaldo, Nathalie",
+      "Liu, Sijia"
+    ],
+    "date": "2025/06/02",
+    "abstract": " Machine unlearning offers a promising solution to privacy and safety concerns in large language models (LLMs) by selectively removing targeted knowledge while preserving utility. However, current methods are highly sensitive to downstream fine-tuning, which can quickly recover forgotten information-even from unrelated tasks. To address this, we introduce invariance into unlearning for the first time, inspired by invariant risk minimization (IRM). Building on this principle, we propose invariant LLM unlearning (ILU), a regularization-based framework that enhances robustness. Notably, ILU generalizes well to diverse fine-tuning tasks, even when trained using a single dataset. A task vector analysis is also provided to further elucidate the rationale behind ILU's effectiveness. Extensive experiments on the WMDP and MUSE benchmark, reveal that ILU significantly outperforms state-of-the-art unlearning methods, including negative preference optimization (NPO) and representation misdirection for unlearning (RMU). Notably, ILU achieves superior unlearning robustness across diverse downstream fine-tuning scenarios (e.g., math, paraphrase detection, and sentiment analysis) while preserving the fine-tuning performance.",
+    "status_excerpt": "Comments: Accepted by ICML 2025 Subjects: Machine Learning (cs.LG) Cite as: arXiv:2506.01339 [cs.LG] (or arXiv:2506.01339v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2506.01339 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2406.09179",
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "title": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+    "authors": [
+      "Wang, Qizhou",
+      "Han, Bo",
+      "Yang, Puning",
+      "Zhu, Jianing",
+      "Liu, Tongliang",
+      "Sugiyama, Masashi"
+    ],
+    "date": "2024/06/13",
+    "abstract": " The imperative to eliminate undesirable data memorization underscores the significance of machine unlearning for large language models (LLMs). Recent research has introduced a series of promising unlearning methods, notably boosting the practical significance of the field. Nevertheless, adopting a proper evaluation framework to reflect the true unlearning efficacy is also essential yet has not received adequate attention. This paper seeks to refine the evaluation of LLM unlearning by addressing two key challenges -- a) the robustness of evaluation metrics and b) the trade-offs between competing goals. The first challenge stems from findings that current metrics are susceptible to various red teaming scenarios. It indicates that they may not reflect the true extent of knowledge retained by LLMs but rather tend to mirror superficial model behaviors, thus prone to attacks. We address this issue by devising and assessing a series of candidate metrics, selecting the most robust ones under various types of attacks. The second challenge arises from the conflicting goals of eliminating unwanted knowledge while retaining those of others. This trade-off between unlearning and retention often fails to conform the Pareto frontier, rendering it subtle to compare the efficacy between methods that excel only in either unlearning or retention. We handle this issue by proposing a calibration method that can restore the original performance on non-targeted data after unlearning, thereby allowing us to focus exclusively on assessing the strength of unlearning. Our evaluation framework notably enhances the effectiveness when assessing and comparing various LLM unlearning methods, further allowing us to benchmark existing works, identify their proper hyper-parameters, and explore new tricks to enhance their practical efficacy.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2503.09117",
+    "scholars": [
+      "wang"
+    ],
+    "title": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+    "authors": [
+      "Wang, Yue",
+      "Wang, Qizhou",
+      "Liu, Feng",
+      "Huang, Wei",
+      "Du, Yali",
+      "Du, Xiaojiang",
+      "Han, Bo"
+    ],
+    "date": "2025/03/12",
+    "abstract": " Large language model (LLM) unlearning has demonstrated its essential role in removing privacy and copyright-related responses, crucial for their legal and safe applications. However, the pursuit of complete unlearning often comes with substantial costs due to its compromises in their general functionality, leading to a notorious trade-off between unlearning and retention. It motivates this paper to explore enhanced unlearning schemes that can mitigate this trade-off. Specifically, we propose Gradient Rectified Unlearning (GRU), an improved framework that regulates the directions of gradient updates during the unlearning procedure such that their side impacts on other, unrelated responses can be minimized. GRU is easy and general to implement, demonstrating practical effectiveness across a variety of well-established unlearning benchmarks.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2505.11953",
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "title": "Exploring Criteria of Loss Reweighting to Enhance LLM Unlearning",
+    "authors": [
+      "Yang, Puning",
+      "Wang, Qizhou",
+      "Huang, Zhuo",
+      "Liu, Tongliang",
+      "Zhang, Chengqi",
+      "Han, Bo"
+    ],
+    "date": "2025/05/17",
+    "abstract": " Loss reweighting has shown significant benefits for machine unlearning with large language models (LLMs). However, their exact functionalities are left unclear and the optimal strategy remains an open question, thus impeding the understanding and improvement of existing methodologies. In this paper, we identify two distinct goals of loss reweighting, namely, Saturation and Importance -- the former indicates that those insufficiently optimized data should be emphasized, while the latter stresses some critical data that are most influential for loss minimization. To study their usefulness, we design specific reweighting strategies for each goal and evaluate their respective effects on unlearning. We conduct extensive empirical analyses on well-established benchmarks, and summarize some important observations as follows: (i) Saturation enhances efficacy more than importance-based reweighting, and their combination can yield additional improvements. (ii) Saturation typically allocates lower weights to data with lower likelihoods, whereas importance-based reweighting does the opposite. (iii) The efficacy of unlearning is also largely influenced by the smoothness and granularity of the weight distributions. Based on these findings, we propose SatImp, a simple reweighting method that combines the advantages of both saturation and importance. Empirical results on extensive datasets validate the efficacy of our method, potentially bridging existing research gaps and indicating directions for future research. Our code is available at this https URL .",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2605.16776",
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "title": "Distinguishable Deletion: Unifying Knowledge Erasure and Refusal for Large Language Model Unlearning",
+    "authors": [
+      "Yang, Puning",
+      "Yu, Junchi",
+      "Wang, Qizhou",
+      "Torr, Philip",
+      "Han, Bo",
+      "Chen, Xiuying"
+    ],
+    "date": "2026/05/16",
+    "abstract": " Mitigating sensitive and harmful outputs is fundamental to ensuring safe deployment of LLMs. Existing approaches typically follow two paradigms: Knowledge Deletion (KD), which erases undesirable information during training, and Distinguishable Refusal (DR), which steers models away from using sensitive knowledge during inference. Despite rapid progress, KD-based unlearning struggles with biased deletion due to suppressing specific token sequences as a substitute for complete knowledge removal, whereas DR-based unlearning risks the re-emergence of harmful knowledge because the underlying knowledge remains intact. To address these issues, we propose Distinguishable Deletion ($\\mathrm{D^2}$), a paradigm that restricts the response distribution in the latent representation rather than specific tokens to erase undesirable knowledge, while distinguishing it from retained knowledge, enabling a refusal mechanism to handle unlearned inputs safely and coherently. To implement $\\mathrm{D^2}$, we introduce an energy index that quantifies the presence of knowledge and the separation between unlearned and retained content. Mathematical and empirical analyses show that energy is both accurate and efficient, enabling Energy-based Unlearning Alignment (EUA) to enforce energy-boundary unlearning during training and apply an energy-based refusal mechanism at inference. Extensive experiments demonstrate that EUA significantly outperforms previous methods, indicating the superiority of $\\mathrm{D^2}$. Our code is available at this https URL .",
+    "status_excerpt": "Comments: ICML2026 Accepted Subjects: Machine Learning (cs.LG) ; Artificial Intelligence (cs.AI) Cite as: arXiv:2605.16776 [cs.LG] (or arXiv:2605.16776v1 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2605.16776 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2510.19422",
+    "scholars": [
+      "wang"
+    ],
+    "title": "LLM Unlearning with LLM Beliefs",
+    "authors": [
+      "Li, Kemou",
+      "Wang, Qizhou",
+      "Wang, Yue",
+      "Li, Fengpeng",
+      "Liu, Jun",
+      "Han, Bo",
+      "Zhou, Jiantao"
+    ],
+    "date": "2025/10/22",
+    "abstract": " Large language models trained on vast corpora inherently risk memorizing sensitive or harmful content, which may later resurface in their outputs. Prevailing unlearning methods generally rely on gradient ascent and its variants to lower the probability of specific target responses. However, we find that this strategy induces a critical side effect: probability mass is redistributed into high-likelihood regions, often corresponding to semantically related rephrasings of the targets. We refer to this as the squeezing effect, which explains why many methods yield merely spurious unlearning, a problem further obscured by automated metrics (e.g., ROUGE, truth ratio) that misreport actual success. To address this, we propose a bootstrapping (BS) framework that explicitly links the squeezing effect with the model's own high-confidence generations, namely its model beliefs. Since model beliefs inherently capture the very high-likelihood regions where probability mass is squeezed, incorporating them into the unlearning objective directly counters the squeezing effect. By jointly suppressing both target responses and model beliefs, BS-T (token) attenuates high-probability tokens, whereas BS-S (sequence) removes entire high-confidence generations, together achieving more thorough forgetting while preserving utility. Extensive experiments across diverse benchmarks with various model families confirm the effectiveness of our approach.",
+    "status_excerpt": "Comments: ICLR 2026 Subjects: Machine Learning (cs.LG) ; Computation and Language (cs.CL) Cite as: arXiv:2510.19422 [cs.LG] (or arXiv:2510.19422v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2510.19422 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2601.22028",
+    "scholars": [
+      "tang"
+    ],
+    "title": "Contrastive Representation Shaping for LLM Unlearning",
+    "authors": [
+      "Tang, Haoran",
+      "Khanna, Rajiv"
+    ],
+    "date": "2026/01/29",
+    "abstract": " Most LLM unlearning methods aim to approximate retrain-from-scratch behaviors with minimal distribution shift, often via alignment-style objectives defined in the prediction space. While effective at reducing forgotten content generation, such approaches may act as suppression: forgotten concepts can persist in representations and remain entangled with retained knowledge. We introduce CLReg, a contrastive representation regularizer that identifies forget features while pushing them away from retain features, reducing forget--retain interference while empirically preserving the scale and shape of retain features. As light motivation for the mechanism, we provide a one-step analysis showing that CLReg decreases a simple entanglement proxy in the embedding space. Across unlearning benchmarks and LLMs of different sizes, CLReg decreases forget-retain representation entanglement to enhance mainstream unlearning methods without extra privacy risks, inspiring future unlearning work to remove forget concepts via representation shaping. Code is available at this https URL .",
+    "status_excerpt": "Comments: Accepted to NeurIPS 2026 Subjects: Machine Learning (cs.LG) Cite as: arXiv:2601.22028 [cs.LG] (or arXiv:2601.22028v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2601.22028 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2506.13715",
+    "scholars": [
+      "tang"
+    ],
+    "title": "Sharpness-Aware Machine Unlearning",
+    "authors": [
+      "Tang, Haoran",
+      "Khanna, Rajiv"
+    ],
+    "date": "2025/06/16",
+    "abstract": " We characterize the effectiveness of Sharpness-aware minimization (SAM) under machine unlearning scheme, where unlearning forget signals interferes with learning retain signals. While previous work prove that SAM improves generalization with noise memorization prevention, we show that SAM abandons such denoising property when fitting the forget set, leading to altered generalization depending on signal strength. We further characterize the signal surplus of SAM in the order of signal strength, which enables learning from less retain signals to maintain model performance and putting more weight on unlearning the forget set. Empirical studies show that SAM outperforms SGD with relaxed requirement for retain signals and can enhance various unlearning methods either as pretrain or unlearn algorithm. Motivated by our refined characterization of SAM unlearning and observing that overfitting can benefit more stringent sample-specific unlearning, we propose Sharp MinMax, which splits the model into two to learn retain signals with SAM and unlearn forget signals with sharpness maximization, achieving best performance. Extensive experiments show that SAM enhances unlearning across varying difficulties measured by memorization, yielding decreased feature entanglement between retain and forget sets, stronger resistance to membership inference attacks, and a flatter loss landscape. Our observations generalize to more noised data, different optimizers, and different architectures.",
+    "status_excerpt": "Comments: Accepted to ICLR 2026 Subjects: Machine Learning (cs.LG) Cite as: arXiv:2506.13715 [cs.LG] (or arXiv:2506.13715v3 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2506.13715 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2609.38909",
+    "scholars": [
+      "tang"
+    ],
+    "title": "Unlearning Deceptive Behaviors in LLMs with Contrastive Forget Sets",
+    "authors": [
+      "Tang, Haoran",
+      "Khanna, Rajiv"
+    ],
+    "date": "2026/09/30",
+    "abstract": " Large language models often know the truth and say otherwise: a model that answers correctly when asked neutrally will affirm a user's mistaken belief, or misstate a fact its system prompt wants hidden, once the context rewards it. Such deception is a behavior conditioned on context, not knowledge, yet machine unlearning, the natural tool for removing a behavior from the weights, is built to forget facts that a deceptive model still needs. We propose to unlearn when a model deceives rather than what it knows, with a contrastive forget unit built from the model's own realized deceptions: the same question under a deception-triggering and a neutral context, admitted only where belief holds and behavior flips. Standard objectives on this unit face a dilemma. Suppression objectives such as NPO leave much of the deception in place. Target-based objectives, which distill the model's neutral behavior into the pressured context, remove it but induce context blindness: a target generated without the context teaches the model to stop reading it, eroding benign system-prompt instructions, secret-keeping and the reasoning a monitor inspects, a failure invisible to deception rates and capability benchmarks. We introduce PACT, which trains toward pressure-aware counterfactual targets (the model's own honest response, with a trace that registers the pressure and resists it) while retaining the benign uses of the triggering context. On two 32B reasoning models, PACT reduces held-out deception from over 50% to under 3% while system-prompt adherence, secret-keeping and the reasoning trace stay at the base model's level. On a tug-of-war score of removal against retention, PACT reaches 0.94 and 0.86, against at most 0.77 and 0.60 for any baseline. Like removed knowledge, removed deception is shallow under relearning, and terms that simulate the attacker hold it only at a cost in context use.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2510.01268",
+    "scholars": [
+      "shi"
+    ],
+    "title": "AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees",
+    "authors": [
+      "Zhou, Hongyi",
+      "Zhu, Jin",
+      "Su, Pingfan",
+      "Ye, Kai",
+      "Yang, Ying",
+      "Gavioli-Akilagun, Shakeel A O B",
+      "Shi, Chengchun"
+    ],
+    "date": "2025/09/29",
+    "abstract": " We study the problem of determining whether a piece of text has been authored by a human or by a large language model (LLM). Existing state of the art logits-based detectors make use of statistics derived from the log-probability of the observed text evaluated using the distribution function of a given source LLM. However, relying solely on log probabilities can be sub-optimal. In response, we introduce AdaDetectGPT -- a novel classifier that adaptively learns a witness function from training data to enhance the performance of logits-based detectors. We provide statistical guarantees on its true positive rate, false positive rate, true negative rate and false negative rate. Extensive numerical studies show AdaDetectGPT nearly uniformly improves the state-of-the-art method in various combination of datasets and LLMs, and the improvement can reach up to 37\\%. A python implementation of our method is available at this https URL .",
+    "status_excerpt": "Comments: Accepted by NeurIPS2025 Subjects: Computation and Language (cs.CL) ; Artificial Intelligence (cs.AI); Machine Learning (cs.LG); Machine Learning (stat.ML) Cite as: arXiv:2510.01268 [cs.CL] (or arXiv:2510.01268v5 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2510.01268 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2601.06586",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Detecting LLM-Generated Text with Performance Guarantees",
+    "authors": [
+      "Zhou, Hongyi",
+      "Zhu, Jin",
+      "Yang, Ying",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/01/10",
+    "abstract": " Large language models (LLMs) such as GPT, Claude, Gemini, and Grok have been deeply integrated into our daily life. They now support a wide range of tasks -- from dialogue and email drafting to assisting with teaching and coding, serving as search engines, and much more. However, their ability to produce highly human-like text raises serious concerns, including the spread of fake news, the generation of misleading governmental reports, and academic misconduct. To address this practical problem, we train a classifier to determine whether a piece of text is authored by an LLM or a human. Our detector is deployed on an online CPU-based platform this https URL , and contains three novelties over existing detectors: (i) it does not rely on auxiliary information, such as watermarks or knowledge of the specific LLM used to generate the text; (ii) it more effectively distinguishes between human- and LLM-authored text; and (iii) it enables statistical inference, which is largely absent in the current literature. Empirically, our classifier achieves higher classification accuracy compared to existing detectors, while maintaining type-I error control, high statistical power, and computational efficiency.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2605.25281",
+    "scholars": [
+      "shi"
+    ],
+    "title": "READER: Reasoning-Enhanced AI-Generated Text Detection",
+    "authors": [
+      "Su, Pingfan",
+      "Ye, Kai",
+      "Gong, Shijin",
+      "Xu, Erhan",
+      "Zhu, Jin",
+      "Livieri, Giulia",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/05/24",
+    "abstract": " Recent advances in large language models (LLMs) have made it increasingly difficult to distinguish human-written text from AI-generated content. Many existing detectors train supervised neural classifiers that achieve strong in-distribution performance but are often opaque and can degrade substantially under distribution shift. We present READER, a reasoning-enhanced AI text detector that outputs both a human/AI label and a structured rationale describing the evidence for its decision. A key component of our approach is READ, a curated supervision set of rationales and verdicts. We fine-tune an LLM on READ to build READER, which reasons before detecting at inference time. Despite having only 1.5B parameters, READER consistently outperforms existing detectors as well as prompted, high-capacity LLM baselines (GPT-5.2, Gemini-3-Pro, and DeepSeek-V3.2), which are 100 to 1000 times larger in scale.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2605.03723",
+    "scholars": [
+      "shi"
+    ],
+    "title": "Segmenting Human-LLM Co-authored Text via Change Point Detection",
+    "authors": [
+      "Li, Mengchu",
+      "Zhu, Jin",
+      "Li, Jinglai",
+      "Shi, Chengchun"
+    ],
+    "date": "2026/05/05",
+    "abstract": " The rise of large language models (LLMs) has created an urgent need to distinguish between human-written and LLM-generated text to ensure authenticity and societal trust. Existing detectors typically provide a binary classification for an entire passage; however, this is insufficient for human--LLM co-authored text, where the objective is to localize specific segments authored by humans or LLMs. To bridge this gap, we propose algorithms to segment text into human- and LLM-authored pieces. Our key observation is that such a segmentation task is conceptually similar to classical change point detection in time-series analysis. Leveraging this analogy, we adapt change point detection to LLM-generated text detection, develop a weighted algorithm and a generalized algorithm to accommodate heterogeneous detection score variability, and establish the minimax optimality of our procedure. Empirically, we demonstrate the strong performance of our approach against a wide range of existing baselines. The python implementation of our proposal is available at this https URL .",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2404.01245",
+    "scholars": [
+      "li"
+    ],
+    "title": "A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules",
+    "authors": [
+      "Li, Xiang",
+      "Ruan, Feng",
+      "Wang, Huiyuan",
+      "Long, Qi",
+      "Su, Weijie J."
+    ],
+    "date": "2024/04/01",
+    "abstract": " Since ChatGPT was introduced in November 2022, embedding (nearly) unnoticeable statistical signals into text generated by large language models (LLMs), also known as watermarking, has been used as a principled approach to provable detection of LLM-generated text from its human-written counterpart. In this paper, we introduce a general and flexible framework for reasoning about the statistical efficiency of watermarks and designing powerful detection rules. Inspired by the hypothesis testing formulation of watermark detection, our framework starts by selecting a pivotal statistic of the text and a secret key -- provided by the LLM to the verifier -- to enable controlling the false positive rate (the error of mistakenly detecting human-written text as LLM-generated). Next, this framework allows one to evaluate the power of watermark detection rules by obtaining a closed-form expression of the asymptotic false negative rate (the error of incorrectly classifying LLM-generated text as human-written). Our framework further reduces the problem of determining the optimal detection rule to solving a minimax optimization program. We apply this framework to two representative watermarks -- one of which has been internally implemented at OpenAI -- and obtain several findings that can be instrumental in guiding the practice of implementing watermarks. In particular, we derive optimal detection rules for these watermarks under our framework. These theoretically derived detection rules are demonstrated to be competitive and sometimes enjoy a higher power than existing detection approaches through numerical experiments.",
+    "status_excerpt": "Comments: Accepted by Annals of Statistics Subjects: Statistics Theory (math.ST) ; Computation and Language (cs.CL); Cryptography and Security (cs.CR); Machine Learning (cs.LG); Machine Learning (stat.ML) MSC classes: 62C05 (Primary), 62F03 (Secondary) Cite as: arXiv:2404.01245 [math.ST] (or arXiv:2404.01245v4 [math.ST] for this version) https://doi.org/10.48550/arXiv.2404.01245 Focus to learn more arXiv-issued DOI via DataCite Journal reference: Ann. Statist. 53(1): 322-351 (February 2025) Related DOI : https://doi.org/10.1214/24-AOS2468 Focus to learn more DOI(s) linking to related resources "
+  },
+  {
+    "arxiv": "2411.13868",
+    "scholars": [
+      "li"
+    ],
+    "title": "Robust Detection of Watermarks for Large Language Models Under Human Edits",
+    "authors": [
+      "Li, Xiang",
+      "Ruan, Feng",
+      "Wang, Huiyuan",
+      "Long, Qi",
+      "Su, Weijie J."
+    ],
+    "date": "2024/11/21",
+    "abstract": " Watermarking has offered an effective approach to distinguishing text generated by large language models (LLMs) from human-written text. However, the pervasive presence of human edits on LLM-generated text dilutes watermark signals, thereby significantly degrading detection performance of existing methods. In this paper, by modeling human edits through mixture model detection, we introduce a new method in the form of a truncated goodness-of-fit test for detecting watermarked text under human edits, which we refer to as Tr-GoF. We prove that the Tr-GoF test achieves optimality in robust detection of the Gumbel-max watermark in a certain asymptotic regime of substantial text modifications and vanishing watermark signals. Importantly, Tr-GoF achieves this optimality \\textit{adaptively} as it does not require precise knowledge of human edit levels or probabilistic specifications of the LLMs, in contrast to the optimal but impractical (Neyman--Pearson) likelihood ratio test. Moreover, we establish that the Tr-GoF test attains the highest detection efficiency rate in a certain regime of moderate text modifications. In stark contrast, we show that sum-based detection rules, as employed by existing methods, fail to achieve optimal robustness in both regimes because the additive nature of their statistics is less resilient to edit-induced noise. Finally, we demonstrate the competitive and sometimes superior empirical performance of the Tr-GoF test on both synthetic data and open-source LLMs in the OPT and LLaMA families.",
+    "status_excerpt": "Comments: To appear in Journal of the Royal Statistical Society: Series B Subjects: Methodology (stat.ME) ; Computation and Language (cs.CL); Machine Learning (cs.LG); Statistics Theory (math.ST); Machine Learning (stat.ML) Cite as: arXiv:2411.13868 [stat.ME] (or arXiv:2411.13868v3 [stat.ME] for this version) https://doi.org/10.48550/arXiv.2411.13868 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2506.22343",
+    "scholars": [
+      "li"
+    ],
+    "title": "Optimal Estimation of Watermark Proportions in Hybrid AI-Human Texts",
+    "authors": [
+      "Li, Xiang",
+      "Wen, Garrett",
+      "He, Weiqing",
+      "Wu, Jiayuan",
+      "Long, Qi",
+      "Su, Weijie J."
+    ],
+    "date": "2025/06/27",
+    "abstract": " Text watermarks in large language models (LLMs) are an increasingly important tool for detecting synthetic text and distinguishing human-written content from LLM-generated text. While most existing studies focus on determining whether entire texts are watermarked, many real-world scenarios involve mixed-source texts, which blend human-written and watermarked content. In this paper, we address the problem of optimally estimating the watermark proportion in mixed-source texts. We cast this problem as estimating the proportion parameter in a mixture model based on \\emph{pivotal statistics}. First, we show that this parameter is not even identifiable in certain watermarking schemes, let alone consistently estimable. In stark contrast, for watermarking methods that employ continuous pivotal statistics for detection, we demonstrate that the proportion parameter is identifiable under mild conditions. We propose efficient estimators for this class of methods, which include several popular unbiased watermarks as examples, and derive minimax lower bounds for any measurable estimator based on pivotal statistics, showing that our estimators achieve these lower bounds. Through evaluations on both synthetic data and mixed-source text generated by open-source models, we demonstrate that our proposed estimators consistently achieve high estimation accuracy.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2510.03944",
+    "scholars": [
+      "li"
+    ],
+    "title": "On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection",
+    "authors": [
+      "He, Weiqing",
+      "Li, Xiang",
+      "Shang, Tianqi",
+      "Shen, Li",
+      "Su, Weijie",
+      "Long, Qi"
+    ],
+    "date": "2025/10/04",
+    "abstract": " Large language models (LLMs) raise concerns about content authenticity and integrity because they can generate human-like text at scale. Text watermarks, which embed detectable statistical signals into generated text, offer a provable way to verify content origin. Many detection methods rely on pivotal statistics that are i.i.d. under human-written text, making goodness-of-fit (GoF) tests a natural tool for watermark detection. However, GoF tests remain largely underexplored in this setting. In this paper, we systematically evaluate eight GoF tests across three popular watermarking schemes, using three open-source LLMs, two datasets, various generation temperatures, and multiple post-editing methods. We find that general GoF tests can improve both the detection power and robustness of watermark detectors. Notably, we observe that text repetition, common in low-temperature settings, gives GoF tests a unique advantage not exploited by existing methods. Our results highlight that classic GoF tests are a simple yet powerful and underused tool for watermark detection in LLMs.",
+    "status_excerpt": "Comments: Accepted at NeurIPS 2025 as a spotlight Subjects: Machine Learning (cs.LG) Cite as: arXiv:2510.03944 [cs.LG] (or arXiv:2510.03944v2 [cs.LG] for this version) https://doi.org/10.48550/arXiv.2510.03944 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2608.14906",
+    "scholars": [
+      "li"
+    ],
+    "title": "Optimal Watermark Localization in Mixed-Source Large Language Model Texts",
+    "authors": [
+      "Blanchet, Jose H.",
+      "Cai, T. Tony",
+      "Li, Xiang",
+      "Liu, Hao",
+      "Long, Qi",
+      "Su, Weijie J."
+    ],
+    "date": "2026/08/14",
+    "abstract": " Watermarking provides a principled way to authenticate text generated by large language models (LLMs). In practice, however, the final text may be mixed-source, with watermark evidence surviving at only a subset of token positions after rewriting, insertion, deletion, or paraphrasing. Although prior work has studied global detection of watermark signals, when such signals can be localized remains unclear. We formulate watermark localization as a token-level multiple-testing problem based on pivotal statistics, with a latent indicator recording whether watermark dependence survives at each position. Under an asymptotic regime indexed by exponents for signal sparsity, next-token concentration, and effective-vocabulary growth, we derive a sharp boundary for global detection and phase transitions for discovery and classification within the class of coordinatewise pivot-based localization rules. We show that discovery is strictly harder than detection and that consistent classification is impossible across the parameter regime within this class. We then develop an adaptive thresholding method that does not require knowledge of the exponents or time-varying next-token distributions, but uses a data-driven estimate of the surviving watermark fraction. The method attains the optimal discovery boundary and near-optimal discovery power relative to homogeneous pivot-based rules. Simulations support the theoretical phase transitions, while experiments on model-generated texts demonstrate practical localization performance under common edit mechanisms.",
+    "status_excerpt": "Comments: 73 pages, 13 figures. Updated experiments and supplementary material Subjects: Methodology (stat.ME) ; Computation and Language (cs.CL); Machine Learning (cs.LG); Machine Learning (stat.ML) Cite as: arXiv:2608.14906 [stat.ME] (or arXiv:2608.14906v2 [stat.ME] for this version) https://doi.org/10.48550/arXiv.2608.14906 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2310.05130",
+    "scholars": [
+      "bao"
+    ],
+    "title": "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+    "authors": [
+      "Bao, Guangsheng",
+      "Zhao, Yanbin",
+      "Teng, Zhiyang",
+      "Yang, Linyi",
+      "Zhang, Yue"
+    ],
+    "date": "2023/10/08",
+    "abstract": " Large language models (LLMs) have shown the ability to produce fluent and cogent content, presenting both productivity opportunities and societal risks. To build trustworthy AI systems, it is imperative to distinguish between machine-generated and human-authored content. The leading zero-shot detector, DetectGPT, showcases commendable performance but is marred by its intensive computational costs. In this paper, we introduce the concept of conditional probability curvature to elucidate discrepancies in word choices between LLMs and humans within a given context. Utilizing this curvature as a foundational metric, we present **Fast-DetectGPT**, an optimized zero-shot detector, which substitutes DetectGPT's perturbation step with a more efficient sampling step. Our evaluations on various datasets, source models, and test conditions indicate that Fast-DetectGPT not only surpasses DetectGPT by a relative around 75% in both the white-box and black-box settings but also accelerates the detection process by a factor of 340, as detailed in Table 1. See \\url{ this https URL } for code, data, and results.",
+    "status_excerpt": "Comments: ICLR 2024 camera version (9 pages, 5 figures, 11 tables) Subjects: Computation and Language (cs.CL) Cite as: arXiv:2310.05130 [cs.CL] (or arXiv:2310.05130v3 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2310.05130 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2412.11506",
+    "scholars": [
+      "bao"
+    ],
+    "title": "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "authors": [
+      "Bao, Guangsheng",
+      "Zhao, Yanbin",
+      "He, Juncai",
+      "Zhang, Yue"
+    ],
+    "date": "2024/12/16",
+    "abstract": " Advanced large language models (LLMs) can generate text almost indistinguishable from human-written text, highlighting the importance of LLM-generated text detection. However, current zero-shot techniques face challenges as white-box methods are restricted to use weaker open-source LLMs, and black-box methods are limited by partial observation from stronger proprietary LLMs. It seems impossible to enable white-box methods to use proprietary models because API-level access to the models neither provides full predictive distributions nor inner embeddings. To traverse the divide, we propose **Glimpse**, a probability distribution estimation approach, predicting the full distributions from partial observations. Despite the simplicity of Glimpse, we successfully extend white-box methods like Entropy, Rank, Log-Rank, and Fast-DetectGPT to latest proprietary models. Experiments show that Glimpse with Fast-DetectGPT and GPT-3.5 achieves an average AUROC of about 0.95 in five latest source models, improving the score by 51% relative to the remaining space of the open source baseline. It demonstrates that the latest LLMs can effectively detect their own outputs, suggesting that advanced LLMs may be the best shield against themselves. We release our code and data at this https URL .",
+    "status_excerpt": "Comments: ICLR 2025 camera version (10 pages, 9 figures, 9 tables) Subjects: Computation and Language (cs.CL) ; Artificial Intelligence (cs.AI) Cite as: arXiv:2412.11506 [cs.CL] (or arXiv:2412.11506v2 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2412.11506 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2503.00258",
+    "scholars": [
+      "bao"
+    ],
+    "title": "Decoupling Content and Expression: Two-Dimensional Detection of AI-Generated Text",
+    "authors": [
+      "Bao, Guangsheng",
+      "Rong, Lihua",
+      "Zhao, Yanbin",
+      "Zhou, Qiji",
+      "Zhang, Yue"
+    ],
+    "date": "2025/03/01",
+    "abstract": " The wide usage of LLMs raises critical requirements on detecting AI participation in texts. Existing studies investigate these detections in scattered contexts, leaving a systematic and unified approach unexplored. In this paper, we present HART, a hierarchical framework of AI risk levels, each corresponding to a detection task. To address these tasks, we propose a novel 2D Detection Method, decoupling a text into content and language expression. Our findings show that content is resistant to surface-level changes, which can serve as a key feature for detection. Experiments demonstrate that 2D method significantly outperforms existing detectors, achieving an AUROC improvement from 0.705 to 0.849 for level-2 detection and from 0.807 to 0.886 for RAID. We release our data and code at this https URL .",
+    "status_excerpt": "Comments: 8 pages, 8 tables, 8 figures Subjects: Computation and Language (cs.CL) ; Artificial Intelligence (cs.AI); Computers and Society (cs.CY) Cite as: arXiv:2503.00258 [cs.CL] (or arXiv:2503.00258v1 [cs.CL] for this version) https://doi.org/10.48550/arXiv.2503.00258 Focus to learn more arXiv-issued DOI via DataCite "
+  },
+  {
+    "arxiv": "2511.00988",
+    "scholars": [
+      "wu"
+    ],
+    "title": "Advancing Machine-Generated Text Detection from an Easy to Hard Supervision Perspective",
+    "authors": [
+      "Wu, Chenwang",
+      "Cheung, Yiu-ming",
+      "Han, Bo",
+      "Lian, Defu"
+    ],
+    "date": "2025/11/02",
+    "abstract": " Existing machine-generated text (MGT) detection methods implicitly assume labels as the \"golden standard\". However, we reveal boundary ambiguity in MGT detection, implying that traditional training paradigms are inexact. Moreover, limitations of human cognition and the superintelligence of detectors make inexact learning widespread and inevitable. To this end, we propose an easy-to-hard enhancement framework to provide reliable supervision under such inexact conditions. Distinct from knowledge distillation, our framework employs an easy supervisor targeting relatively simple longer-text detection tasks (despite weaker capabilities), to enhance the more challenging target detector. Firstly, longer texts targeted by supervisors theoretically alleviate the impact of inexact labels, laying the foundation for reliable supervision. Secondly, by structurally incorporating the detector into the supervisor, we theoretically model the supervisor as a lower performance bound for the detector. Thus, optimizing the supervisor indirectly optimizes the detector, ultimately approximating the underlying \"golden\" labels. Extensive experiments across diverse practical scenarios, including cross-LLM, cross-domain, mixed text, and paraphrase attacks, demonstrate the framework's significant detection effectiveness. The code is available at: this https URL .",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2605.23190",
+    "scholars": [
+      "wu"
+    ],
+    "title": "Hidden Human-Like Nature of Machine-Generated Texts: Theory and Detection Enhancement",
+    "authors": [
+      "Wu, Chenwang",
+      "Cheung, Yiu-ming",
+      "Han, Bo",
+      "Lian, Defu"
+    ],
+    "date": "2026/05/22",
+    "abstract": " Machine-generated texts (MGTs) produced by large language models (LLMs) are increasingly prevalent across various applications, while their potential misuse in fake news propagation and phishing has raised serious concerns, highlighting the need for MGT detection. Existing paragraph-level detection methods commonly treat MGTs as entirely machine-like, overlooking the hidden human-like nature of machine-generated texts: even fully machine-generated texts may contain spans that are highly consistent with human writing. To this end, we first reveal the existence of such hidden human-like spans, and then theoretically analyze their impact on detection. Our analysis shows that these spans increase the sentence complexity for detection, thereby making MGT detection intrinsically harder. Based on this finding, we propose a model-agnostic stacked enhancement framework that improves existing detectors by reducing the influence of hidden human-like spans. Specifically, we model span-level retention decisions as a latent-variable problem and instantiate the optimization with a hard-EM-inspired procedure, where the detector iteratively filters confidently human-like subsequences and refines itself on the remaining text. Extensive experiments across various LLMs and practical scenarios demonstrate that the proposed framework consistently enhances existing detectors. Notably, the framework can also work in a training-free manner, offering flexibility and scalability for practical deployment.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2502.19301",
+    "scholars": [
+      "wang"
+    ],
+    "title": "Rethinking LLM Unlearning Objectives: A Gradient Perspective and Go Beyond",
+    "authors": [
+      "Wang, Qizhou",
+      "Zhou, Jin Peng",
+      "Zhou, Zhanke",
+      "Shin, Saebyeol",
+      "Han, Bo",
+      "Weinberger, Kilian Q."
+    ],
+    "date": "2025/02/26",
+    "abstract": " Large language models (LLMs) should undergo rigorous audits to identify potential risks, such as copyright and privacy infringements. Once these risks emerge, timely updates are crucial to remove undesirable responses, ensuring legal and safe model usage. It has spurred recent research into LLM unlearning, focusing on erasing targeted undesirable knowledge without compromising the integrity of other, non-targeted responses. Existing studies have introduced various unlearning objectives to pursue LLM unlearning without necessitating complete retraining. However, each of these objectives has unique properties, and no unified framework is currently available to comprehend them thoroughly. To fill the gap, we propose a toolkit of the gradient effect (G-effect), quantifying the impacts of unlearning objectives on model performance from a gradient perspective. A notable advantage is its broad ability to detail the unlearning impacts from various aspects across instances, updating steps, and LLM layers. Accordingly, the G-effect offers new insights into identifying drawbacks of existing unlearning objectives, further motivating us to explore a series of new solutions for their mitigation and improvements. Finally, we outline promising directions that merit further studies, aiming at contributing to the community to advance this important field.",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2602.08031",
+    "scholars": [
+      "wu"
+    ],
+    "title": "Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection",
+    "authors": [
+      "Wu, Chenwang",
+      "Cheung, Yiu-ming",
+      "Zhang, Shuhai",
+      "Han, Bo",
+      "Lian, Defu"
+    ],
+    "date": "2026/02/08",
+    "abstract": " While machine-generated texts (MGTs) offer great convenience, they also pose risks such as disinformation and phishing, highlighting the need for reliable detection. Metric-based methods, which extract statistically distinguishable features of MGTs, are often more practical than complex model-based methods that are prone to overfitting. Given their diverse designs, we first place representative metric-based methods within a unified framework, enabling a clear assessment of their advantages and limitations. Our analysis identifies a core challenge across these methods: the token-level detection score is easily biased by the inherent randomness of the MGTs generation process. To address this, we theoretically and empirically reveal two relationships of context detection scores that may aid calibration: Neighbor Similarity and Initial Instability. We then propose a Markov-informed score calibration strategy that models these relationships using Markov random fields, and implements it as a lightweight component via a mean-field approximation, allowing our method to be seamlessly integrated into existing detectors. Extensive experiments in various real-world scenarios, such as cross-LLM and paraphrasing attacks, demonstrate significant gains over baselines with negligible computational overhead. The code is available at this https URL .",
+    "status_excerpt": ""
+  },
+  {
+    "arxiv": "2510.00761",
+    "scholars": [
+      "liu"
+    ],
+    "title": "Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning",
+    "authors": [
+      "Lang, Yicheng",
+      "Zhang, Yihua",
+      "Fan, Chongyu",
+      "Wang, Changsheng",
+      "Jia, Jinghan",
+      "Liu, Sijia"
+    ],
+    "date": "2025/10/01",
+    "abstract": " Large language model (LLM) unlearning aims to surgically remove the influence of undesired data or knowledge from an existing model while preserving its utility on unrelated tasks. This paradigm has shown promise in addressing privacy and safety concerns. However, recent findings reveal that unlearning effects are often fragile: post-unlearning manipulations such as weight quantization or fine-tuning can quickly neutralize the intended forgetting. Prior efforts to improve robustness primarily reformulate unlearning objectives by explicitly assuming the role of vulnerability sources. In this work, we take a different perspective by investigating the role of the optimizer, independent of unlearning objectives and formulations, in shaping unlearning robustness. We show that the 'grade' of the optimizer, defined by the level of information it exploits, ranging from zeroth-order (gradient-free) to first-order (gradient-based) to second-order (Hessian-based), is tightly linked to the resilience of unlearning. Surprisingly, we find that downgrading the optimizer, such as using zeroth-order methods or compressed-gradient variants (e.g., gradient sign-based optimizers), often leads to stronger robustness. While these optimizers produce noisier and less precise updates, they encourage convergence to harder-to-disturb basins in the loss landscape, thereby resisting post-training perturbations. By connecting zeroth-order methods with randomized smoothing, we further highlight their natural advantage for robust unlearning. Motivated by these insights, we propose a hybrid optimizer that combines first-order and zeroth-order updates, preserving unlearning efficacy while enhancing robustness. Extensive experiments on the MUSE and WMDP benchmarks, across multiple LLM unlearning algorithms, validate that our approach achieves more resilient forgetting without sacrificing unlearning quality.",
+    "status_excerpt": ""
+  }
+]

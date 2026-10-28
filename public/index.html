@@ -2,46 +2,51 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light"><meta name="description" content="Statistics × LLM Alignment Research Explorer — 精选 RLHF、Alignment 和 LLM Unlearning 论文">
-<title>Statistics × LLM Alignment · Research Explorer</title>
+<meta name="color-scheme" content="light"><meta name="description" content="Statistics × LLM Research Explorer — 按学者探索 RLHF、LLM Unlearning、水印与 AI 生成文本检测论文">
+<title>Statistics × LLM · Research Explorer</title>
 <style>
-:root{--navy:#242424;--deep:#161616;--blue:#585858;--sky:#eeeeee;--ink:#303030;--muted:#828282;--border:#e8e8e8;--cream:#f8f8f8;--white:#ffffff;--green:#707070;--amber:#828282;--shadow:0 12px 36px rgba(25,43,75,.07)}
+:root{--navy:#242424;--deep:#161616;--blue:#585858;--sky:#eeeeee;--ink:#303030;--muted:#828282;--border:#e8e8e8;--cream:#f8f8f8;--white:#ffffff;--green:#707070;--amber:#828282;--shadow:0 12px 36px rgba(25,25,25,.07)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}button,input,select,textarea{font:inherit}button{cursor:pointer}a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}::selection{background:#dedede}
 .shell{display:grid;grid-template-columns:247px minmax(0,1fr);min-height:100vh}.side{background:var(--deep);color:#c6c6c6;position:sticky;top:0;height:100vh;overflow:auto;padding:29px 17px 22px;display:flex;flex-direction:column}.brand{padding:4px 12px 24px;border-bottom:1px solid #333333}.brand-mark{display:inline-flex;width:37px;height:37px;align-items:center;justify-content:center;border-radius:10px;background:#6b6b6b;color:#ffffff;font-weight:900;letter-spacing:-1px;font-size:18px;margin-bottom:11px}.brand h1{color:#ffffff;line-height:1.26;font-size:18px;letter-spacing:-.4px;margin:0 0 4px}.brand p{margin:0;font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:#959595}.side-lab{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#7b7b7b;margin:28px 12px 10px}.nav-btn{background:none;color:#bababa;border:1px solid transparent;border-radius:11px;display:flex;align-items:center;text-align:left;gap:12px;padding:12px;font-size:13px;width:100%;transition:.18s;margin:3px 0}.nav-btn .ico{font-size:17px;width:24px;text-align:center;color:#969696}.nav-btn.active{background:#353535;color:#ffffff;border-color:#474747;font-weight:650}.nav-btn.active .ico{color:#c0c0c0}.nav-btn:hover:not(.active){background:#262626;color:#ffffff}.side-bottom{margin-top:auto;padding:18px 12px 0;border-top:1px solid #373737;font-size:11px;color:#919191}.side-bottom strong{color:#dcdcdc;font-weight:500}.main{min-width:0;padding:30px clamp(22px,4vw,62px) 75px}.page{max-width:1370px;margin:0 auto}.topline{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);margin-bottom:20px;gap:15px}.topline .time{background:#ffffff;border:1px solid var(--border);padding:6px 11px;border-radius:40px;color:#7a7a7a}.hero{background:linear-gradient(112deg,#242424 4%,#373737 67%,#4a4a4a);border-radius:23px;color:#ffffff;min-height:255px;position:relative;overflow:hidden;padding:36px 42px;display:flex;justify-content:space-between;gap:24px}.hero:before{content:"";position:absolute;width:310px;height:310px;border:1px solid #ffffff26;border-radius:50%;right:-50px;top:-105px;box-shadow:0 0 0 52px #ffffff06,0 0 0 110px #ffffff05}.hero:after{content:"σ";font-family:Georgia,serif;position:absolute;right:72px;top:18px;font-size:150px;line-height:1;opacity:.09}.hero-copy{z-index:1;max-width:730px}.eyebrow{font-size:10px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:#b9b9b9}.hero h2{font-size:clamp(26px,3.2vw,41px);letter-spacing:-1.5px;line-height:1.23;font-weight:750;margin:13px 0 16px}.hero h2 em{font-style:normal;color:#c2c2c2}.hero p{font-size:13.5px;color:#d2d2d2;max-width:660px;margin:0;line-height:1.9}.hero-bar{display:flex;gap:9px;margin-top:24px;flex-wrap:wrap}.hero-bar span{font-size:11px;padding:6px 10px;background:#ffffff19;border:1px solid #ffffff25;border-radius:7px;color:#ebebeb}.hero-art{z-index:1;display:flex;justify-content:center;align-items:center;min-width:100px}.orbit{width:129px;height:129px;border-radius:50%;border:1px dashed #a6a6a680;display:grid;place-items:center;position:relative}.orbit:after,.orbit:before{content:"";position:absolute;width:11px;height:11px;border-radius:50%;background:#a9a9a9;left:9px;top:12px;box-shadow:85px 99px #c0c0c0}.orbit b{font:46px Georgia,serif;color:#f0f0f0;font-weight:400}.overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:17px 0 31px}.metric{background:#ffffff;border:1px solid var(--border);border-radius:15px;padding:17px 20px;position:relative}.metric .num{display:block;font-size:30px;font-weight:780;color:#2b2b2b;line-height:1.1;letter-spacing:-1px}.metric .caption{font-size:11px;color:var(--muted);margin-top:7px}.metric small{font-size:9px;color:#929292;display:block;margin-top:4px}.section-top{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin:24px 0 18px}.kicker{font-size:10px;font-weight:750;letter-spacing:2px;color:var(--blue);text-transform:uppercase}.section-top h3{margin:4px 0 0;font-size:24px;letter-spacing:-.8px;color:#2b2b2b}.section-top p{color:var(--muted);font-size:12px;margin:5px 0 0}.light-btn,.primary-btn{border:1px solid var(--border);border-radius:10px;background:#ffffff;padding:8px 12px;font-weight:650;font-size:12px;color:#484848;display:inline-flex;align-items:center;justify-content:center;gap:7px;white-space:nowrap}.light-btn:hover{border-color:#b3b3b3;background:#fafafa}.primary-btn{border-color:#585858;background:#565656;color:#ffffff}.primary-btn:hover{background:#464646}.action-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .filter-card{background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:17px;margin-bottom:16px}.search-wrap{display:flex;align-items:center;border:1px solid var(--border);border-radius:11px;background:#fafafa;padding:0 13px;gap:8px;min-height:46px}.search-wrap:focus-within{border-color:#8c8c8c;box-shadow:0 0 0 3px #e4e4e4}.search-wrap .glass{font-size:19px;color:#8f8f8f}.search-wrap input{border:0;background:transparent;outline:0;flex:1;min-width:0;color:var(--navy);font-size:13px}.search-wrap kbd{font-size:11px;color:#9f9f9f;background:#ffffff;border:1px solid var(--border);padding:2px 6px;border-radius:5px}.filter-line{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-top:12px}.filter-line select{flex:1 1 148px;min-width:0;max-width:230px;border:1px solid var(--border);border-radius:9px;background:#ffffff;color:#505050;padding:9px 11px;font-size:11.5px;outline:0}.filter-line select:focus{border-color:#939393}.check-pill{white-space:nowrap;font-size:11.5px;color:#636363;display:inline-flex;gap:6px;align-items:center;cursor:pointer}.check-pill input{accent-color:#5f5f5f}.result-bar{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#828282;margin:12px 1px 11px;gap:10px}.result-bar strong{color:var(--navy)}.papers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.paper{background:#ffffff;border:1px solid var(--border);border-radius:15px;padding:20px 20px 15px;min-width:0;position:relative;transition:transform .18s,box-shadow .18s,border-color .18s;display:flex;flex-direction:column}.paper:hover{transform:translateY(-2px);box-shadow:var(--shadow);border-color:#d5d5d5}.paper-head{display:flex;gap:6px;flex-wrap:wrap;padding-right:25px}.tag{display:inline-flex;align-items:center;border-radius:5px;font-size:10px;font-weight:650;letter-spacing:.1px;padding:3px 7px;background:#f4f4f4;color:#686868}.tag.type{background:#f2f2f2;color:#606060}.tag.rank-a{background:#efefef;color:#565656}.tag.rank-b{background:#f4f4f4;color:#727272}.tag.rank-c{background:#f3f3f3;color:#727272}.tag.venue{background:#f4f4f4;color:#7c7c7c}.star{position:absolute;top:14px;right:14px;background:none;border:0;font-size:21px;color:#c7c7c7;padding:0 3px}.star.on{color:#9d9d9d}.paper h4{font-size:15px;line-height:1.45;letter-spacing:-.24px;color:#2c2c2c;margin:12px 0 8px;cursor:pointer}.paper h4:hover{color:#5a5a5a}.paper .summary{font-size:12px;color:#737373;line-height:1.8;margin:0 0 14px;flex:1}.paper .angle{border-left:2px solid #bbbbbb;padding-left:11px;color:#5a5a5a;font-size:11.4px;line-height:1.7;margin:0 0 15px}.paper-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid #f0f0f0;padding-top:12px}.paper-foot .methods{font-size:10px;color:#959595;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:210px}.paper-foot button{font-size:11px;color:#565656;border:0;background:none;font-weight:700;white-space:nowrap}.paper-read{position:absolute;bottom:12px;right:76px;color:var(--green);font-size:11px}.empty{padding:50px;background:#ffffff;border-radius:15px;color:var(--muted);text-align:center;border:1px dashed var(--border);grid-column:1/-1}
-.panel{background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:22px;margin:15px 0}.panel h4{margin:0 0 8px;font-size:16px;color:#2d2d2d}.panel p{margin:0;color:#727272;font-size:12.5px;line-height:1.9}.notice{border-left:3px solid #878787;background:#f9f9f9;padding:13px 17px;border-radius:0 9px 9px 0}.notice p{font-size:12px}.lead-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.lead-card{background:#ffffff;border:1px solid var(--border);border-radius:15px;padding:22px;min-height:180px}.lead-no{font-family:Georgia,serif;color:#bebebe;font-size:25px}.lead-card h4{margin:10px 0 9px;font-size:15px;color:#2c2c2c}.lead-card p{font-size:12px;color:#727272;line-height:1.8}.pills{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0}.small-pill{font-size:10px;border:1px solid #e1e1e1;background:#fbfbfb;border-radius:20px;padding:3px 8px;color:#6e6e6e}.journey{display:grid;grid-template-columns:1fr;gap:14px}.week{display:grid;grid-template-columns:125px minmax(0,1fr);gap:20px;background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:22px}.week-id{color:#555555;font-size:11px;font-weight:750;letter-spacing:1px}.week-id strong{font:normal 42px Georgia,serif;display:block;color:#2f2f2f;margin-top:8px}.week h4{margin:0 0 5px;color:#2f2f2f;font-size:16px}.week p{font-size:12px;color:#7c7c7c;margin:0 0 13px}.week-links{display:flex;flex-direction:column;gap:8px}.week-link{text-align:left;border:1px solid #eaeaea;background:#fcfcfc;padding:10px 12px;border-radius:9px;font-size:12px;color:#444444}.week-link:hover{border-color:#bababa}.week-link span{font-size:10px;font-weight:700;color:#6d6d6d;margin-right:9px}.idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.idea{border:1px solid var(--border);border-radius:16px;background:#ffffff;padding:24px;position:relative}.idea .no{font-size:11px;color:#575757;font-weight:750;letter-spacing:1px}.idea h4{font-size:16px;line-height:1.4;margin:8px 0 11px}.idea p{font-size:12px;margin:10px 0;line-height:1.85;color:#777777}.idea p strong{color:#4a4a4a}.idea .idea-take{background:#f9f9f9;border-radius:10px;padding:12px;margin-top:15px}.idea-ref{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.idea-ref button{font-size:10px;background:#f3f3f3;border:0;border-radius:5px;color:#5b5b5b;padding:5px 8px}.atlas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.atlas-card{padding:23px;background:#ffffff;border:1px solid var(--border);border-radius:15px}.atlas-card h4{margin:0 0 9px;font-size:16px}.atlas-card p{font-size:12px;line-height:1.8;color:#787878}.atlas-card .mini{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.atlas-card button{border-radius:6px;background:#f6f6f6;color:#676767;border:0;padding:6px 8px;font-size:11px}.atlas-card button:hover{background:#ededed}.compare-bar{position:fixed;z-index:40;bottom:19px;left:50%;transform:translateX(-50%);background:#272727;color:#ffffff;box-shadow:0 16px 45px #23232350;border-radius:13px;padding:11px 15px;display:none;align-items:center;gap:15px;font-size:12px}.compare-bar.show{display:flex}.compare-bar button{border:0;background:#f0f0f0;color:#474747;padding:8px 11px;border-radius:7px;font-weight:700;font-size:11px}.compare-bar .clear{background:#ffffff13;color:#c9c9c9}.overlay{position:fixed;inset:0;background:#1b1b1ba1;z-index:70;display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.dialog{background:#ffffff;box-shadow:0 25px 85px #10101078;border-radius:19px;max-width:820px;width:100%;max-height:min(92vh,930px);overflow:auto;position:relative;padding:31px}.dialog h3{font-size:22px;line-height:1.42;color:#262626;max-width:710px;margin:12px 30px 17px}.close{position:absolute;right:21px;top:18px;border:0;border-radius:8px;background:#f4f4f4;color:#646464;font-size:22px;width:34px;height:34px;line-height:1}.info-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:17px 0}.info-row{background:#f9f9f9;padding:14px;border-radius:10px}.info-row small{font-weight:750;font-size:10px;letter-spacing:.7px;color:#939393;display:block;margin-bottom:5px}.info-row div{font-size:12px;color:#464646;line-height:1.8}.dialog .notearea{width:100%;height:100px;background:#fcfcfc;border:1px solid #e3e3e3;border-radius:9px;padding:11px;font-size:12px;outline:0;resize:vertical;color:#434343}.dialog .notearea:focus{border-color:#9d9d9d}.dialog-actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 16px}.dialog-subtitle{font-size:12px;color:#8b8b8b;letter-spacing:.5px;font-weight:750;margin:18px 0 8px}.compare-table{width:100%;border-collapse:collapse;min-width:550px;text-align:left;font-size:12px}.compare-table td,.compare-table th{vertical-align:top;border:1px solid #e9e9e9;padding:12px;min-width:115px}.compare-table th{color:#505050;background:#f6f6f6}.compare-scroll{overflow-x:auto}.footnote{margin-top:40px;text-align:center;color:#8f8f8f;font-size:11px}.hidden{display:none!important}.sidebar-toggle{display:none}.source-link{color:#5e5e5e;word-break:break-all;font-size:11px}.line{height:1px;background:#ededed;margin:16px 0}.warn{background:#f9f9f9;color:#656565;border:1px solid #e5e5e5;padding:12px;border-radius:8px;font-size:12px}.state{font-size:12px;color:#888888}
+.panel{background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:22px;margin:15px 0}.panel h4{margin:0 0 8px;font-size:16px;color:#2d2d2d}.panel p{margin:0;color:#727272;font-size:12.5px;line-height:1.9}.notice{border-left:3px solid #878787;background:#f9f9f9;padding:13px 17px;border-radius:0 9px 9px 0}.notice p{font-size:12px}.lead-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}.lead-card{background:#ffffff;border:1px solid var(--border);border-radius:15px;padding:22px;min-height:180px}.lead-no{font-family:Georgia,serif;color:#bebebe;font-size:25px}.lead-card h4{margin:10px 0 9px;font-size:15px;color:#2c2c2c}.lead-card p{font-size:12px;color:#727272;line-height:1.8}.pills{display:flex;gap:6px;flex-wrap:wrap;margin:11px 0}.small-pill{font-size:10px;border:1px solid #e1e1e1;background:#fbfbfb;border-radius:20px;padding:3px 8px;color:#6e6e6e}.journey{display:grid;grid-template-columns:1fr;gap:14px}.week{display:grid;grid-template-columns:125px minmax(0,1fr);gap:20px;background:#ffffff;border:1px solid var(--border);border-radius:16px;padding:22px}.week-id{color:#555555;font-size:11px;font-weight:750;letter-spacing:1px}.week-id strong{font:normal 42px Georgia,serif;display:block;color:#2f2f2f;margin-top:8px}.week h4{margin:0 0 5px;color:#2f2f2f;font-size:16px}.week p{font-size:12px;color:#7c7c7c;margin:0 0 13px}.week-links{display:flex;flex-direction:column;gap:8px}.week-link{text-align:left;border:1px solid #eaeaea;background:#fcfcfc;padding:10px 12px;border-radius:9px;font-size:12px;color:#444444}.week-link:hover{border-color:#bababa}.week-link span{font-size:10px;font-weight:700;color:#6d6d6d;margin-right:9px}.idea-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.idea{border:1px solid var(--border);border-radius:16px;background:#ffffff;padding:24px;position:relative}.idea .no{font-size:11px;color:#575757;font-weight:750;letter-spacing:1px}.idea h4{font-size:16px;line-height:1.4;margin:8px 0 11px}.idea p{font-size:12px;margin:10px 0;line-height:1.85;color:#777777}.idea p strong{color:#4a4a4a}.idea .idea-take{background:#f9f9f9;border-radius:10px;padding:12px;margin-top:15px}.idea-ref{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.idea-ref button{font-size:10px;background:#f3f3f3;border:0;border-radius:5px;color:#5b5b5b;padding:5px 8px}.atlas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.atlas-card{padding:23px;background:#ffffff;border:1px solid var(--border);border-radius:15px}.atlas-card h4{margin:0 0 9px;font-size:16px}.atlas-card p{font-size:12px;line-height:1.8;color:#787878}.atlas-card .mini{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.atlas-card button{border-radius:6px;background:#f6f6f6;color:#676767;border:0;padding:6px 8px;font-size:11px}.atlas-card button:hover{background:#ededed}.compare-bar{position:fixed;z-index:40;bottom:19px;left:50%;transform:translateX(-50%);background:#272727;color:#ffffff;box-shadow:0 16px 45px #23232350;border-radius:13px;padding:11px 15px;display:none;align-items:center;gap:15px;font-size:12px}.compare-bar.show{display:flex}.compare-bar button{border:0;background:#f0f0f0;color:#474747;padding:8px 11px;border-radius:7px;font-weight:700;font-size:11px}.compare-bar .clear{background:#ffffff13;color:#c9c9c9}.overlay{position:fixed;inset:0;background:#1b1b1ba1;z-index:70;display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.dialog{background:#ffffff;box-shadow:0 25px 85px #10101078;border-radius:19px;max-width:820px;width:100%;max-height:min(92vh,930px);overflow:auto;position:relative;padding:31px}.dialog h3{font-size:22px;line-height:1.42;color:#262626;max-width:710px;margin:12px 30px 17px}.close{position:absolute;right:21px;top:18px;border:0;border-radius:8px;background:#f4f4f4;color:#646464;font-size:22px;width:34px;height:34px;line-height:1}.info-rows{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:17px 0}.info-row{background:#f9f9f9;padding:14px;border-radius:10px}.info-row small{font-weight:750;font-size:10px;letter-spacing:.7px;color:#939393;display:block;margin-bottom:5px}.info-row div{font-size:12px;color:#464646;line-height:1.8}.notearea{width:100%;height:100px;background:#fcfcfc;border:1px solid #e3e3e3;border-radius:9px;padding:11px;font-size:12px;outline:0;resize:vertical;color:#434343}.notearea:focus{border-color:#9d9d9d}.dialog-actions{display:flex;flex-wrap:wrap;gap:9px;margin:20px 0 16px}.dialog-subtitle{font-size:12px;color:#8b8b8b;letter-spacing:.5px;font-weight:750;margin:18px 0 8px}.compare-table{width:100%;border-collapse:collapse;min-width:550px;text-align:left;font-size:12px}.compare-table td,.compare-table th{vertical-align:top;border:1px solid #e9e9e9;padding:12px;min-width:115px}.compare-table th{color:#505050;background:#f6f6f6}.compare-scroll{overflow-x:auto}.footnote{margin-top:40px;text-align:center;color:#8f8f8f;font-size:11px}.hidden{display:none!important}.sidebar-toggle{display:none}.source-link{color:#5e5e5e;word-break:break-all;font-size:11px}.line{height:1px;background:#ededed;margin:16px 0}.warn{background:#f9f9f9;color:#656565;border:1px solid #e5e5e5;padding:12px;border-radius:8px;font-size:12px}.state{font-size:12px;color:#888888}
 @media(max-width:1140px){.papers{grid-template-columns:1fr}.hero-art{display:none}.main{padding:23px 25px 65px}.lead-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:760px){.shell{display:block}.side{position:fixed;z-index:60;left:-280px;top:0;width:255px;transition:left .2s;box-shadow:10px 0 30px #1e1e1e20}.side.open{left:0}.sidebar-toggle{display:inline-block;background:#ffffff;border:1px solid var(--border);border-radius:8px;padding:5px 10px}.topline{font-size:11px}.topline .time{font-size:10px}.main{padding:16px 14px 55px}.hero{padding:29px 23px;border-radius:16px;min-height:auto}.hero h2{font-size:30px;letter-spacing:-1px}.overview{grid-template-columns:repeat(2,1fr);gap:9px}.metric{padding:14px}.metric .num{font-size:25px}.lead-grid,.idea-grid,.atlas-grid{grid-template-columns:1fr}.week{grid-template-columns:1fr;gap:10px}.week-id strong{display:inline;margin-left:8px;font-size:20px}.dialog{padding:22px 17px}.info-rows{grid-template-columns:1fr}.section-top{align-items:flex-start;flex-wrap:wrap}.section-top h3{font-size:21px}.filter-line select{max-width:none}.compare-bar{width:calc(100% - 22px);justify-content:space-between}.brand{padding-top:25px}}
+.author-link{background:none;border:0;color:#555;padding:0;text-decoration:underline;text-underline-offset:3px;font-size:11px}.authorline{margin:0 0 10px}.lead-card .week-link{font-size:11px;white-space:normal}.lead-card{min-width:0}.paper h4,.week-link,.dialog h3{overflow-wrap:anywhere}button:focus-visible,a:focus-visible{outline:2px solid #333;outline-offset:3px}.state{overflow-wrap:anywhere}
 </style>
 </head>
 <body>
 <div class="shell"><aside class="side" id="sidebar">
-<div class="brand"><div class="brand-mark">Σ</div><h1>Statistics × LLM Alignment</h1><p>Research Explorer / 2026</p></div>
+<div class="brand"><div class="brand-mark">Σ</div><h1>Statistics × LLM</h1><p>Research Explorer / 2026</p></div>
 <div class="side-lab">RESEARCH</div>
+<button class="nav-btn" data-page="scholars"><span class="ico">◎</span>学者与代表作 <span style="margin-left:auto">11</span></button>
 <button class="nav-btn active" data-page="overview"><span class="ico">◫</span>研究概览</button>
 <button class="nav-btn" data-page="explorer"><span class="ico">▦</span>论文探索 <span id="nav-count" style="margin-left:auto"></span></button>
 <button class="nav-btn" data-page="ideas"><span class="ico">✧</span>研究切入点</button>
 <button class="nav-btn" data-page="roadmap"><span class="ico">↗</span>阅读路线</button>
-<div class="side-bottom">精选文献，不追求数量<br><strong>RLHF · Other Alignment · Unlearning</strong><br>收藏与笔记只保存在当前浏览器</div>
+<div class="side-bottom">精选文献，不追求数量<br><strong>RLHF · Unlearning · Text Detection</strong><br>收藏与笔记只保存在当前浏览器</div>
 </aside><main class="main"><div class="page">
-<div class="topline"><span><button class="sidebar-toggle" id="menu-toggle">☰ 菜单</button>&nbsp; STATISTICS × LLM ALIGNMENT</span><span class="time">更新 · 2026.10.21</span></div>
-<section class="hero"><div class="hero-copy"><div class="eyebrow">CURATED RESEARCH EXPLORER</div><h2>从 <em>RLHF</em> 到<br>LLM Alignment 与 Unlearning</h2><p>面向统计学研究者的精选阅读地图。用三个研究方向理解代表方法、证据边界与可能的统计问题。论文分析以公开发表页和摘要为起点；定理细节仍需阅读原文核对。</p><div class="hero-bar"><span>30 SELECTED PAPERS</span><span>THREE DIRECTIONS</span><span>EVIDENCE DEPTH MARKED</span></div></div><div class="hero-art"><div class="orbit"><b>∂</b></div></div></section>
-<div class="overview"><div class="metric"><span class="num" id="metric-all">30</span><div class="caption">精选论文</div><small>原库另有归档</small></div><div class="metric"><span class="num" id="metric-rlhf">15</span><div class="caption">RLHF 与偏好优化</div></div><div class="metric"><span class="num" id="metric-other">9</span><div class="caption">其他 Alignment</div></div><div class="metric"><span class="num" id="metric-unlearning">6</span><div class="caption">Machine Unlearning</div></div></div>
+<div class="topline"><span><button class="sidebar-toggle" id="menu-toggle">☰ 菜单</button>&nbsp; STATISTICS × LLM</span><span class="time">更新 · 2026.10.28</span></div>
+<section class="hero"><div class="hero-copy"><div class="eyebrow">CURATED RESEARCH EXPLORER</div><h2>统计学视角下的<br><em>LLM 研究探索</em></h2><p>从你选出的 11 位学者出发，探索 RLHF、LLM Unlearning，以及改写后水印与 AI 文本检测。每篇记录作者、发表状态、六问分析和证据边界。</p><div class="hero-bar"><span>40 SELECTED PAPERS</span><span>11 SCHOLARS · 3 DIRECTIONS</span><span>EVIDENCE DEPTH MARKED</span></div></div><div class="hero-art"><div class="orbit"><b>∂</b></div></div></section>
+<div class="overview"><div class="metric"><span class="num" id="metric-all">40</span><div class="caption">精选论文</div><small>11 位学者 · 旧记录可追溯</small></div><div class="metric"><span class="num" id="metric-rlhf">16</span><div class="caption">RLHF 与偏好优化</div></div><div class="metric"><span class="num" id="metric-other">12</span><div class="caption">LLM Unlearning</div></div><div class="metric"><span class="num" id="metric-unlearning">12</span><div class="caption">水印与 AI 文本检测</div></div></div>
 <section id="view-overview" class="view">
-<div class="section-top"><div><span class="kicker">01 / OVERVIEW</span><h3>三个研究方向</h3><p>RLHF 是使用人类反馈进行策略训练的特定路线；偏好优化还包括 DPO 等直接方法。</p></div></div>
+<div class="section-top"><div><span class="kicker">01 / OVERVIEW</span><h3>三个研究方向</h3><p>RLHF 为重点，也收录紧密相关的偏好优化与 RLVR；每篇注明研究对象和局限。</p></div></div>
 <div class="lead-grid" id="direction-cards"></div>
-<div class="panel notice"><h4>如何阅读这份精选库</h4><p>“Method / Theory / Theory + Method”表示主要贡献类型，不是论文质量等级。技术标签仅用于搜索。研究潜力是编辑提出的待验证问题，不代表作者已经证明或学界尚无人研究。会议年份和链接以各论文正式页面为准；arXiv 仅按预印本标识。</p></div>
+<div class="panel notice"><h4>如何阅读这份精选库</h4><p>“Method / Theory / Theory + Method”表示研究内容类型，不是质量等级；两篇综述的标签表示覆盖范围。技术标签仅用于搜索。研究潜力是编辑提出的待验证问题，不代表作者已经证明或学界尚无人研究。正式发表、作者报告接收、预印本分别标明。修回不等于接收；作者网页有冲突时明确提示。</p></div>
+<div class="panel notice"><h4>你关心的第三个方向：改写后还能检测吗？</h4><p>水印检测检验已知机制与密钥留下的信号；通用 AI 文本检测利用语言或表征差异。两者需要的信息不同。改写、插入、删除会稀释或破坏信号，“整篇检出”“定位存活片段”“估计水印比例”也对应不同统计问题。未检出不等于证明人类原创，检出也不是无条件来源证明。</p><div class="action-row" style="margin-top:12px"><button class="light-btn" data-open="s241113868">先读：Human Edits / Tr-GoF ↗</button><button class="light-btn" data-scholar="li">Xiang Li 的研究路线 →</button></div></div>
 </section>
+<section id="view-scholars" class="view hidden"><div class="section-top"><div><span class="kicker">SCHOLARS / SOURCE MAP</span><h3>从学者进入研究问题</h3><p>已核对截图中的 11 位学者身份。数字是本精选库的篇数，合著可同时计入多人，不代表其全部发表数量。</p></div></div><div class="lead-grid" id="scholars"></div></section>
 <section id="view-explorer" class="view hidden">
-<div class="section-top"><div><span class="kicker">02 / PAPER EXPLORER</span><h3>论文探索器</h3><p>关键词、方向、会议、年份和研究类型；每篇回答六个研究问题。</p></div><div class="action-row"><button class="light-btn" id="download-csv">↓ 导出 CSV</button><button class="light-btn" id="show-shelf">☆ 我的收藏与笔记</button></div></div>
-<div class="filter-card"><label class="search-wrap"><span class="glass">⌕</span><input id="search" placeholder="搜索标题、技术标签、统计问题…" autocomplete="off"><kbd>/</kbd></label><div class="filter-line">
-<select id="filter-direction"><option value="">全部方向</option></select><select id="filter-venue"><option value="">全部会议/来源</option></select><select id="filter-year"><option value="">全部年份</option></select><select id="filter-type"><option value="">全部研究类型</option><option>Method</option><option>Theory</option><option>Theory + Method</option></select><label class="check-pill"><input type="checkbox" id="filter-saved">仅看收藏</label><label class="check-pill"><input type="checkbox" id="filter-unread">仅看未读</label><button class="light-btn" id="clear-filters">清除</button></div></div>
-<div id="library-panel"><div class="result-bar"><div>当前显示 <strong id="result-num">30</strong> 篇</div><div>☆ 收藏　✓ 已读</div></div><div class="papers" id="papers"></div></div>
+<div class="section-top"><div><span class="kicker">02 / PAPER EXPLORER</span><h3>论文探索器</h3><p>按作者、问题或技术搜索；支持学者、方向、来源、年份和类型组合筛选。</p></div><div class="action-row"><button class="light-btn" id="download-csv">↓ 导出 CSV</button><button class="light-btn" id="show-shelf">☆ 我的收藏与笔记</button></div></div>
+<div class="filter-card"><label class="search-wrap"><span class="glass">⌕</span><input id="search" aria-label="关键词检索" placeholder="搜索作者、标题、技术、水印改写…" autocomplete="off"><kbd>/</kbd></label><div class="filter-line">
+<select id="filter-scholar" aria-label="筛选学者"><option value="">全部学者</option></select><select id="filter-direction" aria-label="筛选研究方向"><option value="">全部方向</option></select><select aria-label="筛选发表来源" id="filter-venue"><option value="">全部会议/来源</option></select><select aria-label="筛选年份" id="filter-year"><option value="">全部年份</option></select><select aria-label="筛选研究类型" id="filter-type"><option value="">全部研究类型</option><option>Method</option><option>Theory</option><option>Theory + Method</option></select><label class="check-pill"><input type="checkbox" id="filter-saved">仅看收藏</label><label class="check-pill"><input type="checkbox" id="filter-unread">仅看未读</label><button class="light-btn" id="clear-filters">清除</button></div></div>
+<div class="action-row" style="margin:0 0 14px"><button class="light-btn" data-query="Watermark">水印检测</button><button class="light-btn" data-query="AI Text Detection">通用文本检测</button><button class="light-btn" data-query="Paraphrase">改写攻击</button><span class="state" id="active-scholar"></span></div>
+<div id="library-panel"><div class="result-bar"><div>当前显示 <strong id="result-num">40</strong> 篇</div><div>☆ 收藏　✓ 已读</div></div><div class="papers" id="papers"></div></div>
 <div id="shelf-panel" class="hidden"><div class="section-top"><div><h3>我的收藏、已读与笔记</h3><p>当前浏览器本地保存；包括旧库中已归档论文的记录，不会因精选筛除而删除。</p></div><button class="light-btn" id="export-notes">↓ 导出全部笔记 JSON</button></div><div class="papers" id="saved-papers"></div><div class="panel" id="archived-notes"></div></div>
 </section>
 <section id="view-ideas" class="view hidden"><div class="section-top"><div><span class="kicker">03 / RESEARCH OPPORTUNITIES</span><h3>值得核查的统计切入点</h3><p>以下是初步研究假设；先核查最新相关工作、识别条件和计算成本。</p></div></div><div class="idea-grid" id="ideas"></div></section>
 <section id="view-roadmap" class="view hidden"><div class="section-top"><div><span class="kicker">04 / READING ROADMAP</span><h3>四阶段精选阅读路线</h3><p>只列入理解研究格局所需的代表论文。</p></div><button class="light-btn" id="export-route">↓ 导出阅读清单</button></div><div class="journey" id="weeks"></div></section>
-<div class="footnote">STATISTICS × LLM ALIGNMENT RESEARCH EXPLORER · EDITORIAL READING AID · 2026.10.21</div>
+<div class="footnote">STATISTICS × LLM RESEARCH EXPLORER · EDITORIAL READING AID · 2026.10.28</div>
 </div></main></div>
 <div class="compare-bar" id="comparebar"><span id="comparecount">0 篇已加入对比</span><button id="compare-open">比较论文</button><button class="clear" id="compare-clear">清空</button></div>
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="论文详情"><div class="dialog"><button class="close" id="close-dialog" aria-label="关闭">×</button><div id="modalbody"></div></div></div>
@@ -55,18 +60,1548 @@ const PAPERS = [
     "direction": "RLHF & Preference Alignment",
     "type": "Theory + Method",
     "tags": [
+      "RLHF",
       "Doubly Robust",
-      "DPO"
+      "Misspecification"
     ],
-    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0a226473989931ec6f6ced7343542f86-Abstract-Conference.html",
-    "problem": "双重稳健偏好优化能否缓解偏好模型与参考策略的错设？",
-    "idea": "构造利用两类 nuisance 模型信息的偏好优化目标。",
-    "contribution": "把双重稳健估计思想引入语言模型对齐。",
-    "evidence": "官网摘要陈述一致性条件；具体误差界与证明条件需阅读全文。",
-    "statistics": "半参数估计、正交化与模型错设。",
-    "potential": "值得精读；交叉拟合和非标量反馈扩展仍只是待核查假设。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+    "problem": "偏好模型或参考策略错设时，怎样可靠估计偏好并学习策略？",
+    "idea": "将直接预测与重要性加权组合为双重稳健偏好估计，再用于 DRPO。",
+    "contribution": "把半参数双重稳健思想用于偏好评价和优化，放宽两类模型同时正确的要求。",
+    "evidence": "作者给出一类模型正确时的一致性、效率及策略误差分析，并报告 LLM 实验；所有结论均依赖论文条件。",
+    "statistics": "半参数效率、nuisance 估计、模型错设、离策略评价。",
+    "potential": "优先精读。可核查交叉拟合、重叠不足及偏好漂移的影响；这些扩展尚未在本项目验证。",
+    "url": "https://arxiv.org/abs/2506.01183",
+    "authors": [
+      "Erhan Xu",
+      "Kai Ye",
+      "Hongyi Zhou",
+      "Luhan Zhu",
+      "Francesco Quinzan",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2506.01183",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0a226473989931ec6f6ced7343542f86-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
   },
+  {
+    "id": "s250403784",
+    "title": "Robust Reinforcement Learning from Human Feedback for Large Language Models Fine-Tuning",
+    "year": 2026,
+    "venue": "AoAS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Variance Reduction",
+      "Robustness"
+    ],
+    "problem": "Bradley–Terry 奖励模型错设如何影响对齐？",
+    "idea": "通过方差降低的偏好优化 VRPO 改进奖励与策略估计。",
+    "contribution": "将奖励错设与估计方差联系起来，并据此改进优化。",
+    "evidence": "摘要报告奖励/策略估计方差降低和 regret 界改进；实验优势只适用于文中模型、数据与评判方式。",
+    "statistics": "错设模型下估计、方差降低与策略风险。",
+    "potential": "与 DRPO 对照：分别写出目标、稳健含义和识别条件，不能把两篇的保证混为一谈。",
+    "url": "https://arxiv.org/abs/2504.03784",
+    "authors": [
+      "Kai Ye",
+      "Hongyi Zhou",
+      "Jin Zhu",
+      "Francesco Quinzan",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2504.03784",
+    "publication_status": "作者主页列入 accepted manuscripts；正式刊页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241002504",
+    "title": "Dual Active Learning for Reinforcement Learning from Human Feedback",
+    "year": 2026,
+    "venue": "Operations Research",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Active Learning",
+      "Experimental Design"
+    ],
+    "problem": "标注预算有限且教师能力不同，应该选哪些对话给谁标注？",
+    "idea": "用 D-optimal design 同时选择对话和教师，再做悲观离线策略学习。",
+    "contribution": "把数据选择和标注者选择组成双重主动学习。",
+    "evidence": "作者报告奖励估计的渐近广义方差性质及预算相关策略次优界；未逐条复核证明。",
+    "statistics": "最优设计、主动学习、异质标注、离线 RL。",
+    "potential": "很适合统计学切入。先核查教师可靠性可识别性，再考虑预算分配的稳健扩展。",
+    "url": "https://arxiv.org/abs/2410.02504",
+    "authors": [
+      "Pangpang Liu",
+      "Chengchun Shi",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "arxiv": "2410.02504",
+    "publication_status": "作者主页列为 2026 已接收/发表；正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260402507",
+    "title": "Reinforcement Learning from Human Feedback: A Statistical Perspective",
+    "year": 2026,
+    "venue": "Annual Review / 待核实",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Survey",
+      "Preference Learning"
+    ],
+    "problem": "如何从统计角度理解 RLHF 的建模、估计、优化与评估？",
+    "idea": "以 BTL、潜在效用、主动学习和不确定性量化串起 RLHF 流程。",
+    "contribution": "提供综述与教学示例；不是宣称提出一个新的统一最优算法。",
+    "evidence": "综述条目；理论与方法标签表示覆盖内容，不表示本篇同时证明新定理和提出新算法。",
+    "statistics": "偏好估计、实验设计、UQ、选择偏差。",
+    "potential": "作为入门地图优先阅读，再顺着原始论文核对假设；综述中的开放问题也需查最新工作。",
+    "url": "https://arxiv.org/abs/2604.02507",
+    "authors": [
+      "Pangpang Liu",
+      "Chengchun Shi",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "shi",
+      "sun"
+    ],
+    "arxiv": "2604.02507",
+    "publication_status": "Sun 主页称 Annual Review；Shi 主页仍列预印本，正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260301162",
+    "title": "Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "RLVR",
+      "GRPO",
+      "U-statistics"
+    ],
+    "problem": "GRPO 的组内采样如何决定梯度估计误差和策略效果？",
+    "idea": "把 GRPO policy gradient 表达为 U-statistic。",
+    "contribution": "为 MSE、有限样本误差、渐近分布及组大小选择提供统一分析视角。",
+    "evidence": "作者提出 oracle 等价与一类算法中的渐近最优性；其适用类与渐近条件未逐项审计，不能推广成所有 LLM 上最优。",
+    "statistics": "U-statistics、渐近理论、方差分解、采样预算。",
+    "potential": "优先精读理论假设；可核查相关 rollout、非平稳训练与固定计算预算下的结论。",
+    "url": "https://arxiv.org/abs/2603.01162",
+    "authors": [
+      "Hongyi Zhou",
+      "Kai Ye",
+      "Erhan Xu",
+      "Jin Zhu",
+      "Ying Yang",
+      "Shijin Gong",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2603.01162",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2603.01162",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260428005",
+    "title": "Kernelized Advantage Estimation: From Nonparametric Statistics to LLM Reasoning",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLVR",
+      "Kernel Smoothing",
+      "Variance Reduction"
+    ],
+    "problem": "每个提示只能生成少量推理轨迹时，怎样降低梯度方差？",
+    "idea": "用核平滑估计 value function，再构造 advantage 和策略梯度。",
+    "contribution": "用经典非参数估计在有限 rollout 预算下共享信息。",
+    "evidence": "摘要称有 value/gradient 估计与策略优化的理论和数值结果；未复核带宽、维数及正则条件。",
+    "statistics": "非参数回归、偏差—方差权衡、核平滑。",
+    "potential": "适合统计方法研究，但高维表征与训练分布漂移可能改变有效性，需先复核。",
+    "url": "https://arxiv.org/abs/2604.28005",
+    "authors": [
+      "Shijin Gong",
+      "Kai Ye",
+      "Jin Zhu",
+      "Xinyu Zhang",
+      "Hongyi Zhou",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2604.28005",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2604.28005",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260527293",
+    "title": "BASIS: Batchwise Advantage Estimation from Single-Rollout Information Sharing for LLM Reasoning",
+    "year": 2026,
+    "venue": "EMNLP Findings",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Method",
+    "tags": [
+      "RLVR",
+      "Advantage Estimation",
+      "Information Sharing"
+    ],
+    "problem": "如何兼顾单 rollout 的计算成本和多 rollout 的估计精度？",
+    "idea": "BASIS 跨同一批次的提示共享奖励信息，估计 value baseline。",
+    "contribution": "提出不训练 critic、每提示单 rollout 的后训练算法。",
+    "evidence": "作者在其基准上报告 value 估计 MSE 和训练效率改善；不等于任意任务都有同样收益。",
+    "statistics": "跨样本信息共享、方差降低、异质性。",
+    "potential": "与 KAE/GRPO 配套读，重点检查跨提示共享需要什么同质性及有效样本假设。",
+    "url": "https://arxiv.org/abs/2605.27293",
+    "authors": [
+      "Shijin Gong",
+      "Erhan Xu",
+      "Kai Ye",
+      "Giulia Livieri",
+      "Francesco Quinzan",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2605.27293",
+    "publication_status": "作者主页称已接收；正式 proceedings 页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "p38",
+    "title": "Low-Rank Contextual Reinforcement Learning from Heterogeneous Human Feedback",
+    "year": 2026,
+    "venue": "JASA",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Heterogeneous Feedback",
+      "Low Rank"
+    ],
+    "problem": "异质用户的偏好如何建模，又如何应对反馈分布偏移？",
+    "idea": "低秩建模用户上下文与回答特征的交互，配合 reduced-subspace 悲观策略。",
+    "contribution": "LoCo-RLHF 将个性化上下文结构与低秩统计估计结合。",
+    "evidence": "作者给出特定设定的策略次优界和个性化实验；不将它解释为一般用户偏好的完整表示。",
+    "statistics": "低秩估计、上下文偏好、分布偏移。",
+    "potential": "优先精读。可核查秩选择与子空间估计的不确定性如何传递到策略评价。",
+    "url": "https://arxiv.org/abs/2412.19436",
+    "authors": [
+      "Seong Jin Lee",
+      "Will Wei Sun",
+      "Yufeng Liu"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2412.19436",
+    "publication_status": "已发表：期刊记录核查",
+    "publication_source": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2674413",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251203208",
+    "title": "Uncertainty Quantification for Large Language Model Reward Learning under Heterogeneous Human Feedback",
+    "year": 2025,
+    "venue": "arXiv",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Uncertainty Quantification",
+      "Heterogeneity"
+    ],
+    "problem": "存在标注者差异时，奖励估计的置信区间如何构造？",
+    "idea": "联合建模 latent reward 与 human rationality，用交替梯度求解，再推导统计推断。",
+    "contribution": "把异质偏好下的奖励估计与 UQ、奖励比较和 BoN 决策连接起来。",
+    "evidence": "作者给出估计器收敛及渐近分布，用于区间和比较；优化收敛与统计分布是两种不同结果。",
+    "statistics": "双凸估计、渐近正态性、置信区间。",
+    "potential": "统计方向高度相关。先核查尺度识别与模型条件，再考虑错设下覆盖率。",
+    "url": "https://arxiv.org/abs/2512.03208",
+    "authors": [
+      "Pangpang Liu",
+      "Junwei Lu",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2512.03208",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2512.03208",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260322563",
+    "title": "Privacy-Preserving Reinforcement Learning from Human Feedback via Decoupled Reward Modeling",
+    "year": 2026,
+    "venue": "SLADS / 作者报告",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Differential Privacy",
+      "Minimax"
+    ],
+    "problem": "偏好数据含敏感信息时，如何设计隐私保护 RLHF 流程？",
+    "idea": "只对 reward learning 施加差分隐私，再由私有奖励模型导出策略。",
+    "contribution": "把隐私预算配置与奖励/策略阶段的结构区分开来。",
+    "evidence": "作者分析附加隐私误差及 minimax 下界，并在特定样本量和隐私区间比较上界；不声称全参数范围最优。",
+    "statistics": "差分隐私、minimax 下界、统计误差分解。",
+    "potential": "可研究异质教师与私有奖励推断的结合；发布策略前需严格核查后处理与数据访问假设。",
+    "url": "https://arxiv.org/abs/2603.22563",
+    "authors": [
+      "Young Hyun Cho",
+      "Will Wei Sun"
+    ],
+    "scholars": [
+      "sun"
+    ],
+    "arxiv": "2603.22563",
+    "publication_status": "作者主页列为 SLADS 2026；正式刊页未核实",
+    "publication_source": "https://web.ics.purdue.edu/~sun244/research.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240516455",
+    "title": "On the Algorithmic Bias of Aligning Large Language Models with RLHF: Preference Collapse and Matching Regularization",
+    "year": 2025,
+    "venue": "JASA",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Preference Collapse",
+      "Regularization"
+    ],
+    "problem": "KL 正则化是否会使模型输出偏离要表达的偏好分布？",
+    "idea": "分析 preference collapse，并设计 preference matching 正则化及条件版本。",
+    "contribution": "区分奖励最大化与偏好分布匹配，提出明确的匹配目标。",
+    "evidence": "作者在 BTL/Plackett–Luce 等设定下论证匹配性质并报告实验；“应匹配什么偏好”同时含规范性选择。",
+    "statistics": "偏好分布、正则化偏差、少数群体偏好。",
+    "potential": "优先阅读。将目标定义与统计识别分开，核查不同对齐指标是否改变结论。",
+    "url": "https://arxiv.org/abs/2405.16455",
+    "authors": [
+      "Jiancong Xiao",
+      "Ziniu Li",
+      "Xingyu Xie",
+      "Emily Getzen",
+      "Cong Fang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2405.16455",
+    "publication_status": "已接收：arXiv 注释及作者主页；期刊链接保留",
+    "publication_source": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2025.2555067",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250310990",
+    "title": "Statistical Impossibility and Possibility of Aligning LLMs with Human Preferences: From Condorcet Paradox to Nash Equilibrium",
+    "year": 2026,
+    "venue": "Annals of Statistics",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "RLHF",
+      "Social Choice",
+      "Nash Equilibrium"
+    ],
+    "problem": "存在循环偏好时，标量奖励能否完整表达群体偏好？",
+    "idea": "从 Condorcet cycle 分析奖励可表示性，再考察 Nash 策略。",
+    "contribution": "给出对齐可表示性与多样偏好保留的限制和可能性。",
+    "evidence": "作者在明确的概率偏好模型中给出不可能性/可能性结果；不能解释为所有 RLHF 均不可用。",
+    "statistics": "概率偏好、可识别性、社会选择、博弈。",
+    "potential": "和算法偏差论文配套读，先明确“对齐”是哪一个数学目标。",
+    "url": "https://arxiv.org/abs/2503.10990",
+    "authors": [
+      "Kaizhao Liu",
+      "Qi Long",
+      "Zhekun Shi",
+      "Weijie J. Su",
+      "Jiancong Xiao"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2503.10990",
+    "publication_status": "已接收：arXiv 注释及作者主页；正式刊页未核实",
+    "publication_source": "https://jiancongxiao.github.io/publications/",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250501997",
+    "title": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Calibration",
+      "Uncertainty"
+    ],
+    "problem": "偏好对齐后为什么会出现过度自信，如何校准？",
+    "idea": "区分可校准与不可校准区间，并使用校准感知微调及 EM 型 ECE 正则。",
+    "contribution": "把对齐、任务性能和校准误差一起分析。",
+    "evidence": "作者报告机制分析和实验；模型可能性判断依赖所定义的 ECE 条件，未复核全部理论细节。",
+    "statistics": "校准、ECE、分布偏移、统计决策。",
+    "potential": "适合研究校准评估的抽样误差与跨域稳定性，不能用单一 ECE 替代全部可靠性。",
+    "url": "https://arxiv.org/abs/2505.01997",
+    "authors": [
+      "Jiancong Xiao",
+      "Bojian Hou",
+      "Zhanliang Wang",
+      "Ruochen Jin",
+      "Qi Long",
+      "Weijie J. Su",
+      "Li Shen"
+    ],
+    "scholars": [
+      "xiao"
+    ],
+    "arxiv": "2505.01997",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/xiao25b.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s231211456",
+    "title": "Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-Constraint",
+    "year": 2024,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "Online DPO",
+      "Exploration"
+    ],
+    "problem": "离线、在线和混合数据下，如何高效学习 KL 约束 RLHF 策略？",
+    "idea": "用 reverse-KL contextual bandit 分析策略改进，导出迭代 DPO 和 rejection sampling。",
+    "contribution": "把探索与数据覆盖显式纳入 RLHF 理论及算法。",
+    "evidence": "正式摘要陈述有限样本保证与 LLM 实验；理论设定与完整神经网络训练仍有距离。",
+    "statistics": "上下文 bandit、覆盖、样本复杂度。",
+    "potential": "Tong Zhang 路线的入门代表作；先画清在线反馈和离线样本的差异。",
+    "url": "https://arxiv.org/abs/2312.11456",
+    "authors": [
+      "Wei Xiong",
+      "Hanze Dong",
+      "Chenlu Ye",
+      "Ziqi Wang",
+      "Han Zhong",
+      "Heng Ji",
+      "Nan Jiang",
+      "Tong Zhang"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2312.11456",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v235/xiong24a.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240207314",
+    "title": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+    "year": 2024,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "RLHF",
+      "General Preferences",
+      "Minimax"
+    ],
+    "problem": "不假设 Bradley–Terry 奖励结构，如何从一般比较偏好学习？",
+    "idea": "将 RLHF 写成带 reverse-KL 正则的双策略 minimax game。",
+    "contribution": "绕开潜在标量奖励存在的假设，分析离线及在线可学习性。",
+    "evidence": "作者给出样本效率结果及经验验证；偏好 oracle 可访问性与函数类条件需精读。",
+    "statistics": "非传递偏好、博弈估计、统计学习。",
+    "potential": "与 Xiao 的循环偏好和 DRPO 对照，可区分目标改变和估计稳健性的不同作用。",
+    "url": "https://arxiv.org/abs/2402.07314",
+    "authors": [
+      "Chenlu Ye",
+      "Wei Xiong",
+      "Yuheng Zhang",
+      "Hanze Dong",
+      "Nan Jiang",
+      "Tong Zhang"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2402.07314",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://papers.nips.cc/paper_files/paper/2024/hash/94d13c2401fe119e57ba325b6fe526e0-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250502387",
+    "title": "RM-R1: Reward Modeling as Reasoning",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Method",
+    "tags": [
+      "Reward Modeling",
+      "RLVR",
+      "Reasoning"
+    ],
+    "problem": "奖励模型先推理再评分，能否提供更可靠反馈？",
+    "idea": "RM-R1 用 chain-of-rubrics 推理，并通过蒸馏和可验证奖励训练。",
+    "contribution": "将奖励建模改写为可解释的生成式推理任务。",
+    "evidence": "正式摘要以奖励基准上的经验改善为主；可读推理链不构成奖励无偏或校准的证明。",
+    "statistics": "评判器误差、测量效度、校准。",
+    "potential": "适合研究 reasoning reward 的可靠性，但需独立评价而非让同一个模型自证正确。",
+    "url": "https://arxiv.org/abs/2505.02387",
+    "authors": [
+      "Xiusi Chen",
+      "Gaotang Li",
+      "Ziqi Wang",
+      "Bowen Jin",
+      "Cheng Qian",
+      "Yu Wang",
+      "Hongru Wang",
+      "Yu Zhang",
+      "Denghui Zhang",
+      "Tong Zhang",
+      "Hanghang Tong",
+      "Heng Ji"
+    ],
+    "scholars": [
+      "zhang"
+    ],
+    "arxiv": "2505.02387",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8e3b8de251afd887fb4589c1e3a3c793-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240208787",
+    "title": "Rethinking Machine Unlearning for Large Language Models",
+    "year": 2025,
+    "venue": "Nature Machine Intelligence",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "Survey",
+      "Evaluation"
+    ],
+    "problem": "LLM 遗忘到底要求移除什么影响，如何评价？",
+    "idea": "梳理遗忘范围、数据—模型关系、方法、指标和应用。",
+    "contribution": "建立概念地图并提示容易被忽视的多面评估问题；属于综述。",
+    "evidence": "综述覆盖理论与方法，不提供所有 LLM 的通用删除证书。",
+    "statistics": "反事实重训练基准、影响函数、可检验性。",
+    "potential": "Unlearning 首读；先区分训练影响删除、知识抑制与安全拒答，再比较算法。",
+    "url": "https://arxiv.org/abs/2402.08787",
+    "authors": [
+      "Sijia Liu",
+      "Yuanshun Yao",
+      "Jinghan Jia",
+      "Stephen Casper",
+      "Nathalie Baracaldo",
+      "Peter Hase",
+      "Yuguang Yao",
+      "Chris Yuhao Liu",
+      "Xiaojun Xu",
+      "Hang Li",
+      "Kush R. Varshney",
+      "Mohit Bansal",
+      "Sanmi Koyejo",
+      "Yang Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2402.08787",
+    "publication_status": "已发表：期刊记录核查",
+    "publication_source": "https://www.nature.com/articles/s42256-025-00985-0",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241007163",
+    "title": "Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "SimNPO",
+      "Reference Bias"
+    ],
+    "problem": "NPO 的参考模型会如何影响遗忘样本的优化权重？",
+    "idea": "移除参考模型依赖，设计 SimNPO，并分析简化模型。",
+    "contribution": "揭示 reference bias 和难度不均带来的权重问题。",
+    "evidence": "作者给出 Markov-chain mixture 分析及 TOFU/MUSE 实验；简化模型分析不等价于一般 LLM 删除保证。",
+    "statistics": "参考偏差、加权估计、模型简化。",
+    "potential": "与 SatImp/G-effect 对照读，核查收益来自目标、权重、长度还是调参。",
+    "url": "https://arxiv.org/abs/2410.07163",
+    "authors": [
+      "Chongyu Fan",
+      "Jiancheng Liu",
+      "Licong Lin",
+      "Jinghan Jia",
+      "Ruiqi Zhang",
+      "Song Mei",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2410.07163",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/02443e4e008231e0af0855f3cc70ed17-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250205374",
+    "title": "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "Relearning",
+      "Robust Optimization"
+    ],
+    "problem": "少量重新训练为什么能恢复被遗忘内容，如何减轻？",
+    "idea": "用稳健优化和 SAM 等平滑策略提高遗忘对重新学习的耐受。",
+    "contribution": "把 relearning attack 与损失景观平滑联系起来。",
+    "evidence": "作者报告 WMDP/MUSE 上抵抗若干攻击的改进；不构成对所有未知恢复攻击的认证。",
+    "statistics": "稳健优化、局部敏感性、攻击分布。",
+    "potential": "优先阅读，并区分攻击预算、保留能力与遗忘强度之间的权衡。",
+    "url": "https://arxiv.org/abs/2502.05374",
+    "authors": [
+      "Chongyu Fan",
+      "Jinghan Jia",
+      "Yihua Zhang",
+      "Anil Ramakrishna",
+      "Mingyi Hong",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2502.05374",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/fan25e.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251009007",
+    "title": "LLM Unlearning on Noisy Forget Sets: A Study of Incomplete, Rewritten, and Watermarked Data",
+    "year": 2025,
+    "venue": "AISec Workshop",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Noisy Forget Sets",
+      "Watermark"
+    ],
+    "problem": "遗忘集不完整、被改写或带水印时，现有方法是否有效？",
+    "idea": "在扰动后的 forget sets 上系统评估 RMU/NPO，并用 saliency 分析语义线索。",
+    "contribution": "把真实可获得的遗忘数据质量纳入评估。",
+    "evidence": "作者观察到保留核心语义时的若干稳健现象；这不是水印来源检测论文，也不是任意噪声下的定理。",
+    "statistics": "测量误差、语义保真、评估设计。",
+    "potential": "与第三方向形成联系，但应区分“用含水印数据遗忘”和“检测水印”两个任务。",
+    "url": "https://arxiv.org/abs/2510.09007",
+    "authors": [
+      "Changsheng Wang",
+      "Yihua Zhang",
+      "Dennis Wei",
+      "Jinghan Jia",
+      "Pin-Yu Chen",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2510.09007",
+    "publication_status": "已接收：arXiv 注释与作者主页；不是 CCS 主会论文",
+    "publication_source": "https://lsjxjtu.github.io/publications.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240609179",
+    "title": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Evaluation",
+      "Forget–Retain"
+    ],
+    "problem": "不同方法在遗忘与保留上取舍不同，怎样公平比较？",
+    "idea": "检查指标对攻击的敏感性，并校准非目标性能后比较遗忘。",
+    "contribution": "强调指标可靠性及比较基准的可比性。",
+    "evidence": "正式摘要讨论攻击下的评估失真与校准方案；校准后好分数仍不是知识完全删除的证明。",
+    "statistics": "测量效度、Pareto 比较、校准。",
+    "potential": "优先精读评估协议，核查校准是否隐藏其他能力损失。",
+    "url": "https://arxiv.org/abs/2406.09179",
+    "authors": [
+      "Qizhou Wang",
+      "Bo Han",
+      "Puning Yang",
+      "Jianing Zhu",
+      "Tongliang Liu",
+      "Masashi Sugiyama"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2406.09179",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3a91841d2bcc0b13a3d0d5d60c9f0581-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "n13",
+    "title": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "GRU",
+      "Gradient Projection"
+    ],
+    "problem": "遗忘更新如何尽量减少对无关能力的副作用？",
+    "idea": "GRU 调整梯度更新方向以缓解 forget–retain 冲突。",
+    "contribution": "将保留损害控制纳入遗忘更新规则。",
+    "evidence": "主要是算法及基准实验；未核查一般分布下统计或认证删除保证。",
+    "statistics": "多目标优化、梯度干扰、保留风险。",
+    "potential": "适合作为方法基线；研究性能时应对齐保留集、调参预算与攻击强度。",
+    "url": "https://arxiv.org/abs/2503.09117",
+    "authors": [
+      "Yue Wang",
+      "Qizhou Wang",
+      "Feng Liu",
+      "Wei Huang",
+      "Yali Du",
+      "Xiaojiang Du",
+      "Bo Han"
+    ],
+    "scholars": [
+      "wang"
+    ],
+    "arxiv": "2503.09117",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/wang25de.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250511953",
+    "title": "Exploring Criteria of Loss Reweighting to Enhance LLM Unlearning",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Reweighting",
+      "SatImp"
+    ],
+    "problem": "遗忘损失的样本权重到底在发挥什么作用？",
+    "idea": "区分 saturation 与 importance，并组合成 SatImp。",
+    "contribution": "通过可分解实验研究权重的目标、平滑度和粒度。",
+    "evidence": "论文主要给出经验规律；未把所测基准上较好的权重当成普遍最优规则。",
+    "statistics": "加权风险、样本难度、影响性。",
+    "potential": "适合从统计重加权切入，先区分目标风险改变与估计方差改变。",
+    "url": "https://arxiv.org/abs/2505.11953",
+    "authors": [
+      "Puning Yang",
+      "Qizhou Wang",
+      "Zhuo Huang",
+      "Tongliang Liu",
+      "Chengqi Zhang",
+      "Bo Han"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2505.11953",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v267/yang25ak.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260516776",
+    "title": "Distinguishable Deletion: Unifying Knowledge Erasure and Refusal for Large Language Model Unlearning",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "Energy",
+      "Refusal"
+    ],
+    "problem": "如何结合知识移除与合理拒答，减少只抑制固定词串的问题？",
+    "idea": "D² 在 latent representation 限制响应分布，以 energy 边界实现 EUA 训练与推理拒答。",
+    "contribution": "把知识分离与拒答连接为可操作框架。",
+    "evidence": "作者提供数学分析和基准实验；不应把 energy 指标等同于完整训练影响被删除。",
+    "statistics": "表示分布、判别边界、评价指标效度。",
+    "potential": "值得读新范式，重点追问潜在知识与行为指标之间的对应是否可识别。",
+    "url": "https://arxiv.org/abs/2605.16776",
+    "authors": [
+      "Puning Yang",
+      "Junchi Yu",
+      "Qizhou Wang",
+      "Philip Torr",
+      "Bo Han",
+      "Xiuying Chen"
+    ],
+    "scholars": [
+      "wang",
+      "yang"
+    ],
+    "arxiv": "2605.16776",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.mlr.press/v306/yang26dc.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260122028",
+    "title": "Contrastive Representation Shaping for LLM Unlearning",
+    "year": 2026,
+    "venue": "NeurIPS",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Representation",
+      "Contrastive Learning"
+    ],
+    "problem": "输出不再出现目标内容时，表征中的遗忘与保留是否仍然纠缠？",
+    "idea": "CLReg 用对比正则分离 forget 与 retain features。",
+    "contribution": "将表征纠缠作为遗忘算法的可测诊断和改进目标。",
+    "evidence": "作者给出一步 entanglement proxy 分析及多模型实验；一步代理量下降不是全局知识删除定理。",
+    "statistics": "表示识别、代理测量、隐私风险。",
+    "potential": "Haoran Tang 的 LLM 代表作，建议与输出评估方法一起读。",
+    "url": "https://arxiv.org/abs/2601.22028",
+    "authors": [
+      "Haoran Tang",
+      "Rajiv Khanna"
+    ],
+    "scholars": [
+      "tang"
+    ],
+    "arxiv": "2601.22028",
+    "publication_status": "已接收：arXiv 注释和作者主页；正式 proceedings 未核实",
+    "publication_source": "https://haorantang.github.io/",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250613715",
+    "title": "Sharpness-Aware Machine Unlearning",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "Machine Unlearning",
+      "SAM",
+      "Generalization"
+    ],
+    "problem": "SAM 在遗忘与保留信号相互干扰时会如何改变泛化？",
+    "idea": "分析不同信号强度下 SAM 的作用，并提出 Sharp MinMax。",
+    "contribution": "把遗忘集和保留集的优化几何分开讨论。",
+    "evidence": "含理论及实验；是一般 machine unlearning 方法，不能自动外推到大语言模型或认证删除。",
+    "statistics": "信号强度、泛化、成员推断、损失几何。",
+    "potential": "作为理论补充，与 LLM 论文对照检查迁移条件；不将传统设定写成已验证的 LLM 结论。",
+    "url": "https://arxiv.org/abs/2506.13715",
+    "authors": [
+      "Haoran Tang",
+      "Rajiv Khanna"
+    ],
+    "scholars": [
+      "tang"
+    ],
+    "arxiv": "2506.13715",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/815d50638e46b7f3bdaaae2158c68d54-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250219301",
+    "title": "Rethinking LLM Unlearning Objectives: A Gradient Perspective and Go Beyond",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "LLM Unlearning",
+      "G-effect",
+      "Gradient Analysis"
+    ],
+    "problem": "多个遗忘目标为何表现不同，怎样统一检查其局部影响？",
+    "idea": "用 G-effect 描述目标在样本、层和训练步骤上的梯度影响。",
+    "contribution": "提供分析和诊断遗忘目标的工具。",
+    "evidence": "局部梯度分析配合实验；局部变化不自动推出多步训练后的遗忘质量。",
+    "statistics": "影响分析、局部近似、多目标风险。",
+    "potential": "先验证局部诊断是否预测训练结果，再考虑用其选择权重或正则。",
+    "url": "https://arxiv.org/abs/2502.19301",
+    "authors": [
+      "Qizhou Wang",
+      "Jin Peng Zhou",
+      "Zhanke Zhou",
+      "Saebyeol Shin",
+      "Bo Han",
+      "Kilian Q. Weinberger"
+    ],
+    "scholars": [
+      "wang"
+    ],
+    "arxiv": "2502.19301",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/9ad307ab459fb93163248a0a56959307-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251000761",
+    "title": "Downgrade to Upgrade: Optimizer Simplification Enhances Robustness in LLM Unlearning",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Optimizer",
+      "Robustness"
+    ],
+    "problem": "优化器本身如何影响遗忘被量化或微调破坏的程度？",
+    "idea": "比较不同阶信息的优化器，并结合一阶与零阶更新。",
+    "contribution": "把优化器从目标函数之外单独作为鲁棒性的研究变量。",
+    "evidence": "作者报告若干基准上简化优化器改善耐受性，并讨论平滑机制；不是任何噪声优化器都会更好。",
+    "statistics": "随机平滑、优化噪声、稳健性评估。",
+    "potential": "适合受控消融，需公平匹配计算、学习率搜索与遗忘强度。",
+    "url": "https://arxiv.org/abs/2510.00761",
+    "authors": [
+      "Yicheng Lang",
+      "Yihua Zhang",
+      "Chongyu Fan",
+      "Changsheng Wang",
+      "Jinghan Jia",
+      "Sijia Liu"
+    ],
+    "scholars": [
+      "liu"
+    ],
+    "arxiv": "2510.00761",
+    "publication_status": "作者主页列为 ICLR；正式论文 PDF 核查",
+    "publication_source": "https://openreview.net/pdf/a78c8e7458c059eb2cd9237d4af803b102afba7b.pdf",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251001268",
+    "title": "AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Logits",
+      "Statistical Testing"
+    ],
+    "problem": "固定 log-probability 检测统计量是否浪费可用信息？",
+    "idea": "AdaDetectGPT 从数据自适应学习 witness function，增强 logits-based detector。",
+    "contribution": "把检测规则学习与错误率分析结合起来。",
+    "evidence": "作者对 TPR/FPR 等给出统计保证并报告实验；保证受采样、分布及训练条件限制。",
+    "statistics": "两样本判别、假设检验、阈值校准。",
+    "potential": "适合精读统计保证；部署前单独检验中文、短文本和新模型上的误报。",
+    "url": "https://arxiv.org/abs/2510.01268",
+    "authors": [
+      "Hongyi Zhou",
+      "Jin Zhu",
+      "Pingfan Su",
+      "Kai Ye",
+      "Ying Yang",
+      "Shakeel A O B Gavioli-Akilagun",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2510.01268",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/808bc5e3d076c1125a87f81b42d5e52d-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260503723",
+    "title": "Segmenting Human-LLM Co-authored Text via Change Point Detection",
+    "year": 2026,
+    "venue": "STAI-X",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Change Points",
+      "Mixed Text"
+    ],
+    "problem": "混合人类与 AI 写作中，如何定位连续来源片段？",
+    "idea": "将局部检测分数当作序列，使用加权及广义变点方法处理异质波动。",
+    "contribution": "从整篇二分类走向片段定位。",
+    "evidence": "作者在其分数序列模型下建立 minimax 性质并报告实验；不是对任意自然文本的无条件定位保证。",
+    "statistics": "变点检测、异方差、定位误差。",
+    "potential": "与水印定位配套读：前者借助通用分数，后者需要水印 pivot 和密钥信息。",
+    "url": "https://arxiv.org/abs/2605.03723",
+    "authors": [
+      "Mengchu Li",
+      "Jin Zhu",
+      "Jinglai Li",
+      "Chengchun Shi"
+    ],
+    "scholars": [
+      "shi"
+    ],
+    "arxiv": "2605.03723",
+    "publication_status": "作者主页列为 STAI-X；正式会议页未核实",
+    "publication_source": "https://callmespring.github.io/publication",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s240401245",
+    "title": "A Statistical Framework of Watermarks for Large Language Models: Pivot, Detection Efficiency and Optimal Rules",
+    "year": 2025,
+    "venue": "Annals of Statistics",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Hypothesis Testing",
+      "Minimax"
+    ],
+    "problem": "如何比较水印检测规则的统计效率并控制误报？",
+    "idea": "基于文本与密钥构造 pivot，分析漏报率并求解 minimax 检测。",
+    "contribution": "给水印机制与检测规则提供统计比较框架。",
+    "evidence": "正式记录含最优规则与渐近效率分析；成立于相应 watermark、pivot 和概率模型下。",
+    "statistics": "枢轴量、I/II 类错误、大偏差、minimax。",
+    "potential": "水印方向首读。先写出 H0/H1 和密钥可用性，再阅读编辑鲁棒性。",
+    "url": "https://arxiv.org/abs/2404.01245",
+    "authors": [
+      "Xiang Li",
+      "Feng Ruan",
+      "Huiyuan Wang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2404.01245",
+    "publication_status": "已发表：arXiv journal reference 与期刊 DOI 核查",
+    "publication_source": "https://doi.org/10.1214/24-AOS2468",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241113868",
+    "title": "Robust Detection of Watermarks for Large Language Models Under Human Edits",
+    "year": 2026,
+    "venue": "JRSS B",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Human Edits",
+      "Tr-GoF"
+    ],
+    "problem": "人类删改稀释水印后，怎样提高检测能力？",
+    "idea": "用混合模型描述编辑后的 pivot，采用 truncated goodness-of-fit（Tr-GoF）检验。",
+    "contribution": "在特定 Gumbel-max 水印及编辑渐近区间，建立自适应稳健检测分析。",
+    "evidence": "作者给出指定渐近区间的最优性与效率结果，并做合成/LLM 实验；不保证任意对抗改写后可检测。",
+    "statistics": "稀疏混合检测、自适应检验、检测边界。",
+    "potential": "与你的问题最直接相关。先核查编辑如何影响 token—key 对齐和信号存活。",
+    "url": "https://arxiv.org/abs/2411.13868",
+    "authors": [
+      "Xiang Li",
+      "Feng Ruan",
+      "Huiyuan Wang",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2411.13868",
+    "publication_status": "期刊记录：2025 在线发表；2026 卷 88(2), 491 起",
+    "publication_source": "https://academic.oup.com/jrsssb/article-abstract/88/2/491/8261309",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250622343",
+    "title": "Optimal Estimation of Watermark Proportions in Hybrid AI-Human Texts",
+    "year": 2025,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Mixture Proportion",
+      "Identifiability"
+    ],
+    "problem": "混合文本中仍带水印信号的比例能否估计？",
+    "idea": "把 pivot 分布写成混合模型，区分不可识别机制与连续 pivot 可估计机制。",
+    "contribution": "建立比例识别条件、估计器及 minimax 界。",
+    "evidence": "作者证明某些水印机制下不可识别，并在特定连续 pivot 类给出最优速率；比例不自动等于全部 AI 写作占比。",
+    "statistics": "混合比例估计、可识别性、下界。",
+    "potential": "优先阅读。可核查依赖和失配编辑下区间估计，但目前仅是研究提议。",
+    "url": "https://arxiv.org/abs/2506.22343",
+    "authors": [
+      "Xiang Li",
+      "Garrett Wen",
+      "Weiqing He",
+      "Jiayuan Wu",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2506.22343",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2506.22343",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251003944",
+    "title": "On the Empirical Power of Goodness-of-Fit Tests in Watermark Detection",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "Watermark",
+      "Goodness-of-Fit",
+      "Post-editing"
+    ],
+    "problem": "经典 GoF 检验在不同水印及编辑条件下实际有多大检验力？",
+    "idea": "系统比较多个 GoF 检验、水印、温度和后编辑设置。",
+    "contribution": "为经典统计检验提供有针对性的水印实证比较。",
+    "evidence": "主要是经验结果；观测到的检验力优势不是所有分布上的最优性证明。",
+    "statistics": "拟合优度、检验力、重复 token 与依赖。",
+    "potential": "适合复现实证基线，尤其关注低误报区间和文本长度，而非只看 AUROC。",
+    "url": "https://arxiv.org/abs/2510.03944",
+    "authors": [
+      "Weiqing He",
+      "Xiang Li",
+      "Tianqi Shang",
+      "Li Shen",
+      "Weijie Su",
+      "Qi Long"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2510.03944",
+    "publication_status": "已发表：正式会议论文核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1b19bf73c2f341a350f9bd05c204d97b-Paper-Conference.pdf",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260814906",
+    "title": "Optimal Watermark Localization in Mixed-Source Large Language Model Texts",
+    "year": 2026,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "Watermark",
+      "Localization",
+      "Multiple Testing"
+    ],
+    "problem": "编辑后的混合文本中，哪些位置仍保留水印依赖？",
+    "idea": "将 token 级定位写成多重检验，分析存活信号和自适应阈值。",
+    "contribution": "区分整篇检测、发现部分位置与一致分类的统计难度。",
+    "evidence": "作者在坐标级 pivot 规则和特定渐近模型中给出边界；其不可分类结果也限定于该规则类。",
+    "statistics": "稀疏多重检验、发现边界、定位。",
+    "potential": "水印进阶首选。关注定位目标是存活信号，而非直接证明每个词由 AI 创作。",
+    "url": "https://arxiv.org/abs/2608.14906",
+    "authors": [
+      "Jose H. Blanchet",
+      "T. Tony Cai",
+      "Xiang Li",
+      "Hao Liu",
+      "Qi Long",
+      "Weijie J. Su"
+    ],
+    "scholars": [
+      "li"
+    ],
+    "arxiv": "2608.14906",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2608.14906",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s231005130",
+    "title": "Fast-DetectGPT: Efficient Zero-Shot Detection of Machine-Generated Text via Conditional Probability Curvature",
+    "year": 2024,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Zero-shot",
+      "Curvature"
+    ],
+    "problem": "怎样降低零样本文本检测的计算成本？",
+    "idea": "Fast-DetectGPT 用 conditional probability curvature，以采样替代昂贵文本扰动。",
+    "contribution": "提供高效的概率统计检测基线。",
+    "evidence": "作者在所测来源模型和数据上报告检测与速度改进；不能推断任意模型、语言和改写都可识别。",
+    "statistics": "条件概率统计量、近似、跨分布检验。",
+    "potential": "作为无水印检测入门。查清 scoring/sampling 模型与被检测模型是否相同。",
+    "url": "https://arxiv.org/abs/2310.05130",
+    "authors": [
+      "Guangsheng Bao",
+      "Yanbin Zhao",
+      "Zhiyang Teng",
+      "Linyi Yang",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2310.05130",
+    "publication_status": "已发表：正式会议论文与 arXiv camera version",
+    "publication_source": "https://openreview.net/pdf?id=Bpcgcr8E8Z",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s241211506",
+    "title": "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Black-box",
+      "Distribution Estimation"
+    ],
+    "problem": "闭源 API 只暴露部分概率，如何使用依赖完整分布的检测器？",
+    "idea": "Glimpse 从部分观测估计概率分布，接到 Fast-DetectGPT 等统计量。",
+    "contribution": "连接 API 概率信息与原本需要更多模型访问的检测方法。",
+    "evidence": "论文主要报告近似方法与实验；分布补全不意味着恢复内部表征或无偏检验。",
+    "statistics": "分布估计、缺失信息、误差传播。",
+    "potential": "注意 API 是否仍提供所需 top-k 概率；研究可用性与检测校准是两个独立问题。",
+    "url": "https://arxiv.org/abs/2412.11506",
+    "authors": [
+      "Guangsheng Bao",
+      "Yanbin Zhao",
+      "Juncai He",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2412.11506",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/806e8e4ea77000a1486eeddeb1b90a6e-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s250300258",
+    "title": "Decoupling Content and Expression: Two-Dimensional Detection of AI-Generated Text",
+    "year": 2025,
+    "venue": "arXiv",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Method",
+    "tags": [
+      "AI Text Detection",
+      "Paraphrase",
+      "Content–Expression"
+    ],
+    "problem": "文本被表面改写后，内容与表达能否提供不同检测信号？",
+    "idea": "用二维方法分离内容和语言表达，并按 HART 风险层次组织任务。",
+    "contribution": "将 AI 参与写作的不同程度及表面编辑放在同一检测框架中。",
+    "evidence": "作者在其基准上观察内容比表面表达更耐改写；未给出任意语义重写的可靠检测保证。",
+    "statistics": "语义表征、测量分解、分布偏移。",
+    "potential": "与你关注的改写场景相关。先明确检测的是 AI 内容参与、表达参与还是整篇来源。",
+    "url": "https://arxiv.org/abs/2503.00258",
+    "authors": [
+      "Guangsheng Bao",
+      "Lihua Rong",
+      "Yanbin Zhao",
+      "Qiji Zhou",
+      "Yue Zhang"
+    ],
+    "scholars": [
+      "bao"
+    ],
+    "arxiv": "2503.00258",
+    "publication_status": "预印本；未核实正式发表",
+    "publication_source": "https://arxiv.org/abs/2503.00258",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s251100988",
+    "title": "Advancing Machine-Generated Text Detection from an Easy to Hard Supervision Perspective",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Inexact Labels",
+      "Paraphrase"
+    ],
+    "problem": "来源标签含糊、短文本难检测时，如何构造较可靠监督？",
+    "idea": "用较容易的长文本任务监督更难的目标检测器，并通过结构连接训练。",
+    "contribution": "把检测边界模糊与不精确监督纳入方法设计。",
+    "evidence": "作者给出特定监督结构分析及跨域/改写实验；不把长文本标签视为绝对真实。",
+    "statistics": "弱监督、标签误差、迁移。",
+    "potential": "可研究混合文本标签的定义与校准；先核查长短文本分布是否可比。",
+    "url": "https://arxiv.org/abs/2511.00988",
+    "authors": [
+      "Chenwang Wu",
+      "Yiu-ming Cheung",
+      "Bo Han",
+      "Defu Lian"
+    ],
+    "scholars": [
+      "wu"
+    ],
+    "arxiv": "2511.00988",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/dce5d66bf88b7b7d0f11fbd9c9f16620-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  },
+  {
+    "id": "s260208031",
+    "title": "Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "Watermark & AI Text Detection",
+    "type": "Theory + Method",
+    "tags": [
+      "AI Text Detection",
+      "Markov Calibration",
+      "Paraphrase"
+    ],
+    "problem": "token 检测分数受到随机生成与上下文关系影响，如何校正？",
+    "idea": "用 Markov random field 表达邻近相似和初始不稳定，经 mean-field 近似校准分数。",
+    "contribution": "给现有 metric-based 检测器添加轻量分数校准模块。",
+    "evidence": "作者给出关系分析并报告跨模型与改写实验；不是已控制每种部署分布下的 FPR。",
+    "statistics": "序列依赖、MRF、近似推断、校准。",
+    "potential": "Chenwang Wu 的首读；可检验依赖错设与阈值选择对低误报检测的影响。",
+    "url": "https://arxiv.org/abs/2602.08031",
+    "authors": [
+      "Chenwang Wu",
+      "Yiu-ming Cheung",
+      "Shuhai Zhang",
+      "Bo Han",
+      "Defu Lian"
+    ],
+    "scholars": [
+      "wu"
+    ],
+    "arxiv": "2602.08031",
+    "publication_status": "已发表：正式会议页核查",
+    "publication_source": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/50b4eb974283cf1a7a60980ed06cf1be-Abstract-Conference.html",
+    "verification": "2026-10-28：arXiv 题名、作者与摘要已核查；发表依据单列。全文定理假设、证明和实验数值未系统复核。"
+  }
+];
+const DIRECTIONS = [
+{key:'RLHF & Preference Alignment',name:'RLHF 与偏好优化',question:'怎样从人类偏好得到可靠、可校准的奖励与策略？',tech:'RLHF · DPO · Reward Modeling · RLVR/GRPO',statistics:'错设、异质反馈、主动设计、置信区间与样本效率。'},
+{key:'Machine Unlearning',name:'LLM Unlearning',question:'怎样遗忘指定影响，同时保留其他能力并抵抗恢复？',tech:'SimNPO · GRU · SatImp · Representation · Robust Unlearning',statistics:'遗忘目标定义、评估可比性、保留风险与局部敏感性。'},
+{key:'Watermark & AI Text Detection',name:'水印与 AI 文本检测',question:'删改、改写或人机混写后，来源信号还剩多少，能否定位？',tech:'Watermark · Tr-GoF · Proportion · Change Points · Zero-shot',statistics:'检验力、低误报校准、混合可识别性、多重检验与依赖。'}];
+const SCHOLARS = [
+  {
+    "id": "shi",
+    "name": "Chengchun Shi",
+    "affiliation": "LSE",
+    "url": "https://callmespring.github.io/",
+    "publications": "https://callmespring.github.io/publication",
+    "focus": "统计 RLHF：错设、双重稳健、主动学习；也做 AI 文本检测。",
+    "recommended": [
+      "p01",
+      "s241002504",
+      "s260301162"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "xiao",
+    "name": "Jiancong Xiao",
+    "affiliation": "NUS",
+    "url": "https://jiancongxiao.github.io/",
+    "publications": "https://jiancongxiao.github.io/publications/",
+    "focus": "偏好匹配、循环偏好与对齐后校准。",
+    "recommended": [
+      "s240516455",
+      "s250310990",
+      "s250501997"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "sun",
+    "name": "Will Wei Sun",
+    "affiliation": "Purdue",
+    "url": "https://web.ics.purdue.edu/~sun244/",
+    "publications": "https://web.ics.purdue.edu/~sun244/research.html",
+    "focus": "异质奖励、主动设计、不确定性量化与隐私。",
+    "recommended": [
+      "p38",
+      "s251203208",
+      "s241002504"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "zhang",
+    "name": "Tong Zhang",
+    "affiliation": "UIUC / ML theory",
+    "url": "https://www.tongzhang-ml.org/",
+    "publications": "https://www.tongzhang-ml.org/publication",
+    "focus": "在线偏好学习、一般偏好模型、推理奖励建模。",
+    "recommended": [
+      "s231211456",
+      "s240207314",
+      "s250502387"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "liu",
+    "name": "Sijia Liu",
+    "affiliation": "MSU / OPTML",
+    "url": "https://lsjxjtu.github.io/",
+    "publications": "https://lsjxjtu.github.io/publications.html",
+    "focus": "LLM 遗忘目标、评估与抗恢复优化；已排除同名 NLP 研究者。",
+    "recommended": [
+      "s240208787",
+      "s241007163",
+      "s250205374"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "tang",
+    "name": "Haoran Tang",
+    "affiliation": "Purdue CS",
+    "url": "https://haorantang.github.io/",
+    "publications": "https://haorantang.github.io/",
+    "focus": "表征级 LLM 遗忘与 SAM 理论；非同名 BAIR 研究者。",
+    "recommended": [
+      "s260122028",
+      "s250613715"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "wang",
+    "name": "Qizhou Wang",
+    "affiliation": "RIKEN AIP",
+    "url": "https://qizhouwang.github.io/homepage/",
+    "publications": "https://qizhouwang.github.io/homepage/",
+    "focus": "遗忘评价、梯度目标与遗忘—保留权衡。",
+    "recommended": [
+      "s240609179",
+      "s250219301",
+      "n13"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "yang",
+    "name": "Puning Yang",
+    "affiliation": "MBZUAI",
+    "url": "https://puning97.github.io/",
+    "publications": "https://puning97.github.io/",
+    "focus": "重加权、遗忘评价，以及删除与拒答结合。",
+    "recommended": [
+      "s250511953",
+      "s260516776",
+      "s240609179"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "bao",
+    "name": "Guangsheng Bao",
+    "affiliation": "Fuyao / formerly Westlake",
+    "url": "https://baoguangsheng.github.io/",
+    "publications": "https://baoguangsheng.github.io/publications/",
+    "focus": "零样本 AI 文本检测、闭源概率近似与改写后检测。",
+    "recommended": [
+      "s231005130",
+      "s241211506",
+      "s250300258"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "wu",
+    "name": "Chenwang Wu",
+    "affiliation": "HKBU / USTC",
+    "url": "https://daftstone.github.io/",
+    "publications": "https://daftstone.github.io/",
+    "focus": "检测分数的序列校准与不精确监督。",
+    "recommended": [
+      "s260208031",
+      "s251100988"
+    ],
+    "verified_on": "2026-10-28"
+  },
+  {
+    "id": "li",
+    "name": "Xiang Li",
+    "affiliation": "Penn DBEI",
+    "url": "https://lx10077.github.io/",
+    "publications": "https://lx10077.github.io/publications/",
+    "focus": "水印检验、编辑鲁棒性、混合比例和定位；非其他同名学者。",
+    "recommended": [
+      "s240401245",
+      "s241113868",
+      "s260814906"
+    ],
+    "verified_on": "2026-10-28"
+  }
+];
+const ARCHIVE = [
   {
     "id": "p02",
     "title": "Understanding the Performance Gap in Preference Learning: A Dichotomy of RLHF and DPO",
@@ -285,26 +1820,6 @@ const PAPERS = [
     "evidence": "摘要级核查；收敛结果需区分算法收敛与统计误差。",
     "statistics": "非传递偏好、博弈与估计误差。",
     "potential": "适合与 p03 比较模型表达力和样本需求。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
-    "id": "p38",
-    "title": "Low-Rank Contextual Reinforcement Learning from Heterogeneous Human Feedback",
-    "year": 2026,
-    "venue": "JASA",
-    "direction": "RLHF & Preference Alignment",
-    "type": "Theory + Method",
-    "tags": [
-      "Heterogeneous Feedback",
-      "Low Rank"
-    ],
-    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2674413",
-    "problem": "如何表达人类反馈中的群体异质性？",
-    "idea": "以低秩上下文结构建模异质反馈。",
-    "contribution": "提供统计期刊中的结构化 RLHF 视角。",
-    "evidence": "期刊页面可核查发表元数据；理论细节未逐条复核。",
-    "statistics": "低秩估计、异质性与个体化决策。",
-    "potential": "适合深入统计建模；与 quantile RLHF 不是同一论文。",
     "verification": "官方发表页/摘要核查；未逐条复核全文定理"
   },
   {
@@ -548,26 +2063,6 @@ const PAPERS = [
     "verification": "ICLR 2025 正式论文集摘要核查；未逐条复核全文定理"
   },
   {
-    "id": "n13",
-    "title": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
-    "year": 2025,
-    "venue": "ICML",
-    "direction": "Machine Unlearning",
-    "type": "Method",
-    "tags": [
-      "Forget–Retention",
-      "LLM Unlearning"
-    ],
-    "url": "https://proceedings.mlr.press/v267/wang25de.html",
-    "problem": "删除目标知识时如何保留其他能力？",
-    "idea": "设计兼顾遗忘与保留的更新机制。",
-    "contribution": "直接处理 LLM unlearning 的核心权衡。",
-    "evidence": "PMLR 摘要级核查；实验和理论保证需原文确认。",
-    "statistics": "多目标风险、保留集抽样与权衡估计。",
-    "potential": "方法线代表；研究权衡曲线而非单点分数。",
-    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
-  },
-  {
     "id": "n14",
     "title": "Textual Unlearning Gives a False Sense of Unlearning",
     "year": 2025,
@@ -646,25 +2141,469 @@ const PAPERS = [
     "statistics": "攻击鲁棒性、恢复风险和实验设计。",
     "potential": "与 Leak@$k$ 一起审视遗忘评估边界。",
     "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p10",
+    "title": "Transitivity Meets Cyclicity: Explicit Preference Decomposition for Dynamic Large Language Model Alignment",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "偏好建模",
+    "stat": "图分解 / 动态偏好",
+    "rank": "A",
+    "url": "https://proceedings.mlr.press/v306/huang26ac.html",
+    "insight": "显式分解传递性偏好与循环偏好，避免只用标量奖励描述复杂比较结构。",
+    "question": "如何区分总体排序和由情境造成的循环偏好？",
+    "angle": "考虑 Hodge/图谱分解的统计估计、稀疏成对观察及不确定性传播。",
+    "effort": "高",
+    "keywords": "transitivity cyclicity graph decomposition Hodge",
+    "memo": ""
+  },
+  {
+    "id": "p12",
+    "title": "Exploratory Preference Optimization: Harnessing Implicit Q*-Approximation for Sample-Efficient RLHF",
+    "year": 2025,
+    "venue": "ICLR",
+    "topic": "在线 RLHF",
+    "stat": "探索 / 理论保证",
+    "rank": "A",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/6c71ddecdefd911d2f993461972d8b39-Abstract-Conference.html",
+    "insight": "在在线 DPO 中加入探索奖励，分析一般函数逼近下的样本效率与策略覆盖。",
+    "question": "如何避免固定参考策略对未知偏好区域覆盖不足？",
+    "angle": "与主动学习、bandit 查询和目标分布漂移结合做理论与低成本模拟。",
+    "effort": "高",
+    "keywords": "XPO online DPO exploration coverage guarantees",
+    "memo": ""
+  },
+  {
+    "id": "p13",
+    "title": "Value-Incentivized Preference Optimization: A Unified Approach to Online and Offline RLHF",
+    "year": 2025,
+    "venue": "ICLR",
+    "topic": "在线 RLHF",
+    "stat": "乐观-悲观 / 价值正则",
+    "rank": "A",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/b2d80dc5b407e16b258abe3056402372-Abstract-Conference.html",
+    "insight": "统一在线、离线偏好优化，并在奖励估计中引入价值诱导正则以体现乐观或悲观。",
+    "question": "离线偏好稀缺时，何种保守约束更可靠？",
+    "angle": "明确偏好覆盖、乐观/悲观选择、样本依赖与 regret 的统计条件。",
+    "effort": "高",
+    "keywords": "VPO optimistic pessimistic offline online regret",
+    "memo": ""
+  },
+  {
+    "id": "p16",
+    "title": "Improving LLM General Preference Alignment via Optimistic Online Mirror Descent",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "topic": "偏好建模",
+    "stat": "博弈 / 优化收敛",
+    "rank": "A",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/eab6ea376caf12d786adbb0a090fb842-Abstract-Conference.html",
+    "insight": "将一般偏好 alignment 视为二人博弈，利用乐观镜像下降优化 Nash policy。",
+    "question": "非 BT 偏好下的优化收敛速率能否继续改进？",
+    "angle": "分析 noisy payoff、mini-batch 估计与 game gap 的非渐近误差。",
+    "effort": "高",
+    "keywords": "mirror descent duality gap nash preference",
+    "memo": ""
+  },
+  {
+    "id": "p17",
+    "title": "When Distance Distracts: Representation Distance Bias in BT-Loss for Reward Models",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "奖励模型",
+    "stat": "梯度偏差 / 再加权",
+    "rank": "A",
+    "url": "https://proceedings.mlr.press/v306/xie26a.html",
+    "insight": "发现 BT loss 的单样本梯度受表示距离影响，并提出成对自适应归一化。",
+    "question": "样本权重是否被表示几何而非偏好误差支配？",
+    "angle": "考察 influence function、pair weighting、梯度方差及公平的比较设计。",
+    "effort": "低",
+    "keywords": "BT loss gradient representation distance normalization",
+    "memo": ""
+  },
+  {
+    "id": "p18",
+    "title": "Rectifying Shortcut Behaviors in Preference-based Reward Learning",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "topic": "奖励模型",
+    "stat": "不变性 / 核方法",
+    "rank": "A",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/5d97b7e62022c859347397f6c1e8d0f9-Abstract-Conference.html",
+    "insight": "用群不变核表示约束 reward model，减弱长度或迎合性等 shortcut 的影响。",
+    "question": "哪些表征不变性是真正的偏好信号所要求的？",
+    "angle": "分析 invariant kernel、分布偏移和可能牺牲的真实效用信息。",
+    "effort": "中",
+    "keywords": "invariance kernel shortcut spurious correlations",
+    "memo": ""
+  },
+  {
+    "id": "p19",
+    "title": "Gradient Regularization Mitigates Reward Hacking in Reinforcement Learning from Human Feedback and Verifiable Rewards",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "奖励模型",
+    "stat": "梯度正则 / 稳定性",
+    "rank": "A",
+    "url": "https://proceedings.mlr.press/v306/ackermann26a.html",
+    "insight": "研究 reward accuracy 与优化平坦性关系，通过梯度正则缓解 reward hacking。",
+    "question": "为何最大化 proxy reward 会远离其可靠区域？",
+    "angle": "连接统计稳定性、局部光滑性、模型误差与可信策略改进界。",
+    "effort": "中",
+    "keywords": "gradient regularization reward hacking RLHF RLVR",
+    "memo": ""
+  },
+  {
+    "id": "p20",
+    "title": "Mitigating Reward Hacking in RLHF via Bayesian Non-negative Reward Modeling",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "奖励模型",
+    "stat": "贝叶斯潜因子 / 去偏",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v306/duan26c.html",
+    "insight": "用稀疏非负潜因子生成奖励，并通过变分推断降低偏好标签噪声和风格偏差。",
+    "question": "能否把真实偏好因子与表面风格因子区分开？",
+    "angle": "对比 factor identifiability、稀疏性假设与多群组可迁移性。",
+    "effort": "中",
+    "keywords": "Bayesian factor analysis latent debiasing reward",
+    "memo": ""
+  },
+  {
+    "id": "p21",
+    "title": "Factored Causal Representation Learning for Robust Reward Modeling in RLHF",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "奖励模型",
+    "stat": "因果表征 / OOD",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v306/yang26ct.html",
+    "insight": "将 reward 相关因子与无关因子拆分，以减轻长度、迎合性等虚假相关。",
+    "question": "什么额外假设能识别偏好相关的因果表示？",
+    "angle": "尝试环境不变预测、负控变量和已知干预的可识别性分析。",
+    "effort": "高",
+    "keywords": "causal invariance representation confounding",
+    "memo": ""
+  },
+  {
+    "id": "p22",
+    "title": "Multi-Objective Preference Optimization: Improving Human Alignment of Generative Models",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "多目标对齐",
+    "stat": "约束优化 / 帕累托",
+    "rank": "A",
+    "url": "https://proceedings.mlr.press/v306/agnihotri26a.html",
+    "insight": "研究相互冲突的多目标偏好，通过 KL 正则和约束阈值进行直接偏好优化。",
+    "question": "helpfulness 与 safety 的权衡应该怎样定义？",
+    "angle": "引入条件约束、随机偏好权重、可行域估计以及阈值可解释性。",
+    "effort": "中",
+    "keywords": "multi objective MOPO constrained KL Pareto",
+    "memo": ""
+  },
+  {
+    "id": "p23",
+    "title": "Reward-free Alignment for Conflicting Objectives",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "多目标对齐",
+    "stat": "冲突梯度 / 帕累托收敛",
+    "rank": "A",
+    "url": "https://proceedings.mlr.press/v306/chen26bl.html",
+    "insight": "无需显式 reward model，直接使用成对偏好，在多目标冲突下求 Pareto-critical 解。",
+    "question": "加权求和与目标梯度冲突时如何保持用户定义的权衡？",
+    "angle": "研究多目标优化中的随机梯度偏差、权重扰动与统计泛化。",
+    "effort": "中",
+    "keywords": "multi objective RACO Pareto gradient conflicts",
+    "memo": ""
+  },
+  {
+    "id": "p24",
+    "title": "Distortion of AI Alignment Revisited: RLHF is a Decent Utilitarian Aligner",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "群体偏好",
+    "stat": "社会福利 / 反例分析",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v306/oko26a.html",
+    "insight": "重新分析异质个体偏好下 RLHF 的社会福利 distortion，与 2025 年负面结论形成直接讨论。",
+    "question": "为何看似相反的理论结论会同时成立？",
+    "angle": "核对两篇的目标函数、采样机制、温度范围及近似条件，再考虑新定理。",
+    "effort": "高",
+    "keywords": "social choice utilitarian welfare distortion",
+    "memo": ""
+  },
+  {
+    "id": "p25",
+    "title": "The Axiomatic Value of Regularization in AI Alignment from Human Preferences",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "群体偏好",
+    "stat": "公理 / 社会选择",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v306/korkmaz26a.html",
+    "insight": "从社会选择公理解释 RLHF 正则化的规范性意义，讨论群体偏好汇总规则。",
+    "question": "正则化选择是否隐含了未经说明的社会福利假设？",
+    "angle": "比较正则化与 Borda/Nash aggregation 下的统计一致性。",
+    "effort": "高",
+    "keywords": "social choice axioms regularization Borda",
+    "memo": ""
+  },
+  {
+    "id": "p26",
+    "title": "Learning to summarize user information for personalized reinforcement learning from human feedback",
+    "year": 2026,
+    "venue": "ICLR",
+    "topic": "群体偏好",
+    "stat": "个性化 / 异质效应",
+    "rank": "B",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/c7af751b5e0a407c62ac023e3cb381f9-Abstract-Conference.html",
+    "insight": "将用户摘要用于条件奖励模型，减少“平均用户”奖励对异质偏好的掩盖。",
+    "question": "少量历史偏好能否可靠地个性化奖励？",
+    "angle": "构造分层模型、随机效应及冷启动偏好泛化实验。",
+    "effort": "中",
+    "keywords": "personalization hierarchical random effects heterogeneity",
+    "memo": ""
+  },
+  {
+    "id": "p27",
+    "title": "Reward Model Routing in Alignment",
+    "year": 2026,
+    "venue": "ICLR",
+    "topic": "奖励模型",
+    "stat": "Bandit / 自适应选择",
+    "rank": "B",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8dc9b0192713f44f035b8c0bd3f4153a-Abstract-Conference.html",
+    "insight": "对每个输入自适应选择奖励模型，结合离线可靠性学习和在线 Thompson sampling。",
+    "question": "何时应调用不同的 reward model 而非整体平均？",
+    "angle": "建模 context-dependent expert reliability、bandit regret 与探索偏差。",
+    "effort": "中",
+    "keywords": "routing thompson sampling reward model experts",
+    "memo": ""
+  },
+  {
+    "id": "p28",
+    "title": "When Data is the Algorithm: A Systematic Study and Curation of Preference Optimization Datasets",
+    "year": 2026,
+    "venue": "ICLR",
+    "topic": "偏好数据",
+    "stat": "数据筛选 / 评估",
+    "rank": "B",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/f2d94c76288a5537b27ea9e307fc54eb-Abstract-Conference.html",
+    "insight": "系统分析开源 DPO 偏好数据质量，并通过噪声与冗余筛选得到更紧凑的训练集。",
+    "question": "同等标注预算应如何分配到不同难度、来源与反馈质量？",
+    "angle": "用主动数据选择、影响函数、covariate shift 校正做可复现实验。",
+    "effort": "低",
+    "keywords": "data curation preference dataset selection active learning",
+    "memo": ""
+  },
+  {
+    "id": "p29",
+    "title": "Policy Filtration for RLHF to Mitigate Noise in Reward Models",
+    "year": 2025,
+    "venue": "ICML",
+    "topic": "偏好数据",
+    "stat": "筛选 / 噪声 / R²",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v267/zhang25bq.html",
+    "insight": "按 reward reliability 过滤 policy rollout，缓解不准确奖励对策略学习的误导。",
+    "question": "筛样本提高可信度的同时，是否造成系统性选择偏差？",
+    "angle": "对筛选后分布使用 inverse propensity weighting 或 doubly robust 纠偏。",
+    "effort": "中",
+    "keywords": "selection bias reward filtering policy training",
+    "memo": ""
+  },
+  {
+    "id": "p30",
+    "title": "Explicit Preference Optimization: No Need for an Implicit Reward Model",
+    "year": 2025,
+    "venue": "ICML",
+    "topic": "DPO 理论",
+    "stat": "直接偏好目标 / 模型解析",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v267/hu25l.html",
+    "insight": "重新审视 DPO 的隐式奖励解释，提出显式偏好优化方案。",
+    "question": "何时显式概率目标比从 policy ratio 推导出的奖励更稳定？",
+    "angle": "从 likelihood、识别约束与模型错设分析替代损失的统计性质。",
+    "effort": "中",
+    "keywords": "EPO DPO preference loss",
+    "memo": ""
+  },
+  {
+    "id": "p31",
+    "title": "TGDPO: Harnessing Token-Level Reward Guidance for Enhancing Direct Preference Optimization",
+    "year": 2025,
+    "venue": "ICML",
+    "topic": "序列反馈",
+    "stat": "Token 级奖励 / credit assignment",
+    "rank": "B",
+    "url": "https://proceedings.mlr.press/v267/zhu25c.html",
+    "insight": "将序列级优化拆为 token-level 问题，引入更细粒度奖励引导 DPO。",
+    "question": "句子级比较信号能否识别 token 级因果贡献？",
+    "angle": "研究 noisy token credit、弱监督识别和加权学习。",
+    "effort": "中",
+    "keywords": "token reward credit assignment DPO",
+    "memo": ""
+  },
+  {
+    "id": "p32",
+    "title": "T-REG: Preference Optimization with Token-Level Reward Regularization",
+    "year": 2025,
+    "venue": "ACL",
+    "topic": "序列反馈",
+    "stat": "Token 级正则化",
+    "rank": "B",
+    "url": "https://aclanthology.org/2025.acl-long.1353/",
+    "insight": "利用 token 级奖励正则化缓解序列级稀疏反馈的问题。",
+    "question": "Token 级 feedback 错误会否累积成序列偏差？",
+    "angle": "对比时序 credit assignment、token weighting 和风险约束。",
+    "effort": "低",
+    "keywords": "token reward regularization RLHF",
+    "memo": ""
+  },
+  {
+    "id": "p33",
+    "title": "Lost in the Context: Insufficient and Distracted Attention to Contexts in Preference Modeling",
+    "year": 2025,
+    "venue": "ACL",
+    "topic": "奖励模型",
+    "stat": "上下文偏差 / 诊断",
+    "rank": "B",
+    "url": "https://aclanthology.org/2025.acl-long.285/",
+    "insight": "发现 reward model 对 prompt 关键上下文关注不足，造成偏好评价不稳。",
+    "question": "忽略 context 会怎样污染奖励模型的条件比较？",
+    "angle": "研究条件偏好、context-specific nuisance 与 attention-shift 干预设计。",
+    "effort": "低",
+    "keywords": "contextual reward model conditional preference",
+    "memo": ""
+  },
+  {
+    "id": "p34",
+    "title": "Towards Reward Fairness in RLHF: From a Resource Allocation Perspective",
+    "year": 2025,
+    "venue": "ACL",
+    "topic": "多目标对齐",
+    "stat": "公平 / 资源分配",
+    "rank": "B",
+    "url": "https://aclanthology.org/2025.acl-long.163/",
+    "insight": "把 reward unfairness 视为资源分配问题，研究不同偏差与公平约束。",
+    "question": "对齐目标中的公平性究竟作用于标签、奖励还是策略结果？",
+    "angle": "将 fairness constraints 与可估计的群体效用差异分开。",
+    "effort": "中",
+    "keywords": "fairness resource allocation reward distribution",
+    "memo": ""
+  },
+  {
+    "id": "p35",
+    "title": "Explainable Reinforcement Learning from Human Feedback to Improve Alignment",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "topic": "对齐诊断",
+    "stat": "数据归因 / Unlearning",
+    "rank": "B",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/c991f77d9faa6de92bc6945c191d66e6-Abstract-Conference.html",
+    "insight": "将不满意输出归因到训练数据，并通过定向 unlearning 改进对齐。",
+    "question": "如何证明数据归因识别的是原因，而不是相关近邻？",
+    "angle": "研究 influence-based attribution 的有效性检验及 unlearning 后效用误差。",
+    "effort": "中",
+    "keywords": "unlearning data attribution influence RLHF",
+    "memo": ""
+  },
+  {
+    "id": "p36",
+    "title": "Quantile Regression for Distributional Reward Models in RLHF",
+    "year": 2024,
+    "venue": "arXiv",
+    "topic": "分布式奖励",
+    "stat": "分位数回归 / 多模态",
+    "rank": "S",
+    "url": "https://arxiv.org/abs/2409.10164",
+    "insight": "Quantile Reward Models：用 quantile regression 学习奖励分布，研究异质偏好与风险敏感决策。",
+    "question": "如何由分布式奖励推导一致的偏好比较概率？",
+    "angle": "这是与老师描述最接近的 QRM 技术线索，但检索未证实其发表在 JASA。",
+    "effort": "中",
+    "keywords": "quantile distributional reward QRM arxiv background",
+    "memo": ""
+  },
+  {
+    "id": "p37",
+    "title": "Distributional Off-Policy Evaluation with Deep Quantile Process Regression",
+    "year": 2026,
+    "venue": "JASA",
+    "topic": "分布式奖励",
+    "stat": "深度分位过程 / OPE",
+    "rank": "S",
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2671449",
+    "insight": "用连续深度分位过程估计离线策略回报分布并给出样本复杂度分析；不是 RLHF 方法论文本身。",
+    "question": "分布式 OPE 理论能否适用于由偏好数据学习的 reward？",
+    "angle": "可尝试偏好奖励不确定性的误差传播；须明确从 OPE 迁移到 RLHF 所需附加条件。",
+    "effort": "高",
+    "keywords": "JASA quantile process distribution off-policy evaluation related",
+    "memo": ""
+  },
+  {
+    "id": "p39",
+    "title": "Bradley-Terry and Multi-Objective Reward Modeling Are Complementary",
+    "year": 2026,
+    "venue": "ICLR",
+    "topic": "多目标对齐",
+    "stat": "多目标奖励 / OOD",
+    "rank": "B",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/2703e3329fef63ed7690f1b8145f25aa-Abstract-Conference.html",
+    "insight": "研究 BT 与多目标奖励建模的互补关系，关注 OOD reward hacking。",
+    "question": "单标量及多属性奖励在何种情况下各自失效？",
+    "angle": "构造对照 DGP，区分偏好噪声、环境偏移和 reward hacking。",
+    "effort": "中",
+    "keywords": "multi objective reward modeling OOD",
+    "memo": ""
+  },
+  {
+    "id": "p40",
+    "title": "Position: RLHF May Not Reflect Genuine Preferences",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "偏好数据",
+    "stat": "测量效度 / 噪声",
+    "rank": "C",
+    "url": "https://proceedings.mlr.press/v306/ghafouri26a.html",
+    "insight": "立场论文：人类给出的比较标签并不总是稳定的“真实偏好”，主张先评估测量效度。",
+    "question": "标签背后对应稳定效用还是临时构造的偏好？",
+    "angle": "构建重复标注、反事实重述与标注者稳定性评价协议。",
+    "effort": "低",
+    "keywords": "position measurement validity elicitation",
+    "memo": ""
+  },
+  {
+    "id": "p41",
+    "title": "Position: Large Language Models Should Learn Personalized Rather Than Aggregated Human Preferences",
+    "year": 2026,
+    "venue": "ICML",
+    "topic": "群体偏好",
+    "stat": "个体偏好 / 社会选择",
+    "rank": "C",
+    "url": "https://proceedings.mlr.press/v306/garbacea26a.html",
+    "insight": "立场论文：群体平均偏好可能掩盖个体异质性，建议在安全约束下个性化。",
+    "question": "应该优化平均效用还是个体最差效用？",
+    "angle": "为新的建模问题提供动机，不能替代严格方法证据。",
+    "effort": "低",
+    "keywords": "position personalization distribution of preference",
+    "memo": ""
   }
 ];
-const DIRECTIONS = [
-{key:'RLHF & Preference Alignment',name:'RLHF 与偏好优化',question:'如何把人类比较反馈转为可靠的奖励或策略？',tech:'Reward Modeling · RLHF · DPO · Robust Preference Learning',statistics:'偏好模型识别、噪声校正、样本效率、异质反馈和分布偏移。'},
-{key:'Other Alignment Methods',name:'其他 Alignment 方法',question:'除了人类反馈 RLHF，还有哪些训练时与推理时对齐路线？',tech:'SFT · RLAIF · RLVR/GRPO · Self-Alignment · Safety · Multi-objective · Decoding',statistics:'合成反馈偏差、奖励信号效度、安全—效用权衡和多目标估计。'},
-{key:'Machine Unlearning',name:'Machine Unlearning',question:'如何使 LLM 遗忘指定信息，同时保持其他能力？',tech:'LLM Unlearning · Forget/Retain · Evaluation · Reversibility',statistics:'遗忘指标的检验力、多次抽样泄漏、攻击稳健性与保留风险。'}];
 const ROUTE = [
-{week:'01',title:'RLHF 基础与经典方法',desc:'先理解示范微调、奖励建模、RLHF 和 DPO 的关系。',ids:['n01','n02','p03','p07'],deliver:'输出：画出反馈数据、奖励模型和策略目标之间的依赖图。'},
-{week:'02',title:'近期 Alignment 方法',desc:'对照 AI 反馈、自生成数据、RLVR 和推理时对齐。',ids:['n03','n06','n08','n09'],deliver:'输出：列出各路线需要的人类标注、可验证奖励和外部评判器。'},
-{week:'03',title:'Statistics-driven Alignment',desc:'集中研究错设、噪声、奖励分布和异质反馈。',ids:['p01','p05','p04','p38'],deliver:'输出：写出每篇论文的 estimand、假设与已证明结果。'},
-{week:'04',title:'Machine Unlearning',desc:'从评估基准进入，再看保留权衡和评估失效。',ids:['n12','n13','n16','n17'],deliver:'输出：区分拒答、行为抑制、抗恢复和训练影响删除。'}];
+{week:'01',title:'RLHF 的目标、数据与基本方法',desc:'先读统计综述，再理解 KL 约束、一般偏好和偏好匹配。',ids:['s260402507','s231211456','s240207314','s240516455'],deliver:'输出：明确偏好、奖励与策略的目标；区分 RLHF、DPO 和 RLVR。'},
+{week:'02',title:'统计驱动的 RLHF',desc:'围绕错设、标注预算与不确定性选读。',ids:['p01','s241002504','s251203208','s260301162'],deliver:'输出：分别列 estimand、识别条件、统计保证及优化保证。'},
+{week:'03',title:'LLM Unlearning：评估先于优化',desc:'先定义删除目标，再比较方法与恢复风险。',ids:['s240208787','s240609179','s241007163','s250205374','s260122028'],deliver:'输出：区分拒答、输出抑制、表征分离和训练影响删除；标注每个指标实际测到什么。'},
+{week:'04',title:'从水印检验到改写后的来源识别',desc:'首读 Xiang Li 的框架与 Human Edits，再看定位和无水印检测。',ids:['s240401245','s241113868','s260814906','s231005130','s260208031'],deliver:'输出：写出 H0/H1、所需密钥/模型访问、编辑假设、FPR 与 power；不要把未检出当成人类原创证据。'}];
 const IDEAS = [
-{no:'01',name:'偏好错设下的稳健策略估计',hyp:'BT 或参考策略错设时，哪些策略目标仍可识别？',why:'偏好预测准确不必然带来策略收益。',tools:'正交估计、交叉拟合、敏感性分析',difficulty:'理论高；实验中',open:'双重稳健结论能否延伸到非标量反馈仍需核查。',ids:['p01','p03','p07']},
-{no:'02',name:'带噪及异质标注的反馈融合',hyp:'标注者可靠性随提示与群体变化时，如何校正偏好标签？',why:'统一噪声率可能掩盖真实反馈结构。',tools:'潜变量模型、重复标注、稳健估计',difficulty:'理论高；实验中',open:'没有锚定数据时的可识别性尚需建立。',ids:['p05','p38']},
-{no:'03',name:'奖励模型质量与下游收益',hyp:'哪些奖励诊断量能预测策略训练效果？',why:'pairwise accuracy 与策略优化信号可能不一致。',tools:'代理风险、校准、离策略评估',difficulty:'理论中；实验高',open:'相关性不能解释因果，需控制训练与评估预算。',ids:['p09','p11','n07']},
-{no:'04',name:'RLVR 组内采样与奖励伪信号',hyp:'组内相对比较和可验证奖励如何改变偏差及方差？',why:'GRPO 的训练信号与最终目标可能不同。',tools:'方差分解、稳健损失、分布偏移分析',difficulty:'理论高；实验高',open:'优化动力学不等于统计泛化保证。',ids:['n06','n07']},
-{no:'05',name:'自生成与 AI 反馈的测量偏差',hyp:'模型自己生成和评价的数据何时会放大错误？',why:'减少人工标注也可能降低反馈独立性。',tools:'选择偏差分析、校准、交叉评判',difficulty:'理论中；实验中',open:'需用独立的人类或外部评估集检验。',ids:['n03','n08']},
-{no:'06',name:'多目标安全对齐的不确定性',hyp:'安全与有用性前沿如何随目标权重和评价样本变化？',why:'单一汇总分数隐藏价值取舍。',tools:'约束风险、Pareto 前沿、置信带',difficulty:'理论中；实验高',open:'规范性权重不能从统计显著性自动决定。',ids:['n10','n11','p06']},
-{no:'07',name:'LLM 遗忘的可检验性',hyp:'多次随机解码和恢复攻击下，怎样报告遗忘置信度？',why:'表面拒答不能证明训练影响已被删除。',tools:'多重检验、尾部风险、攻击评估',difficulty:'理论高；实验中',open:'严格的删除保证与行为评估之间仍有定义差异。',ids:['n12','n14','n16','n17']}];
+{no:'01',name:'错设与覆盖不足下的偏好评价',hyp:'双重稳健估计在数据覆盖不足和偏好漂移下还能识别哪些策略比较？',why:'模型正确与支持集足够是不同条件。',tools:'半参数估计、敏感性分析、截断加权',difficulty:'理论高；实验中',open:'这是待验证问题；需先核查 DRPO 最新后续工作。',ids:['p01','s250403784']},
+{no:'02',name:'标注预算与奖励置信区间',hyp:'怎样同时分配对话、教师及重复标注预算，并为奖励比较给区间？',why:'异质教师可能同时改变信息量与偏差。',tools:'最优设计、潜变量估计、自适应推断',difficulty:'理论高；实验中',open:'教师尺度、难度和奖励的识别条件需明确。',ids:['s241002504','s251203208','p38']},
+{no:'03',name:'RLVR 的采样预算与跨提示共享',hyp:'固定计算预算下，何时使用组内采样，何时跨提示估计 baseline？',why:'低梯度方差可能伴随更高近似偏差。',tools:'U-statistics、核回归、方差分解',difficulty:'理论高；实验高',open:'相关采样和训练非平稳性是否破坏理论需要验证。',ids:['s260301162','s260428005','s260527293']},
+{no:'04',name:'遗忘评估的可比性与不确定性',hyp:'对齐保留风险后，如何为遗忘与恢复攻击效果报告有效区间？',why:'单点指标可能把拒答误判成知识移除。',tools:'配对评估、风险曲线、多重比较',difficulty:'理论中；实验中',open:'必须先选定删除目标；不同攻击测量的对象可能不同。',ids:['s240609179','n13','s260516776']},
+{no:'05',name:'优化几何能否预测遗忘的抗恢复性',hyp:'表征纠缠、局部平滑和优化噪声中，哪些量能预测重学习风险？',why:'机制解释与跨模型可迁移预测是不同证据。',tools:'局部敏感性、稳健优化、受控消融',difficulty:'理论高；实验高',open:'代理量与训练影响删除之间的联系仍需论证。',ids:['s250205374','s251000761','s260122028']},
+{no:'06',name:'改写后水印的自适应检测与定位',hyp:'未知编辑强度及相关 token 下，能否同时控制误报并定位存活信号？',why:'整篇检测成功不保证逐片段归因可靠。',tools:'稀疏混合检验、多重检验、变点检测',difficulty:'理论高；实验中',open:'Tr-GoF 和定位论文已有特定最优性；不能把简单叠加直接称为新空白。',ids:['s241113868','s250622343','s260814906']},
+{no:'07',name:'无水印检测的低误报与分布偏移',hyp:'跨模型、语言及改写后，怎样校准可解释的检测错误率？',why:'平均 AUROC 不能保证低 FPR 区间可靠，更不能证明作者身份。',tools:'分布稳健检验、分层校准、依赖建模',difficulty:'理论高；实验中',open:'须保留独立人类文本评估集，明确短文本、混写与语义改写的边界。',ids:['s251001268','s241211506','s260208031','s260503723']}];
 const el=id=>document.getElementById(id);
 const escaped=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const key='rlhf_stats_atlas_v1';
@@ -673,27 +2612,29 @@ const per=id=>saved[id]||{};
 function save(id,fields){saved[id]={...per(id),...fields};try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){}updateMetrics()}
 let page='overview',comparison=[],shelf=false;
 function updateMetrics(){el('metric-all').textContent=PAPERS.length;el('metric-rlhf').textContent=PAPERS.filter(p=>p.direction===DIRECTIONS[0].key).length;el('metric-other').textContent=PAPERS.filter(p=>p.direction===DIRECTIONS[1].key).length;el('metric-unlearning').textContent=PAPERS.filter(p=>p.direction===DIRECTIONS[2].key).length;el('nav-count').textContent=PAPERS.length}
-function card(p){let s=per(p.id);return `<article class="paper"><button class="star ${s.star?'on':''}" title="${s.star?'取消收藏':'收藏'}" data-star="${p.id}">${s.star?'★':'☆'}</button><div class="paper-head"><span class="tag type">${escaped(p.type)}</span><span class="tag venue">${escaped(p.venue)} ${p.year}</span><span class="tag">${escaped(DIRECTIONS.find(d=>d.key===p.direction)?.name)}</span></div><h4 data-open="${p.id}" tabindex="0">${escaped(p.title)}</h4><p class="summary">${escaped(p.problem)}</p><p class="angle"><strong>核心贡献：</strong>${escaped(p.contribution)}</p><div class="paper-foot"><span class="methods">${p.tags.map(escaped).join(' · ')}</span><button data-open="${p.id}">查看六问分析 ↗</button></div>${s.read?'<span class="paper-read">✓ 已读</span>':''}</article>`}
-function setupOptions(){for(let [id,items] of [['filter-direction',DIRECTIONS.map(d=>d.key)],['filter-venue',[...new Set(PAPERS.map(p=>p.venue))]],['filter-year',[...new Set(PAPERS.map(p=>String(p.year)))].sort().reverse()]]){el(id).innerHTML+=items.map(x=>`<option value="${escaped(x)}">${escaped(id==='filter-direction'?DIRECTIONS.find(d=>d.key===x).name:x)}</option>`).join('')}}
-function filtered(){let q=el('search').value.trim().toLocaleLowerCase();return PAPERS.filter(p=>(!q||Object.values(p).flat().join(' ').toLocaleLowerCase().includes(q))&&['direction','venue','year','type'].every(f=>!el('filter-'+f).value||String(p[f])===el('filter-'+f).value)&&(!el('filter-saved').checked||per(p.id).star)&&(!el('filter-unread').checked||!per(p.id).read))}
-function renderLibrary(){let a=filtered();el('result-num').textContent=a.length;el('papers').innerHTML=a.length?a.map(card).join(''):'<div class="empty">没有匹配的论文。请调整关键词或筛选条件。</div>'}
-function renderShelf(){let ps=PAPERS.filter(p=>per(p.id).star||per(p.id).read||per(p.id).note);el('saved-papers').innerHTML=ps.length?ps.map(card).join(''):'<div class="empty">精选库中尚无收藏、已读记录或笔记。</div>';let ids=new Set(PAPERS.map(p=>p.id));let legacy=Object.entries(saved).filter(([id,s])=>!ids.has(id)&&(s.star||s.read||s.note));el('archived-notes').innerHTML='<h4>旧库归档论文的个人记录</h4><p>筛除论文没有清除原来的本地记录。可导出全部笔记 JSON；原始书目信息见 <a href="data/papers_archive.json" target="_blank" rel="noopener">论文归档</a>。</p>'+(legacy.length?legacy.map(([id,s])=>`<p><strong>${escaped(id)}</strong>　${s.star?'★ 收藏　':''}${s.read?'✓ 已读　':''}${escaped(s.note||'')}</p>`).join(''):'<p>当前浏览器没有旧库归档论文的记录。</p>')}
+function card(p){let s=per(p.id);return `<article class="paper"><button class="star ${s.star?'on':''}" title="${s.star?'取消收藏':'收藏'}" data-star="${p.id}">${s.star?'★':'☆'}</button><div class="paper-head"><span class="tag type">${escaped(p.type)}</span><span class="tag venue">${escaped(p.venue)} ${p.year}</span><span class="tag">${escaped(DIRECTIONS.find(d=>d.key===p.direction)?.name)}</span></div><h4 data-open="${p.id}" tabindex="0">${escaped(p.title)}</h4><p class="state authorline">${p.scholars.map(id=>`<button class="author-link" data-scholar="${id}">${escaped(SCHOLARS.find(s=>s.id===id).name)}</button>`).join(' · ')}</p><p class="summary">${escaped(p.problem)}</p><p class="angle"><strong>核心贡献：</strong>${escaped(p.contribution)}</p><div class="paper-foot"><span class="methods">${p.tags.map(escaped).join(' · ')}</span><button data-open="${p.id}">查看六问分析 ↗</button></div>${s.read?'<span class="paper-read">✓ 已读</span>':''}</article>`}
+function setupOptions(){for(let [id,items] of [['filter-scholar',SCHOLARS.map(s=>s.id)],['filter-direction',DIRECTIONS.map(d=>d.key)],['filter-venue',[...new Set(PAPERS.map(p=>p.venue))]],['filter-year',[...new Set(PAPERS.map(p=>String(p.year)))].sort().reverse()]]){el(id).innerHTML+=items.map(x=>`<option value="${escaped(x)}">${escaped(id==='filter-direction'?DIRECTIONS.find(d=>d.key===x).name:id==='filter-scholar'?SCHOLARS.find(s=>s.id===x).name:x)}</option>`).join('')}}
+function filtered(){let q=el('search').value.trim().toLocaleLowerCase();return PAPERS.filter(p=>(!q||Object.values(p).flat().join(' ').toLocaleLowerCase().includes(q))&&(!el('filter-scholar').value||p.scholars.includes(el('filter-scholar').value))&&['direction','venue','year','type'].every(f=>!el('filter-'+f).value||String(p[f])===el('filter-'+f).value)&&(!el('filter-saved').checked||per(p.id).star)&&(!el('filter-unread').checked||!per(p.id).read))}
+function renderLibrary(){let a=filtered();let scholar=SCHOLARS.find(s=>s.id===el('filter-scholar').value);el('active-scholar').textContent=scholar?'当前学者：'+scholar.name:'';el('result-num').textContent=a.length;el('papers').innerHTML=a.length?a.map(card).join(''):'<div class="empty">没有匹配的论文。请调整关键词或筛选条件。</div>'}
+function renderShelf(){let ps=PAPERS.filter(p=>per(p.id).star||per(p.id).read||per(p.id).note);el('saved-papers').innerHTML=ps.length?ps.map(card).join(''):'<div class="empty">精选库中尚无收藏、已读记录或笔记。</div>';let ids=new Set(PAPERS.map(p=>p.id));let archivedById=new Map(ARCHIVE.map(p=>[p.id,p]));let legacy=Object.entries(saved).filter(([id,s])=>!ids.has(id)&&(s.star||s.read||s.note));el('archived-notes').innerHTML='<h4>旧库归档论文的个人记录</h4><p>筛除论文没有清除原来的本地记录。可导出全部笔记 JSON；原始书目信息见 <a href="data/papers_archive.json" target="_blank" rel="noopener">论文归档</a>。</p>'+(legacy.length?legacy.map(([id,s])=>{let p=archivedById.get(id);return `<div class="panel"><p><strong>${escaped(p?.title||id)}</strong> · ${escaped(id)}　${s.star?'★ 收藏　':''}${s.read?'✓ 已读　':''}</p>${p?`<p><a href="${escaped(p.url)}" target="_blank" rel="noopener noreferrer">归档论文来源 ↗</a></p>`:''}<textarea class="notearea" aria-label="归档笔记 ${escaped(id)}" data-legacy-note="${escaped(id)}">${escaped(s.note||'')}</textarea></div>`}).join(''):'<p>当前浏览器没有旧库归档论文的记录。</p>')}
 function switchPage(p){page=p;document.querySelectorAll('.view').forEach(v=>v.classList.add('hidden'));el('view-'+p).classList.remove('hidden');document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.page===p));el('sidebar').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'})}
 function showShelf(){shelf=!shelf;el('library-panel').classList.toggle('hidden',shelf);el('shelf-panel').classList.toggle('hidden',!shelf);el('show-shelf').textContent=shelf?'← 返回论文列表':'☆ 我的收藏与笔记';if(shelf)renderShelf();else renderLibrary()}
-function openPaper(id){let p=PAPERS.find(x=>x.id===id);if(!p)return;let s=per(id);let rows=[['1 · Research Problem',p.problem],['2 · Main Idea',p.idea],['3 · Main Contribution',p.contribution],['4 · Theory vs Experiments',p.evidence],['5 · Statistical Connection',p.statistics],['6 · Research Potential',p.potential]];el('modalbody').innerHTML=`<div class="paper-head"><span class="tag type">${escaped(p.type)}</span><span class="tag venue">${escaped(p.venue)} ${p.year}</span></div><h3>${escaped(p.title)}</h3><p class="state">${escaped(DIRECTIONS.find(d=>d.key===p.direction)?.name)} · ${p.tags.map(escaped).join(' · ')}</p><div class="info-rows">${rows.map(([k,v])=>`<div class="info-row"><small>${k}</small><div>${escaped(v)}</div></div>`).join('')}</div><div class="panel notice"><p><strong>核查深度：</strong>${escaped(p.verification)}</p></div><div class="dialog-actions"><a class="primary-btn" href="${escaped(p.url)}" target="_blank" rel="noopener noreferrer">打开论文来源 ↗</a><button class="light-btn" id="modal-star">${s.star?'★ 已收藏':'☆ 收藏'}</button><button class="light-btn" id="modal-read">${s.read?'✓ 已读 · 取消':'✓ 标记已读'}</button><button class="light-btn" id="modal-compare">${comparison.includes(id)?'− 移出比较':'+ 加入比较'}</button></div><div class="dialog-subtitle">个人笔记（自动保存在当前浏览器）</div><textarea class="notearea" id="modal-note">${escaped(s.note||'')}</textarea>`;el('overlay').classList.add('show');document.body.style.overflow='hidden';el('modal-star').onclick=()=>{save(id,{star:!per(id).star});openPaper(id);renderLibrary();if(shelf)renderShelf()};el('modal-read').onclick=()=>{save(id,{read:!per(id).read});openPaper(id);renderLibrary();if(shelf)renderShelf()};el('modal-compare').onclick=()=>{if(comparison.includes(id))comparison=comparison.filter(x=>x!==id);else if(comparison.length<4)comparison.push(id);else{alert('最多比较 4 篇论文。');return}updateCompare();openPaper(id)};el('modal-note').oninput=e=>save(id,{note:e.target.value})}
+function openPaper(id){let p=PAPERS.find(x=>x.id===id);if(!p)return;let s=per(id);let rows=[['1 · Research Problem',p.problem],['2 · Main Idea',p.idea],['3 · Main Contribution',p.contribution],['4 · Theory vs Experiments',p.evidence],['5 · Statistical Connection',p.statistics],['6 · Research Potential',p.potential]];el('modalbody').innerHTML=`<div class="paper-head"><span class="tag type">${escaped(p.type)}</span><span class="tag venue">${escaped(p.venue)} ${p.year}</span></div><h3>${escaped(p.title)}</h3><p class="state">${p.authors.map(escaped).join(' · ')}</p><div class="panel notice"><p><strong>发表状态：</strong>${escaped(p.publication_status)}</p><p><a href="${escaped(p.publication_source)}" target="_blank" rel="noopener noreferrer">核查发表依据 ↗</a> · arXiv:${escaped(p.arxiv)} · 核查日 2026-10-28</p></div><p class="state">${escaped(DIRECTIONS.find(d=>d.key===p.direction)?.name)} · ${p.tags.map(escaped).join(' · ')}</p><div class="info-rows">${rows.map(([k,v])=>`<div class="info-row"><small>${k}</small><div>${escaped(v)}</div></div>`).join('')}</div><div class="panel notice"><p><strong>核查深度：</strong>${escaped(p.verification)}</p></div><div class="dialog-actions"><a class="primary-btn" href="${escaped(p.url)}" target="_blank" rel="noopener noreferrer">打开论文来源 ↗</a><button class="light-btn" id="modal-star">${s.star?'★ 已收藏':'☆ 收藏'}</button><button class="light-btn" id="modal-read">${s.read?'✓ 已读 · 取消':'✓ 标记已读'}</button><button class="light-btn" id="modal-compare">${comparison.includes(id)?'− 移出比较':'+ 加入比较'}</button></div><div class="dialog-subtitle">个人笔记（自动保存在当前浏览器）</div><textarea class="notearea" id="modal-note">${escaped(s.note||'')}</textarea>`;el('overlay').classList.add('show');document.body.style.overflow='hidden';el('modal-star').onclick=()=>{save(id,{star:!per(id).star});openPaper(id);renderLibrary();if(shelf)renderShelf()};el('modal-read').onclick=()=>{save(id,{read:!per(id).read});openPaper(id);renderLibrary();if(shelf)renderShelf()};el('modal-compare').onclick=()=>{if(comparison.includes(id))comparison=comparison.filter(x=>x!==id);else if(comparison.length<4)comparison.push(id);else{alert('最多比较 4 篇论文。');return}updateCompare();openPaper(id)};el('modal-note').oninput=e=>save(id,{note:e.target.value})}
 function closeModal(){el('overlay').classList.remove('show');document.body.style.overflow=''}
 function updateCompare(){el('comparebar').classList.toggle('show',comparison.length>0);el('comparecount').textContent=`已选 ${comparison.length} / 4 篇`}
-function compareModal(){if(!comparison.length)return;let ps=comparison.map(id=>PAPERS.find(p=>p.id===id));let rows=[['方向',p=>p.direction],['研究类型',p=>p.type],['问题',p=>p.problem],['方法',p=>p.idea],['贡献',p=>p.contribution],['统计联系',p=>p.statistics]];el('modalbody').innerHTML=`<h3>文献对照矩阵</h3><div class="compare-scroll"><table class="compare-table"><thead><tr><th>维度</th>${ps.map(p=>`<th><a href="${escaped(p.url)}" target="_blank" rel="noopener">${escaped(p.title)}</a></th>`).join('')}</tr></thead><tbody>${rows.map(([k,fn])=>`<tr><th>${k}</th>${ps.map(p=>`<td>${escaped(fn(p))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;el('overlay').classList.add('show');document.body.style.overflow='hidden'}
+function compareModal(){if(!comparison.length)return;let ps=comparison.map(id=>PAPERS.find(p=>p.id===id));let rows=[['作者',p=>p.authors.join(' · ')],['发表状态',p=>p.publication_status],['证据与局限',p=>p.evidence],['方向',p=>p.direction],['研究类型',p=>p.type],['问题',p=>p.problem],['方法',p=>p.idea],['贡献',p=>p.contribution],['统计联系',p=>p.statistics]];el('modalbody').innerHTML=`<h3>文献对照矩阵</h3><div class="compare-scroll"><table class="compare-table"><thead><tr><th>维度</th>${ps.map(p=>`<th><a href="${escaped(p.url)}" target="_blank" rel="noopener">${escaped(p.title)}</a></th>`).join('')}</tr></thead><tbody>${rows.map(([k,fn])=>`<tr><th>${k}</th>${ps.map(p=>`<td>${escaped(fn(p))}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;el('overlay').classList.add('show');document.body.style.overflow='hidden'}
+function renderScholars(){el('scholars').innerHTML=SCHOLARS.map(s=>`<article class="lead-card"><div class="kicker">${escaped(s.affiliation)}</div><h4>${escaped(s.name)} <span class="tag">${PAPERS.filter(p=>p.scholars.includes(s.id)).length} 篇</span></h4><p>${escaped(s.focus)}</p><p><a href="${escaped(s.url)}" target="_blank" rel="noopener">主页 ↗</a> · <a href="${escaped(s.publications)}" target="_blank" rel="noopener">完整发表列表 ↗</a></p><div class="week-links">${s.recommended.map(id=>{const p=PAPERS.find(p=>p.id===id);return `<button class="week-link" data-open="${id}">${escaped(p.title)}</button>`}).join('')}</div><button class="light-btn" style="margin-top:12px" data-scholar="${s.id}">探索本库相关论文 →</button></article>`).join('')}
 function renderOverview(){el('direction-cards').innerHTML=DIRECTIONS.map((d,i)=>`<article class="lead-card"><div class="lead-no">0${i+1}</div><h4>${escaped(d.name)}</h4><p><strong>核心问题：</strong>${escaped(d.question)}</p><p><strong>技术：</strong>${escaped(d.tech)}</p><p><strong>统计切口：</strong>${escaped(d.statistics)}</p><button class="light-btn" data-direction="${escaped(d.key)}">探索论文 →</button></article>`).join('')}
 function renderWeeks(){el('weeks').innerHTML=ROUTE.map(w=>`<div class="week"><div class="week-id">STAGE <strong>${w.week}</strong></div><div><h4>${escaped(w.title)}</h4><p>${escaped(w.desc)}</p><div class="week-links">${w.ids.map(id=>{let p=PAPERS.find(x=>x.id===id);return p?`<button class="week-link" data-open="${id}">${escaped(p.title)}　<small>${p.venue} ${p.year}</small></button>`:''}).join('')}</div><p>${escaped(w.deliver)}</p></div></div>`).join('')}
 function renderIdeas(){el('ideas').innerHTML=IDEAS.map(d=>`<div class="idea"><div class="no">RESEARCH HYPOTHESIS / ${d.no}</div><h4>${escaped(d.name)}</h4><p><strong>研究问题：</strong>${escaped(d.hyp)}</p><p><strong>意义：</strong>${escaped(d.why)}</p><p><strong>统计方法：</strong>${escaped(d.tools)}</p><p><strong>难度：</strong>${escaped(d.difficulty)}</p><div class="idea-take"><p><strong>尚未验证：</strong>${escaped(d.open)}</p></div><div class="idea-ref">${d.ids.map(id=>{let p=PAPERS.find(x=>x.id===id);return p?`<button data-open="${id}">${escaped(p.title.slice(0,34))}…</button>`:''}).join('')}</div></div>`).join('')}
 function download(name,body,mime='text/plain;charset=utf-8'){let b=new Blob([body],{type:mime}),u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),1200)}
-function exportCsv(){let keys=Object.keys(PAPERS[0]);download('selected_alignment_papers.csv','\ufeff'+[keys.join(','),...PAPERS.map(p=>keys.map(k=>'"'+String(Array.isArray(p[k])?p[k].join('; '):p[k]).replaceAll('"','""')+'"').join(','))].join('\r\n'),'text/csv;charset=utf-8')}
-function exportRoute(){let lines=['# Statistics × LLM Alignment 阅读路线',''];for(let w of ROUTE){lines.push('## '+w.title,w.desc,'');for(let id of w.ids){let p=PAPERS.find(x=>x.id===id);lines.push('- [ ] '+p.title+' — '+p.url)}lines.push('')}download('reading_roadmap.md',lines.join('\n'))}
+function exportCsv(){let keys=Object.keys(PAPERS[0]);download('scholar_llm_papers.csv','\ufeff'+[keys.join(','),...PAPERS.map(p=>keys.map(k=>'"'+String(Array.isArray(p[k])?p[k].join('; '):p[k]).replaceAll('"','""')+'"').join(','))].join('\r\n'),'text/csv;charset=utf-8')}
+function exportRoute(){let lines=['# Statistics × LLM 阅读路线',''];for(let w of ROUTE){lines.push('## '+w.title,w.desc,'');for(let id of w.ids){let p=PAPERS.find(x=>x.id===id);lines.push('- [ ] '+p.title+' — '+p.url)}lines.push('')}download('reading_roadmap.md',lines.join('\n'))}
 function reset(){el('search').value='';document.querySelectorAll('.filter-line select').forEach(s=>s.selectedIndex=0);el('filter-saved').checked=false;el('filter-unread').checked=false;renderLibrary()}
-document.addEventListener('click',e=>{let n=e.target.closest('[data-page]');if(n){switchPage(n.dataset.page);return}let d=e.target.closest('[data-direction]');if(d){switchPage('explorer');reset();el('filter-direction').value=d.dataset.direction;renderLibrary();return}let o=e.target.closest('[data-open]');if(o){openPaper(o.dataset.open);return}let star=e.target.closest('[data-star]');if(star){let id=star.dataset.star;save(id,{star:!per(id).star});renderLibrary();if(shelf)renderShelf()}});
-['search','filter-direction','filter-venue','filter-year','filter-type','filter-saved','filter-unread'].forEach(id=>el(id).addEventListener(id==='search'?'input':'change',renderLibrary));
+document.addEventListener('click',e=>{let n=e.target.closest('[data-page]');if(n){switchPage(n.dataset.page);return}let sc=e.target.closest('[data-scholar]');if(sc){closeModal();switchPage('explorer');if(shelf)showShelf();reset();el('filter-scholar').value=sc.dataset.scholar;renderLibrary();return}let query=e.target.closest('[data-query]');if(query){if(shelf)showShelf();reset();el('filter-direction').value='Watermark & AI Text Detection';el('search').value=query.dataset.query;renderLibrary();return}let d=e.target.closest('[data-direction]');if(d){switchPage('explorer');if(shelf)showShelf();reset();el('filter-direction').value=d.dataset.direction;renderLibrary();return}let o=e.target.closest('[data-open]');if(o){openPaper(o.dataset.open);return}let star=e.target.closest('[data-star]');if(star){let id=star.dataset.star;save(id,{star:!per(id).star});renderLibrary();if(shelf)renderShelf()}});
+['search','filter-scholar','filter-direction','filter-venue','filter-year','filter-type','filter-saved','filter-unread'].forEach(id=>el(id).addEventListener(id==='search'?'input':'change',renderLibrary));
 el('menu-toggle').onclick=()=>el('sidebar').classList.toggle('open');el('clear-filters').onclick=reset;el('show-shelf').onclick=showShelf;el('download-csv').onclick=exportCsv;el('export-notes').onclick=()=>download('alignment_reading_notes.json',JSON.stringify({exportedAt:new Date().toISOString(),records:saved},null,2),'application/json;charset=utf-8');el('export-route').onclick=exportRoute;el('close-dialog').onclick=closeModal;el('overlay').onclick=e=>{if(e.target===el('overlay'))closeModal()};el('compare-clear').onclick=()=>{comparison=[];updateCompare()};el('compare-open').onclick=compareModal;
+document.addEventListener('input',e=>{if(e.target.dataset.legacyNote)save(e.target.dataset.legacyNote,{note:e.target.value})});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();el('sidebar').classList.remove('open')}if(e.key==='/'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();switchPage('explorer');el('search').focus()}if(e.key==='Enter'&&e.target.matches('h4[data-open]'))openPaper(e.target.dataset.open)});
-setupOptions();updateMetrics();renderOverview();renderLibrary();renderIdeas();renderWeeks();
+setupOptions();updateMetrics();renderOverview();renderScholars();renderLibrary();renderIdeas();renderWeeks();
 </script></body></html>

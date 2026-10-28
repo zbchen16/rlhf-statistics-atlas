@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "public/data/papers.json"
 HTML = ROOT / "public/index.html"
 CSV = ROOT / "public/data/papers.csv"
+SCHOLARS = ROOT / "public/data/scholars.json"
 
 
 def main() -> None:
@@ -36,8 +37,18 @@ def main() -> None:
     updated, n = re.subn(pattern, lambda _m: serialized, source)
     if n != 1:
         raise ValueError(f"Expected one PAPERS declaration before ROUTE, got {n}; aborting")
+    scholars = json.loads(SCHOLARS.read_text(encoding="utf-8"))
+    serialized_scholars = json.dumps(scholars, ensure_ascii=False, indent=2).replace("<", "\\u003c")
+    updated, n = re.subn(r"(?<=const SCHOLARS = )\[[\s\S]*?\](?=;\nconst ARCHIVE = )", lambda _m: serialized_scholars, updated)
+    if n != 1:
+        raise ValueError("Expected one SCHOLARS declaration before ROUTE; aborting")
+    archive = json.loads((ROOT / "public/data/papers_archive.json").read_text(encoding="utf-8"))
+    serialized_archive = json.dumps(archive, ensure_ascii=False, indent=2).replace("<", "\\u003c")
+    updated, n = re.subn(r"(?<=const ARCHIVE = )\[[\s\S]*?\](?=;\nconst ROUTE = )", lambda _m: serialized_archive, updated)
+    if n != 1:
+        raise ValueError("Expected one ARCHIVE declaration before ROUTE; aborting")
     HTML.write_text(updated, encoding="utf-8")
-    print(f"Synced {len(papers)} paper entries into HTML and CSV")
+    print(f"Synced {len(papers)} papers and {len(scholars)} scholars into HTML; CSV regenerated")
 
 
 if __name__ == "__main__":

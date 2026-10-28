@@ -1,58 +1,67 @@
 #!/usr/bin/env python3
-"""Lightweight static acceptance checks without altering the site or its data."""
+"""Data integrity checks; remote availability and browser behavior are separate gates."""
 from __future__ import annotations
-
-import csv
-import json
+import csv,json,re
 from pathlib import Path
-import re
 from urllib.parse import urlparse
-
-ROOT = Path(__file__).resolve().parents[1]
-HTML = ROOT / "public/index.html"
-JSON = ROOT / "public/data/papers.json"
-CSV = ROOT / "public/data/papers.csv"
-REQUIRED = ("id", "title", "year", "venue", "direction", "type", "tags", "url", "problem", "idea", "contribution", "evidence", "statistics", "potential", "verification")
-DIRECTIONS = {"RLHF & Preference Alignment", "Other Alignment Methods", "Machine Unlearning"}
-TYPES = {"Method", "Theory", "Theory + Method"}
-
-
-def verify() -> None:
-    html = HTML.read_text(encoding="utf-8")
-    papers = json.loads(JSON.read_text(encoding="utf-8"))
-    assert isinstance(papers, list) and papers, "non-empty papers.json required"
-    assert len(papers) == len({p["id"] for p in papers}), "paper IDs must be unique"
-    assert len(papers) == len({p["title"] for p in papers}), "paper titles must be unique"
-    assert all(tuple(p) == REQUIRED for p in papers), "missing or extra paper fields"
-    assert 30 <= len(papers) <= 40, "expected a curated 30–40-paper set"
-    assert all(isinstance(p["year"], int) and p["year"] >= 2020 for p in papers), "invalid years"
-    assert {p["direction"] for p in papers} == DIRECTIONS, "unexpected research directions"
-    assert all(p["type"] in TYPES for p in papers), "invalid research type"
-    assert all(isinstance(p["tags"], list) and 1 <= len(p["tags"]) <= 3 for p in papers), "expected 1–3 technical tags"
-    assert all(all(isinstance(p[k], str) and p[k].strip() for k in ("problem", "idea", "contribution", "evidence", "statistics", "potential", "verification")) for p in papers), "six-part analysis or verification missing"
-    assert all(urlparse(p["url"]).scheme == "https" and urlparse(p["url"]).netloc for p in papers), "invalid URL format"
-    matches = re.findall(r"const PAPERS = (\[[\s\S]*?\]);\nconst DIRECTIONS = ", html)
-    assert len(matches) == 1, "embedded HTML paper array not found exactly once"
-    embedded = json.loads(matches[0])
-    assert embedded == papers, "HTML data is stale; run python scripts/sync_papers.py"
-    with CSV.open(encoding="utf-8-sig", newline="") as f:
-        reader = csv.DictReader(f)
-        assert tuple(reader.fieldnames or ()) == REQUIRED, "CSV headers differ"
-        rows = list(reader)
-    assert len(rows) == len(papers), "CSV record count differs"
-    for idx, (record, row) in enumerate(zip(papers, rows), 1):
-        assert all(str(record[k]) == row[k] for k in REQUIRED), f"CSV mismatch at row {idx}"
-    archive = json.loads((ROOT / "public/data/papers_archive.json").read_text(encoding="utf-8"))
-    assert len(archive) == 28 and len({p["id"] for p in archive}) == 28, "original-paper archive incomplete"
-    assert not ({p["id"] for p in papers} & {p["id"] for p in archive}), "selected and archive IDs overlap"
-    assert {p["id"] for p in papers if p["id"].startswith('p')} | {p["id"] for p in archive} == {f'p{i:02}' for i in range(1,42)}, "original 41 IDs not fully accounted for"
-    assert '<html lang="zh-CN">' in html, "expected Chinese language metadata"
-    assert 'id="papers"' in html and 'id="search"' in html, "core UI missing"
-    assert '<script>' in html and '</script>' in html, "static JavaScript missing"
-    assert (ROOT/'public/.nojekyll').exists(), "expected .nojekyll marker"
-    print(f"PASS: {len(papers)} selected papers, {len(archive)} archived originals, CSV/HTML snapshot synced")
-    print("NOTE: This is a consistency check, not independent verification of every citation or remote deployment.")
-
-
-if __name__ == '__main__':
-    verify()
+ROOT=Path(__file__).resolve().parents[1]
+REQUIRED=('id','title','year','venue','direction','type','tags','problem','idea','contribution','evidence','statistics','potential','url','authors','scholars','arxiv','publication_status','publication_source','verification')
+DIRECTIONS={'RLHF & Preference Alignment','Machine Unlearning','Watermark & AI Text Detection'}
+TYPES={'Method','Theory','Theory + Method'}
+def verify():
+ html=(ROOT/'public/index.html').read_text()
+ papers=json.loads((ROOT/'public/data/papers.json').read_text())
+ scholars=json.loads((ROOT/'public/data/scholars.json').read_text())
+ archive=json.loads((ROOT/'public/data/papers_archive.json').read_text())
+ old=json.loads((ROOT/'docs/scholar-explorer-2026-10-28/preexisting_records.json').read_text())
+ metadata={p['arxiv']:p for p in json.loads((ROOT/'docs/scholar-explorer-2026-10-28/paper_metadata.json').read_text())}
+ assert papers and len(papers)<=50,'keep the selected collection bounded'
+ assert len(scholars)==11 and len({s['id'] for s in scholars})==11
+ assert len({p['id'] for p in papers})==len(papers),'duplicate ID'
+ assert len({p['arxiv'] for p in papers})==len(papers),'duplicate paper/version'
+ assert len({p['title'] for p in papers})==len(papers),'duplicate title'
+ assert all(tuple(p)==REQUIRED for p in papers),'record schema/order mismatch'
+ assert {p['direction'] for p in papers}==DIRECTIONS
+ ids={p['id'] for p in papers};sids={s['id'] for s in scholars}
+ names={s['id']:s['name'] for s in scholars}
+ for p in papers:
+  assert p['type'] in TYPES and 1<=len(p['tags'])<=3
+  assert isinstance(p['year'],int) and 2020<=p['year']<=2026
+  assert all(isinstance(p[k],str) and p[k].strip() for k in REQUIRED if k not in ('year','tags','authors','scholars'))
+  assert p['authors'] and p['scholars'] and set(p['scholars'])<=sids
+  assert all(names[s] in p['authors'] for s in p['scholars']),f"unverified scholar association: {p['id']}"
+  m=metadata[p['arxiv']]
+  assert p['title']==m['title'],'title differs from inspected primary record'
+  normalized=[' '.join(a.split(', ')[::-1]) if ', ' in a else a for a in m['authors']]
+  assert p['authors']==normalized,'author list differs from inspected primary record'
+  for k in ('url','publication_source'):
+   assert urlparse(p[k]).scheme=='https' and urlparse(p[k]).netloc
+ for s in scholars:
+  assert set(s['recommended'])<=ids
+  assert all(s['id'] in next(p for p in papers if p['id']==i)['scholars'] for i in s['recommended'])
+  assert any(s['id'] in p['scholars'] for p in papers),'uncovered scholar'
+ assert not(ids & {p['id'] for p in archive}),'main/archive overlap'
+ assert len({p['id'] for p in archive})==len(archive)
+ all_records={p['id']:p for p in papers+archive}
+ assert len(old)==58 and all(p['id'] in all_records for p in old),'old record lost'
+ assert all(p['title']==all_records[p['id']]['title'] for p in old),'legacy ID reused'
+ for label,array,next_label in [('PAPERS',papers,'DIRECTIONS'),('SCHOLARS',scholars,'ARCHIVE'),('ARCHIVE',archive,'ROUTE')]:
+  m=re.findall(r'const '+label+r' = (\[[\s\S]*?\]);\nconst '+next_label+r' = ',html)
+  assert len(m)==1 and json.loads(m[0])==array,f'{label} HTML snapshot stale'
+ with (ROOT/'public/data/papers.csv').open(encoding='utf-8-sig',newline='') as f:
+  reader=csv.DictReader(f);assert tuple(reader.fieldnames)==REQUIRED;rows=list(reader)
+ assert len(rows)==len(papers)
+ assert all(str(p[k])==r[k] for p,r in zip(papers,rows) for k in REQUIRED),'CSV differs'
+ # All editorial routes, opportunities and overview links must resolve.
+ refs=re.findall(r"ids:\[([^]]+)\]",html)
+ for group in refs:
+  assert set(re.findall(r"'([^']+)'",group))<=ids,'dangling route/opportunity reference'
+ assert set(re.findall(r'data-open="([a-z0-9]+)"',html))<=ids,'dangling static paper link'
+ assert 'rlhf_stats_atlas_v1' in html,'browser storage key must stay compatible'
+ assert (ROOT/'public/.nojekyll').exists()
+ counts={d:sum(p['direction']==d for p in papers) for d in sorted(DIRECTIONS)}
+ print(f'PASS: {len(papers)} papers, {len(scholars)} scholars, {len(archive)} archive; all 58 legacy IDs retained')
+ print('PASS: primary author/title associations, recommendations, editorial references, CSV/HTML snapshots')
+ print(json.dumps(counts,ensure_ascii=False))
+ print('LIMIT: source metadata consistency is not a full-text theorem audit or remote/browser deployment check.')
+if __name__=='__main__':verify()

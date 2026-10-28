@@ -12,3 +12,9 @@ __pycache__/
 node_modules/
 playwright-report/
 test-results/
+.qa-browsers/
+.qa-tmp/
+# Raw HTTP cache and one-time migration helpers stay local to this project.
+docs/scholar-explorer-2026-10-28/sources/
+docs/scholar-explorer-2026-10-28/curate_once.py
+docs/scholar-explorer-2026-10-28/update_ui_once.py

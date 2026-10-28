@@ -1,0 +1,280 @@
+[
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/0a226473989931ec6f6ced7343542f86-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Doubly Robust Alignment for Large Language Models",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://callmespring.github.io/publication",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Publication",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://web.ics.purdue.edu/~sun244/research.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html",
+    "title": "Will Wei Sun",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://arxiv.org/abs/2603.01162",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2603.01162] Demystifying Group Relative Policy Optimization: Its Policy Gradient is a U-Statistic",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://arxiv.org/abs/2604.28005",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2604.28005] Kernelized Advantage Estimation: From Nonparametric Statistics to LLM Reasoning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2026.2674413",
+    "status": "blocked",
+    "accessed": "2026-10-28",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://arxiv.org/abs/2512.03208",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2512.03208] Uncertainty Quantification for Large Language Model Reward Learning under Heterogeneous Human Feedback",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://www.tandfonline.com/doi/abs/10.1080/01621459.2025.2555067",
+    "status": "blocked",
+    "accessed": "2026-10-28",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://jiancongxiao.github.io/publications/",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Publications | Jiancong Xiao",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v267/xiao25b.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Restoring Calibration for Aligned Large Language Models: A Calibration-Aware Fine-Tuning Approach",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v235/xiong24a.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Iterative Preference Learning from Human Feedback: Bridging Theory and Practice for RLHF under KL-constraint",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://papers.nips.cc/paper_files/paper/2024/hash/94d13c2401fe119e57ba325b6fe526e0-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Online Iterative Reinforcement Learning from Human Feedback with General Preference Model",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/8e3b8de251afd887fb4589c1e3a3c793-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "RM-R1: Reward Modeling as Reasoning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://www.nature.com/articles/s42256-025-00985-0",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Rethinking machine unlearning for large language models | Nature Machine Intelligence",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/02443e4e008231e0af0855f3cc70ed17-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Simplicity Prevails: Rethinking Negative Preference Optimization for LLM Unlearning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v267/fan25e.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Towards LLM Unlearning Resilient to Relearning Attacks: A Sharpness-Aware Minimization Perspective and Beyond",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://lsjxjtu.github.io/publications.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Publications",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3a91841d2bcc0b13a3d0d5d60c9f0581-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Towards Effective Evaluations and Comparisons for LLM Unlearning Methods",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v267/wang25de.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "GRU: Mitigating the Trade-off between Unlearning and Retention for LLMs",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v267/yang25ak.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Exploring Criteria of Loss Reweighting to Enhance LLM Unlearning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.mlr.press/v306/yang26dc.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Distinguishable Deletion: Unifying Knowledge Erasure and Refusal for Large Language Model Unlearning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://haorantang.github.io/",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Haoran Tang | Purdue CS",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/815d50638e46b7f3bdaaae2158c68d54-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Sharpness-Aware Machine Unlearning",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/9ad307ab459fb93163248a0a56959307-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Rethinking LLM Unlearning Objectives: A Gradient Perspective and Go Beyond",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://openreview.net/pdf/a78c8e7458c059eb2cd9237d4af803b102afba7b.pdf",
+    "status": "blocked",
+    "accessed": "2026-10-28",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/808bc5e3d076c1125a87f81b42d5e52d-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "AdaDetectGPT: Adaptive Detection of LLM-Generated Text with Statistical Guarantees",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://doi.org/10.1214/24-AOS2468",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html",
+    "title": "",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://academic.oup.com/jrsssb/article-abstract/88/2/491/8261309",
+    "status": "blocked",
+    "accessed": "2026-10-28",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://arxiv.org/abs/2506.22343",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2506.22343] Optimal Estimation of Watermark Proportions in Hybrid AI-Human Texts",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/1b19bf73c2f341a350f9bd05c204d97b-Paper-Conference.pdf",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "application/pdf",
+    "title": "",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://arxiv.org/abs/2608.14906",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2608.14906] Optimal Watermark Localization in Mixed-Source Large Language Model Texts",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://openreview.net/pdf?id=Bpcgcr8E8Z",
+    "status": "blocked",
+    "accessed": "2026-10-28",
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/806e8e4ea77000a1486eeddeb1b90a6e-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Glimpse: Enabling White-Box Methods to Use Proprietary Models for Zero-Shot LLM-Generated Text Detection",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://arxiv.org/abs/2503.00258",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "[2503.00258] Decoupling Content and Expression: Two-Dimensional Detection of AI-Generated Text",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/dce5d66bf88b7b7d0f11fbd9c9f16620-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Advancing Machine-Generated Text Detection from an Easy to Hard Supervision Perspective",
+    "note": "HTTP/metadata only; no full theorem audit"
+  },
+  {
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/50b4eb974283cf1a7a60980ed06cf1be-Abstract-Conference.html",
+    "status": 200,
+    "accessed": "2026-10-28",
+    "content_type": "text/html; charset=utf-8",
+    "title": "Beyond Raw Detection Scores: Markov-Informed Calibration for Boosting Machine-Generated Text Detection",
+    "note": "HTTP/metadata only; no full theorem audit"
+  }
+]

@@ -1,5 +1,545 @@
 [
   {
+    "id": "p02",
+    "title": "Understanding the Performance Gap in Preference Learning: A Dichotomy of RLHF and DPO",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "RLHF",
+      "DPO"
+    ],
+    "url": "https://proceedings.mlr.press/v306/shi26s.html",
+    "problem": "RLHF 与 DPO 的性能差异在何种设定下出现？",
+    "idea": "比较两类偏好优化路线的目标和假设。",
+    "contribution": "提供区分两类路线的理论视角。",
+    "evidence": "仅据官网摘要概括；具体定理和常数未独立核验。",
+    "statistics": "偏好模型错设、策略估计与有限样本分析。",
+    "potential": "适合作为 RLHF/DPO 对照阅读；先复核其模型假设。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p03",
+    "title": "Beyond Bradley-Terry Models: A General Preference Model for Language Model Alignment",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Bradley–Terry",
+      "Preference Model"
+    ],
+    "url": "https://proceedings.mlr.press/v267/zhang25de.html",
+    "problem": "BT 模型不能表达复杂偏好时如何对齐？",
+    "idea": "建立更一般的偏好表示并用于语言模型对齐。",
+    "contribution": "把偏好表示范围扩展到标准 BT 假设之外。",
+    "evidence": "仅核查摘要；理论条件及实验幅度待阅读全文。",
+    "statistics": "统计识别、非传递偏好和模型错设。",
+    "potential": "值得精读；先明确更一般模型的可识别条件。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p04",
+    "title": "DisPPO: Quantile-Based Distributional Reinforcement Learning for Large Language Models",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Distributional Reward",
+      "Quantile Regression"
+    ],
+    "url": "https://proceedings.mlr.press/v306/zhou26z.html",
+    "problem": "标量奖励会遗漏哪些反馈分布信息？",
+    "idea": "用分位数式分布建模改进偏好优化。",
+    "contribution": "使奖励分布而非单一均值参与训练。",
+    "evidence": "仅据摘要概括；不把优化收敛当作统计保证。",
+    "statistics": "分位数回归、分布估计与风险敏感决策。",
+    "potential": "可研究分位数估计误差如何传播到策略；目前是研究假设。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p05",
+    "title": "Unbiased Alignment for Large Language Models with Noisy Preferences",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Noisy Preferences",
+      "Robust Estimation"
+    ],
+    "url": "https://proceedings.mlr.press/v306/wang26fa.html",
+    "problem": "偏好标签有噪声时如何避免优化偏差？",
+    "idea": "校正带噪偏好信号下的训练目标。",
+    "contribution": "把噪声机制显式纳入对齐目标。",
+    "evidence": "摘要级核查；噪声可识别性和误差界需读原文。",
+    "statistics": "标签噪声、校准与稳健估计。",
+    "potential": "值得精读；实例依赖噪声扩展需先证明可识别性。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p06",
+    "title": "Distortion of AI Alignment: Does Preference Optimization Optimize for Preferences?",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "Preference Aggregation",
+      "Social Choice"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/2526c5e8110bc6bc8b462ba95198161e-Abstract-Conference.html",
+    "problem": "优化成对偏好是否等于满足群体偏好？",
+    "idea": "分析偏好优化目标与社会福利目标的关系。",
+    "contribution": "提醒目标函数与规范性偏好汇总之间可能不一致。",
+    "evidence": "摘要级核查；具体反例或界限需读原文。",
+    "statistics": "社会选择、目标错配与群体异质性。",
+    "potential": "可与群体偏好论文对读；不要把规范性选择当作统计事实。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p07",
+    "title": "Conditional Equivalence of DPO and RLHF: Implicit Assumption, Failure Modes, and Provable Alignment",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "DPO",
+      "RLHF"
+    ],
+    "url": "https://proceedings.mlr.press/v306/yang26dp.html",
+    "problem": "DPO 与 RLHF 何时等价，何时失效？",
+    "idea": "研究两者的条件等价和假设失效。",
+    "contribution": "明确直接偏好目标与奖励优化之间的条件边界。",
+    "evidence": "摘要级核查；未独立复核定理细节。",
+    "statistics": "识别假设、偏好模型与策略目标错配。",
+    "potential": "适合与 DPO 原文对读并构造反例。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p08",
+    "title": "Avoiding exp(R) scaling in RLHF through Preference-based Exploration",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Online RLHF",
+      "Exploration"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/f0666ac2771a39f43b483086ffee8d37-Abstract-Conference.html",
+    "problem": "在线 RLHF 如何避免低效探索？",
+    "idea": "利用偏好反馈设计探索机制。",
+    "contribution": "针对样本效率提出不同于静态偏好学习的路线。",
+    "evidence": "摘要级核查；样本复杂度结论需原文确认。",
+    "statistics": "主动学习、探索与样本复杂度。",
+    "potential": "适合研究自适应标注和评估偏差。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p09",
+    "title": "What Makes a Reward Model a Good Teacher? An Optimization Perspective",
+    "year": 2025,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Reward Modeling",
+      "Optimization"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/554e056fe2b6d9fd27ffcd3367ae1267-Abstract-Conference.html",
+    "problem": "什么样的奖励模型才能有效指导策略训练？",
+    "idea": "从优化信号而非单一比较准确率分析奖励模型。",
+    "contribution": "把奖励质量与下游策略更新联系起来。",
+    "evidence": "摘要级核查；具体命题和实验幅度未复核。",
+    "statistics": "代理风险、梯度信号与评估效度。",
+    "potential": "值得对照 RewardBench 指标与真实策略收益。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p11",
+    "title": "On the Robustness of Reward Models for Language Model Alignment",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "Reward Modeling",
+      "Robustness"
+    ],
+    "url": "https://proceedings.mlr.press/v267/hong25d.html",
+    "problem": "奖励模型面对分布变化或扰动是否可靠？",
+    "idea": "分析并改善奖励模型的稳健性。",
+    "contribution": "把稳健性作为奖励建模的核心评估维度。",
+    "evidence": "摘要级核查；稳健保证的适用范围需读原文。",
+    "statistics": "稳健统计、分布偏移与泛化。",
+    "potential": "适合研究反馈分布与政策分布的错配。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p14",
+    "title": "Unintentional Unalignment: Likelihood Displacement in Direct Preference Optimization",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory",
+    "tags": [
+      "DPO",
+      "Optimization"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/3df38ca67befaed9c03b95ffee07d9f8-Abstract-Conference.html",
+    "problem": "DPO 是否会意外降低偏好答案的似然？",
+    "idea": "分析直接偏好目标中的 likelihood displacement。",
+    "contribution": "揭示目标函数优化中的非直观行为。",
+    "evidence": "摘要级核查；这是优化行为分析，不自动等于统计一致性保证。",
+    "statistics": "目标函数诊断、模型选择与数据分布。",
+    "potential": "适合作为 DPO 失效案例阅读。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "p15",
+    "title": "COMAL: A Convergent Meta-Algorithm for Aligning LLMs with General Preferences",
+    "year": 2026,
+    "venue": "ICLR",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "General Preferences",
+      "Game Theory"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2026/hash/5447eef63ec8544bd3a06a9d36efec6b-Abstract-Conference.html",
+    "problem": "非传递一般偏好下如何定义与求解对齐策略？",
+    "idea": "用元算法处理一般偏好结构。",
+    "contribution": "超越单标量奖励或纯 BT 排序设定。",
+    "evidence": "摘要级核查；收敛结果需区分算法收敛与统计误差。",
+    "statistics": "非传递偏好、博弈与估计误差。",
+    "potential": "适合与 p03 比较模型表达力和样本需求。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n01",
+    "title": "Training language models to follow instructions with human feedback",
+    "year": 2022,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Method",
+    "tags": [
+      "RLHF",
+      "Reward Modeling"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract.html",
+    "problem": "预训练模型难以稳定遵循人类指令。",
+    "idea": "先进行示范数据监督微调，再用排序反馈训练奖励模型并以 RLHF 优化。",
+    "contribution": "建立后续 LLM RLHF 工作常用的训练流程。",
+    "evidence": "官方论文摘要描述训练和人类偏好评估；无统计定理主张。",
+    "statistics": "排序标签采样、奖励模型泛化和评估偏差。",
+    "potential": "必读基础；关注标注者分布如何影响目标。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n02",
+    "title": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+    "year": 2023,
+    "venue": "NeurIPS",
+    "direction": "RLHF & Preference Alignment",
+    "type": "Theory + Method",
+    "tags": [
+      "DPO",
+      "Preference Optimization"
+    ],
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/a85b405ed65c6477a4fe8302b5e06ce7-Abstract.html",
+    "problem": "显式奖励模型加 RL 优化流程复杂。",
+    "idea": "将 KL 正则奖励优化目标重参数化为成对偏好分类损失。",
+    "contribution": "提出无需单独拟合奖励模型的 DPO 路线。",
+    "evidence": "官方摘要支持方法与实验主张；等价推导的适用假设需原文复核。",
+    "statistics": "BT 假设、目标识别和离线样本分布。",
+    "potential": "必读基础；与 p07、p14 对照其条件和失效模式。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n03",
+    "title": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
+    "year": 2024,
+    "venue": "ICML",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "RLAIF",
+      "AI Feedback"
+    ],
+    "url": "https://proceedings.mlr.press/v235/lee24t.html",
+    "problem": "人工偏好标签成本高，AI 反馈能否替代部分标注？",
+    "idea": "以 AI 生成的偏好反馈训练奖励模型和对齐策略。",
+    "contribution": "给出 RLAIF 与 RLHF 的直接经验比较。",
+    "evidence": "PMLR 摘要级核查；实验数字和条件需原文确认。",
+    "statistics": "自动标注偏差、测量误差和迁移。",
+    "potential": "RLAIF 代表性入门；重点追问评判器偏差。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n04",
+    "title": "Constitutional AI: Harmlessness from AI Feedback",
+    "year": 2022,
+    "venue": "arXiv",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "Constitutional AI",
+      "RLAIF"
+    ],
+    "url": "https://arxiv.org/abs/2212.08073",
+    "problem": "如何在少量人工安全标注下改进有害请求处理？",
+    "idea": "用原则驱动自我批评与修订，并用 AI 反馈训练偏好模型。",
+    "contribution": "形成宪法式 AI 反馈路线的基础范式。",
+    "evidence": "核查 arXiv 原文元数据和摘要；正式会议发表状态未确认。",
+    "statistics": "规则选择、反馈测量与安全评估。",
+    "potential": "基础背景；不把预印本标为正式顶会。",
+    "verification": "arXiv 原文/摘要；正式发表未确认"
+  },
+  {
+    "id": "n05",
+    "title": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+    "year": 2023,
+    "venue": "ACL",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "SFT",
+      "Self-Alignment"
+    ],
+    "url": "https://aclanthology.org/2023.acl-long.754/",
+    "problem": "指令微调所需人工指令数据稀缺。",
+    "idea": "模型生成指令及示例，过滤后用于监督微调。",
+    "contribution": "展示自生成数据支持指令对齐的可行路线。",
+    "evidence": "ACL Anthology 摘要及发表信息已核查；实验细节待原文。",
+    "statistics": "合成数据选择偏差、覆盖度与泛化。",
+    "potential": "SFT 和 self-alignment 基础；研究数据质量而非仅数据量。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n06",
+    "title": "Reinforcement Learning with Verifiable Rewards: GRPO’s Loss, Dynamics, and Success Amplification",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Other Alignment Methods",
+    "type": "Theory",
+    "tags": [
+      "RLVR",
+      "GRPO"
+    ],
+    "url": "https://proceedings.mlr.press/v306/mroueh26a.html",
+    "problem": "可验证奖励下 GRPO 为何有效、其损失和动态如何理解？",
+    "idea": "分析 GRPO 损失、优化动态与成功样本放大。",
+    "contribution": "为 RLVR/GRPO 提供理论分析入口。",
+    "evidence": "PMLR 摘要级核查；具体定理需阅读全文，不将动力学结果表述为统计泛化保证。",
+    "statistics": "组内相对基线、方差和采样分布。",
+    "potential": "RLVR 理论优先读；检验组采样机制对估计偏差的影响。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n07",
+    "title": "Spurious Rewards: Rethinking Training Signals in RLVR",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Other Alignment Methods",
+    "type": "Theory + Method",
+    "tags": [
+      "RLVR",
+      "Reward Hacking"
+    ],
+    "url": "https://proceedings.mlr.press/v306/shao26d.html",
+    "problem": "可验证奖励是否可能携带虚假训练信号？",
+    "idea": "分析 RLVR 奖励信号中的伪相关并提出处理思路。",
+    "contribution": "把 RLVR 反馈质量置于方法设计中心。",
+    "evidence": "PMLR 摘要级核查；理论和实验细节待原文。",
+    "statistics": "测量误差、伪相关和分布偏移。",
+    "potential": "适合统计学切入；需分清可验证标签与真正目标。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n08",
+    "title": "Aligning Large Language Models via Fully Self-Synthetic Data",
+    "year": 2026,
+    "venue": "ACL",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "Self-Alignment",
+      "Synthetic Data"
+    ],
+    "url": "https://aclanthology.org/2026.acl-long.1595/",
+    "problem": "对齐流程对人工、外部模型或外部偏好数据依赖较强。",
+    "idea": "模型自生成提示、回答和偏好后执行自我对齐优化。",
+    "contribution": "提供全自合成数据的对齐实现。",
+    "evidence": "ACL Anthology 摘要报告基准改进；未复核实验幅度或统计保证。",
+    "statistics": "自选择偏差、误差放大和评估独立性。",
+    "potential": "代表近期 self-alignment；关注训练与评估同源偏差。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n09",
+    "title": "Nudging: Inference-time Alignment of LLMs via Guided Decoding",
+    "year": 2025,
+    "venue": "ACL",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "Inference-time Alignment",
+      "Decoding"
+    ],
+    "url": "https://aclanthology.org/2025.acl-long.623/",
+    "problem": "能否不重新训练模型而在推理时调整输出？",
+    "idea": "以引导式解码在生成阶段施加对齐信号。",
+    "contribution": "代表推理时对齐路线。",
+    "evidence": "ACL Anthology 发表页和摘要级核查；实验细节待原文。",
+    "statistics": "序列选择偏差、校准与计算约束。",
+    "potential": "与训练时对齐方法比较成本及泛化。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n10",
+    "title": "Safeguarding LLM Fine-tuning via Push-Pull Distributional Alignment",
+    "year": 2026,
+    "venue": "ACL",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "Safety Alignment",
+      "Distribution Shift"
+    ],
+    "url": "https://aclanthology.org/2026.acl-long.1083/",
+    "problem": "普通微调可能侵蚀已有安全行为。",
+    "idea": "以分布级对齐保护安全，同时适配新任务。",
+    "contribution": "把安全微调表述为分布级运输问题。",
+    "evidence": "ACL Anthology 摘要级核查；具体安全收益待全文复核。",
+    "statistics": "最优传输、分布偏移和安全—效用权衡。",
+    "potential": "安全路线代表作；考察安全指标的统计不确定性。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n11",
+    "title": "Self-Guided Alignment: Adaptive Preference Sensing for Multi-Objective Generation",
+    "year": 2026,
+    "venue": "ACL",
+    "direction": "Other Alignment Methods",
+    "type": "Method",
+    "tags": [
+      "Multi-objective",
+      "Preference Sensing"
+    ],
+    "url": "https://aclanthology.org/2026.acl-long.2184/",
+    "problem": "单一偏好目标难兼顾多个用户目标。",
+    "idea": "自适应感知偏好以引导多目标生成。",
+    "contribution": "提供多目标对齐的动态调节路线。",
+    "evidence": "ACL Anthology 摘要级核查；不把实验声称写成普遍最优保证。",
+    "statistics": "多目标估计、偏好异质性与权衡曲线。",
+    "potential": "可研究目标权重估计及不确定性。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n12",
+    "title": "MUSE: Machine Unlearning Six-Way Evaluation for Language Models",
+    "year": 2025,
+    "venue": "ICLR",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "Unlearning Evaluation",
+      "Benchmark"
+    ],
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/hash/4556f5398bd2c61bd7500e306b4e560a-Abstract-Conference.html",
+    "problem": "单一指标难判断语言模型是否真正遗忘。",
+    "idea": "从多维度评估 LLM unlearning 的忘记与保留。",
+    "contribution": "建立更全面的 unlearning 评估基准。",
+    "evidence": "OpenReview 正式 ICLR 页面/摘要级核查；具体指标定义需读原文。",
+    "statistics": "测量效度、攻击测试与多指标评估。",
+    "potential": "unlearning 必读评估入口；避免以拒答率替代删除证明。",
+    "verification": "ICLR 2025 正式论文集摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n14",
+    "title": "Textual Unlearning Gives a False Sense of Unlearning",
+    "year": 2025,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "Unlearning Evaluation",
+      "Leakage"
+    ],
+    "url": "https://proceedings.mlr.press/v267/du25d.html",
+    "problem": "文本遗忘表象是否掩盖仍可恢复的信息？",
+    "idea": "提出 U-LiRA+ 审计方法，并设计黑盒与白盒文本遗忘泄漏攻击。",
+    "contribution": "显示表面遗忘仍可能发生成员推断与数据重建泄漏。",
+    "evidence": "PMLR 摘要报告攻击检出与泄漏现象；具体实验条件、数值和适用模型需原文复核。",
+    "statistics": "成员推断、似然比检验、攻击检验力与隐私风险。",
+    "potential": "与 MUSE 对读；重点区分行为抑制、成员隐私和真正删除。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n15",
+    "title": "Forget to Know, Remember to Use: Context-Aware Unlearning for Large Language Models",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "LLM Unlearning",
+      "Context"
+    ],
+    "url": "https://proceedings.mlr.press/v306/peng26a.html",
+    "problem": "遗忘指定知识时如何保留上下文中的正常推理能力？",
+    "idea": "引入上下文感知的遗忘机制。",
+    "contribution": "把遗忘与保留的边界进一步细化。",
+    "evidence": "PMLR 摘要级核查；方法细节和效果待原文。",
+    "statistics": "条件风险、上下文偏移与保留评估。",
+    "potential": "适合研究条件化遗忘目标的可识别性。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n16",
+    "title": "Leak@$k$: Unlearning Does Not Make LLMs Forget Under Probabilistic Decoding",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Theory + Method",
+    "tags": [
+      "Unlearning Evaluation",
+      "Decoding"
+    ],
+    "url": "https://proceedings.mlr.press/v306/reisizadeh26a.html",
+    "problem": "贪心解码下的遗忘是否能抵抗随机采样？",
+    "idea": "用概率解码下的泄漏指标重新检验遗忘。",
+    "contribution": "揭示评估协议改变会改变遗忘结论。",
+    "evidence": "PMLR 摘要级核查；具体定理与数值待原文。",
+    "statistics": "尾部风险、多次抽样检验与置信区间。",
+    "potential": "优先读评估论文；对公开站点的评估表述有直接启发。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
+    "id": "n17",
+    "title": "Unlearning Isn’t Deletion: Investigating Reversibility of Machine Unlearning in LLMs",
+    "year": 2026,
+    "venue": "ICML",
+    "direction": "Machine Unlearning",
+    "type": "Method",
+    "tags": [
+      "Reversibility",
+      "Unlearning Evaluation"
+    ],
+    "url": "https://proceedings.mlr.press/v306/xu26cd.html",
+    "problem": "看似遗忘的模型是否可经少量训练恢复原知识？",
+    "idea": "测试遗忘结果的可逆性。",
+    "contribution": "把可恢复性作为区别行为隐藏与删除的检查。",
+    "evidence": "PMLR 摘要级核查；恢复设置和结果待原文。",
+    "statistics": "攻击鲁棒性、恢复风险和实验设计。",
+    "potential": "与 Leak@$k$ 一起审视遗忘评估边界。",
+    "verification": "官方发表页/摘要核查；未逐条复核全文定理"
+  },
+  {
     "id": "p10",
     "title": "Transitivity Meets Cyclicity: Explicit Preference Decomposition for Dynamic Large Language Model Alignment",
     "year": 2026,
