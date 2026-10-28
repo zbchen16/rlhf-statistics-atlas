@@ -13,6 +13,6 @@ Phases:
 2. [done] Verify scholar identities and primary-source bibliography.
 3. [done] Add scholar navigation, replace three directions/content, archive prior selections safely.
 4. [done] Verify data and browser interactions; review source/claims.
-5. [active] Publish and verify Actions/public HTTP; report limitations.
+5. [done] Publish and verify Actions/public HTTP; report limitations.
 
-Next action: publish and verify Actions, live HTTP/data, and interactions on the public project path.
+Complete: source consistency, 17 local and 17 public browser checks, GitHub Actions verify/deploy, and live byte comparisons passed.

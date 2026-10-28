@@ -1,0 +1,42 @@
+{
+  "checked_on": "2026-10-28",
+  "release_sha": "81d3d63ab50b4da9444801e6dc8f445bf6c4ace0",
+  "http": [
+    {
+      "url": "https://zbchen16.github.io/rlhf-statistics-atlas/?release=81d3d63",
+      "status": 200,
+      "sha256": "7474ec4d03c2709de84ba4d23f3315df6df3de15e8794cbbc27ca9a601b8287f",
+      "matches_local": true
+    },
+    {
+      "url": "https://zbchen16.github.io/rlhf-statistics-atlas/data/papers.json?release=81d3d63",
+      "status": 200,
+      "sha256": "6ae1efdf117e2c756944ddeb353308ceb019536af98878c4acd926d8a79cf99a",
+      "matches_local": true
+    },
+    {
+      "url": "https://zbchen16.github.io/rlhf-statistics-atlas/data/scholars.json?release=81d3d63",
+      "status": 200,
+      "sha256": "7381a924451c229d1ad19e8b643b2dd6e91a2808e819c2e396d539791b627cf3",
+      "matches_local": true
+    },
+    {
+      "url": "https://zbchen16.github.io/rlhf-statistics-atlas/data/papers_archive.json?release=81d3d63",
+      "status": 200,
+      "sha256": "0511331d58a229bc7a46d7d1d97ad6101829df6437c8baa9dc4e7a2908f6de91",
+      "matches_local": true
+    }
+  ],
+  "jobs": [
+    {
+      "name": "verify",
+      "conclusion": "success",
+      "url": "https://github.com/zbchen16/rlhf-statistics-atlas/actions/runs/40623345119/job/122602343589"
+    },
+    {
+      "name": "deploy",
+      "conclusion": "success",
+      "url": "https://github.com/zbchen16/rlhf-statistics-atlas/actions/runs/40623345119/job/122602389577"
+    }
+  ]
+}

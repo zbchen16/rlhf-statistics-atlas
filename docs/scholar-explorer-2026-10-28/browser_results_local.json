@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-28",
+  "url": "http://127.0.0.1:8766/",
+  "checks": [
+    "40 papers / 3 directions",
+    "11 scholar cards and author-specific recommendations",
+    "scholar navigation → 5 Xiang Li papers",
+    "combined scholar/year/type filters",
+    "full author name search",
+    "paraphrase shortcut stays in detection direction",
+    "paper detail: authors, publication state, six questions",
+    "favorites, read status and notes persist across reload",
+    "comparison matrix includes publication state and evidence",
+    "archived paper keeps original title, bookmark/read state and editable note",
+    "notes export includes archived and current entries",
+    "CSV export contains 40 records and author metadata",
+    "reading roadmap and downloadable plan",
+    "7 research opportunities with valid paper links",
+    "mobile menu and no horizontal overflow",
+    "mobile detail fits viewport",
+    "zero JavaScript runtime errors"
+  ],
+  "errors": [],
+  "status": "PASS"
+}
